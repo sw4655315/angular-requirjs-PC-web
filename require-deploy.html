@@ -1,0 +1,296 @@
+<nav class="navbar">
+        <div class="container">
+            <div class="index_nav">
+                <div class="nav_font active">首页</div>
+                <div class="nav_font">需求</div>
+                <div class="nav_font">编客</div>
+                <div class="nav_font">灵感</div>
+                <div class="nav_font">素材</div>
+            </div>
+        </div>
+    </nav>
+    <div class="container" >
+        <div class="bianker_require_select_type fl">
+            <div class="bianker_require_select_type_bg {{deploy_step>=1?'active':''}}">1</div>
+            <div class="bianker_require_select_type_font {{deploy_step>=1?'active':''}}"><p>选择类目</p></div>
+        </div>
+        <div class="bianker_require_select_type fl">
+            <div class="bianker_require_select_type_bg {{deploy_step>=2?'active':''}}">2</div>
+            <div class="bianker_require_select_type_font {{deploy_step>=2?'active':''}}"><p>描述您的需求</p></div>
+        </div>
+        <div class="bianker_require_select_type fl">
+            <div class="bianker_require_select_type_bg {{deploy_step>=3?'active':''}}">3</div>
+            <div class="bianker_require_select_type_font {{deploy_step>=3?'active':''}}"><p>设置需求赏金</p></div>
+        </div>
+        <div class="bianker_require_select_type fl">
+            <div class="bianker_require_select_type_bg {{deploy_step>=4?'active':''}}">4</div>
+            <div class="bianker_require_select_type_font {{deploy_step>=4?'active':''}}"><p>确定需求,并托管赏金</p></div>
+        </div>
+    </div>
+<form>
+    <!-- 第一步 -->
+<div ng-show="deploy_step==1">
+    <div class="container bianker_require_content_wrap">
+        <div class="bianker_require_content_ad_index">官方提供线上担保交易，保障您的资金安全，且不会收取您任何佣金。80%的欺诈、资金盗取均由线下交易导致，请勿线下交易</div>
+        <div class="bianker_require_option_left fl">
+            <div class="bianker_require_option_left_menu">LOGO/VI设计、包装/卡片设计<div class="ico3-3 bianker_require_option_left_menu_ico"></div></div>
+            <div class="bianker_require_option_left_menu active">广告/宣传品设计、书籍/PPT设计<div class="ico3-2 bianker_require_option_left_menu_ico"></div></div>
+            <div class="bianker_require_option_left_menu">电商服务<div class="ico3-3 bianker_require_option_left_menu_ico"></div></div>
+            <div class="bianker_require_option_left_menu">公司起名/宝宝起名<div class="ico3-3 bianker_require_option_left_menu_ico"></div></div>
+            <div class="bianker_require_option_left_menu">品牌/活动/营销/商业策划、文案撰写<div class="ico3-3 bianker_require_option_left_menu_ico"></div></div>
+            <div class="bianker_require_option_left_menu">营销/策划/推广、SEO<div class="ico3-3 bianker_require_option_left_menu_ico"></div></div>
+            <div class="bianker_require_option_left_menu">漫画/动画设计、动画配音<div class="ico3-3 bianker_require_option_left_menu_ico"></div></div>
+            <div class="bianker_require_option_left_menu">影视拍摄/影视文案/后期、音乐制作<div class="ico3-3 bianker_require_option_left_menu_ico"></div></div>
+        </div>
+        <div class="bianker_require_option_right fl">
+            <div class="bianker_require_option_right_block">
+                <div class="bianker_require_option_right_block_header">广告设计</div>
+                <div class="bianker_require_option_right_block_content">
+                    <div class="bianker_require_option_right_block_content_font fl" ng-click="deploy_step=2">广告安装</div>
+                    <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                    <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                    <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                    <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                </div>
+                <div class="bianker_require_option_right_block_content">
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                </div>
+                <div class="bianker_require_option_right_block_content">
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                </div>
+                <div class="bianker_require_option_right_block_content">
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                </div>
+            </div>
+            <div class="bianker_require_option_right_block">
+                <div class="bianker_require_option_right_block_header">广告设计</div>
+                <div class="bianker_require_option_right_block_content">
+                    <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                    <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                    <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                    <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                    <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                </div>
+                <div class="bianker_require_option_right_block_content">
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                </div>
+                <div class="bianker_require_option_right_block_content">
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                </div>
+                <div class="bianker_require_option_right_block_content">
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                </div>
+            </div>
+            <div class="bianker_require_option_right_block">
+                <div class="bianker_require_option_right_block_header">广告设计</div>
+                <div class="bianker_require_option_right_block_content">
+                    <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                    <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                    <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                    <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                    <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                </div>
+                <div class="bianker_require_option_right_block_content">
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
+                </div>
+                <div class="bianker_require_option_right_block_content">
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                    <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
+                </div>
+                <div class="bianker_require_option_right_block_content">
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                    <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 第二步 -->
+<div ng-show="deploy_step==2">
+    <div class="container bianker_require_content_wrap">
+            <div class="bianker_require_content_ad">官方提供线上担保交易，保障您的资金安全，且不会收取您任何佣金。80%的欺诈、资金盗取均由线下交易导致，请勿线下交易。</div>
+            <ul class="bianker_require_content_nav">
+                <li class="fl bianker_require_content_nav_header">您选择了:</li>
+                <li class="fl bianker_require_content_nav_first">一级类目</li>
+                <li class="fl bianker_require_content_nav_ico"><div class="ico3-3"></div></li>
+                <li class="fl bianker_require_content_nav_second">二级类目</li>
+                <li class="fl active-color bianker_require_content_nav_edit" ng-click="deploy_step=1">修改</li>
+            </ul>
+            <div class="bianker_require_content_remark">
+                <div class="bianker_require_content_remark_title">简单的描述您的需求</div>
+                <input type="text" id="require" class="bianker_require_content_remark_input" placeholder="一句话描述您的需求，例如:xx公司宣传微视频">
+            </div>
+            <div class="bianker_require_content_remark_detail">
+                <div class="bianker_require_content_remark_detail_title">说说您的详细需求</div>
+                <textarea  id="require-detail"  rows="15" class="bianker_require_content_remark_detail_input"></textarea>
+            </div>
+
+
+            <div class="bianker_require_content_attachment">
+                <div class="bianker_require_content_attachment_add fl">添加附件</div>
+                <div class="ico8-3 bianker_require_content_attachment_add_icon"></div>
+                <div class="bianker_require_content_attachment_add_tip">最多可添加五个附件，每个大小不超过10M</div>
+            </div>
+            <div class="bianker_require_content_attachment_add_list"></div>
+            <div class="bianker_require_content_button_wrap">
+                 <button class="btn bianker_require_content_button_pre" type="button" ng-click="deploy_step=1">上一步</button>
+                 <button class="btn bianker_require_content_button_next" type="button" ng-click="deploy_step=3">下一步</button>
+            </div>
+            <div class="bianker_require_content_ad_bottom">官方提供线上担保交易，保障您的资金安全，且不会收取您任何佣金。80%的欺诈、资金盗取均由线下交易导致，请勿线下交易。</div>
+        </div>
+</div>
+<!-- 第三步 -->
+<div ng-show="deploy_step==3">
+    <div class="container bianker_require_content_wrap" style="height: 902px">
+        <div class="bianker_require_content_ad">官方提供线上担保交易，保障您的资金安全，且不会收取您任何佣金。80%的欺诈、资金盗取均由线下交易导致，请勿线下交易。</div>
+
+            <div style="width: auto;height: 63px;margin-left: 28px;margin-top: 40px">
+                <div class="bianker_require_content_remark_title">请选择您的交易模式</div>
+                <div class="radio bianker_reward_radio">
+                    <label>
+                        <input type="radio" name="optionsRadios">
+                        投稿模式
+                    </label>
+                </div>
+            </div>
+            <div class="bianker_reward_introduce">投稿模式简介 :<span>&nbsp;指雇主在发布需求时，先将赏金托管到编客网，再从编客投稿中选出满意稿件的交易模式。编客网暂不收取任何比例赏金最为平台服务费。</span></div>
+            <div class="bianker_reward_introduce_people">
+                <div class="bianker_reward_introduce_people_num_title">您希望参与的编客人数:</div>
+                <div class="bianker_reward_introduce_people_num">最多3人</div>
+                <div class="bianker_reward_introduce_people_num">最多6人</div>
+                <div class="bianker_reward_introduce_people_num">最多9人</div>
+            </div>
+            <div class="bianker_reward_setting clearfix">
+                <div class="reward-setting">设置悬赏金额:</div>
+                <input type="text" class="fl bianker_reward_setting_input" placeholder="请输入>100的金额">
+            </div>
+
+
+            <div class="bianker_reward_distribution">
+                <div class="bianker_require_content_remark_title">您希望如何分配该赏金</div>
+                <div class="radio bianker_reward_radio">
+                    <label>
+                        <input type="radio" name="optionsRadios">
+                        单人独享
+                    </label>
+                </div>
+            </div>
+
+            <div class="bianker_reward_command">
+                <div class="bianker_require_content_remark_title">对投稿编客有何要求</div>
+                <div class="btn-group">
+                    <label class="checkbox-inline">
+                        <input type="radio" name="a" value="option1" checked> 需要身份认证
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="a" value="option2"> 手机认证
+                    </label>
+                </div>
+            </div>
+
+            <div class="bianker_reward_endtime">
+                <div class="bianker_require_content_remark_title">您需要何时完成需求</div>
+                <div style="width:auto;height: 34px;margin-top: 20px;margin-bottom: 132px" class="clearfix">
+                    <div class="ico2-8 fl"></div>
+                    <input type="date" class="bianker_reward_endtime_input_date">
+                </div>
+
+            </div>
+
+        <div class="bianker_reward_content_button_wrap">
+            <button class="btn bianker_reward_content_button_pre" type="button" ng-click="deploy_step=2">上一步</button>
+            <button class="btn bianker_reward_content_button_next" type="button" ng-click="deploy_step=4">下一步</button>
+        </div>
+        <div class="bianker_require_content_ad_bottom" >官方提供线上担保交易，保障您的资金安全，且不会收取您任何佣金。80%的欺诈、资金盗取均由线下交易导致，请勿线下交易。</div>
+    </div>
+</div>
+<!-- 第四步 -->
+<div ng-show="deploy_step==4">
+    <div class="container bianker_require_content_wrap">
+        <div class="bianker_require_content_ad">官方提供线上担保交易，保障您的资金安全，且不会收取您任何佣金。80%的欺诈、资金盗取均由线下交易导致，请勿线下交易。</div>
+        <div class="bianker_confirm_header">
+            <div class="bianker_confirm_label_name fl">您的需求:</div>
+            <div class="bianker_confirm_header_main_name fl">玄幻类电子书视频设计</div>
+        </div>
+        <div class="bianker_confirm_content">
+            <div class="bianker_confirm_label_name fl">需求类型:</div>
+            <div class="fl bianker_confirm_content_type">一级类目</div>
+            <div class="fl">二级类目</div>
+        </div>
+        <div class="bianker_confirm_content">
+            <div class="bianker_confirm_label_name fl">详情描述:</div>
+            <div class="fl">用于宣传电子书</div>
+        </div>
+        <div class="bianker_confirm_content">
+            <div class="bianker_confirm_label_name fl">联系方式:</div>
+            <div class="fl">12345689856(手机)</div>
+        </div>
+        <div class="bianker_confirm_content">
+            <div class="bianker_confirm_label_name fl">赏&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp金:</div>
+            <div class="active-color fl" >10000.0元</div>
+        </div>
+        <div class="bianker_confirm_content">
+            <div class="bianker_confirm_label_name fl">交易模式:</div>
+            <div class="fl">比稿</div>
+        </div>
+        <div class="bianker_confirm_content">
+            <div class="bianker_confirm_label_name fl">分配方式:</div>
+            <div class="fl">单人独享</div>
+        </div>
+        <div class="bianker_confirm_content">
+            <div class="bianker_confirm_label_name fl">截止时间:</div>
+            <div class="active-color fl">2016-8-10</div>
+        </div>
+        <div class="bianker_confirm_content">
+            <div class="bianker_confirm_label_name fl">总&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp计:</div>
+            <div class="active-color fl">1000.0元</div>
+        </div>
+        <div class="bianker_confirm_content_type_checkbox_wrap">
+            <input type="checkbox" class="bianker_confirm_content_type_checkbox">
+            <div class="fl" style="margin-left: 30px">同意并遵守</div>
+            <div class="money-color fl">《编客网需求发布与处理规则》</div>
+            <div class="fl">,</div>
+            <div class="money-color fl">《悬赏需求退款规则》</div>
+        </div>
+        <div style="margin-left: 152px;margin-top: 60px;height: 34px;margin-bottom: 74px">
+            <button class="btn bianker_confirm_content_button_pre" type="button" ng-click="deploy_step=3">上一步</button>
+            <button class="btn bianker_require_content_button_next" type="button" ui-sref="app.requireDetail">确认，托管赏金</button>
+        </div>
+        <div class="bianker_require_content_ad_bottom">官方提供线上担保交易，保障您的资金安全，且不会收取您任何佣金。80%的欺诈、资金盗取均由线下交易导致，请勿线下交易。</div>
+    </div>
+</div>
+</form>

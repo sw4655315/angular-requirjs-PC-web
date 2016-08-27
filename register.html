@@ -1,0 +1,119 @@
+<header>
+    <div class="login_header_wrap">
+        <div class="container clearfix">
+            <a ui-sref="app.index">
+            <div class="ico1-1 login_header_logo fl"></div>
+            <div class="login_header_title fl">
+                编客网，陪你做视频的设计师
+            </div>
+            </a>
+        </div>
+    </div>
+</header>
+
+<div class="content" ng-init="loginForm.mobile='13123456789';loginForm.password='123456';loginForm.captcha='123456';">
+    <div id="bg"><img src="Images/bg.png"/></div>
+    <div class="container">
+        <div class="col-lg-8" style="height: 1px"></div>
+        <div class="col-lg-4 register_window">
+            <div class="register_title">编客网络账号注册</div>
+            <div class="register_phoneNum_wrap">
+                <div class="register_phoneNum_main">
+                    <div class="ico6-1 register_phoneNum_main_ico"></div>
+                </div>
+                <input type="text" class="register_phoneNum_input" placeholder="请输入手机号" ng-model="loginForm.mobile">
+            </div>
+            <div class="verification_code" ng-init="countDown=0">
+                <input type="text" class="verification_code_input" ng-model="loginForm.captcha">
+                <button class="btn verification_code_button" ng-click="getCaptcha()" ng-if="countDown<=0">获取验证码</button>
+                <button class="btn verification_code_button" disabled="disabled" ng-if="countDown>0">( {{countDown}} )</button>
+            </div>
+            <div class="password">
+                <div class="password_label">
+                    <div class="ico6-2 password_label_ico"></div>
+                </div>
+                <input type="{{showpwd?'text':'password'}}" class="password_input" placeholder="请输入密码" ng-model="loginForm.password">
+                <div class="password_label_ico_right">
+                    <div class="ico5-{{showpwd?'9':'10'}}" id="eye" ng-click="showpwd=!showpwd"></div>
+                </div>
+            </div>
+            <button class="btn register_btn" id="register" ng-click="signup()">注册</button>
+                <div class="register_window_footer_block">
+                    <div class="register_window_footer_block_gou_wrap">
+                        <div class="ico-gou"></div>
+                    </div>
+                    <div class="register_window_footer_block_xy">《编客网络服务协议》</div>
+                    <a class="register_window_footer_block_dl" ui-sref="login">登录</a>
+                    <div class="register_window_footer_block_tip">已有账号？去</div>
+                </div>
+        </div>
+    </div>
+    <div id="mask" class="mask"></div>
+    <div id="registerBox">
+            <a href="javascript:;" class="close"><div class="ico6-10"></div></a>
+            <div class="registerTitle text-center">使用VA码优先进行编客网注册</div>
+            <div class="row vaCode_wrap">
+                <div class="ico6-9 vaCode_icon fl"></div>
+                <div class="vaCode_main fl">
+                    <label class="vaCode_main_label">请输入16位VA码</label>
+                    <input type="text" class="vaCode_main_input">
+                </div>
+            </div>
+            <div class="row vaCode_confirm_btn">
+                <div></div>
+                <div class="vaCode_confirm_btn_wrap">
+                    <button class="btn vaCode_confirm_btn_main" id="va-code">确定</button>
+                </div>
+            </div>
+        <div class="vaCode_font">
+            <div class="vaCode_font_1">什么是VA码?</div>
+            <div class="vaCode_font_2">VA码是编客网内测邀请码，使用VA码可以优先注册编客网</div>
+            <div class="vaCode_font_3 active-color">联系客服</div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="login_footer_main">
+        <div class="container">
+            <ul class="link">
+                <li>关于编客</li>
+                <li>用户协议</li>
+                <li>客服中心</li>
+                <li>商务合作</li>
+            </ul>
+            <br>
+            <div class="copyright">copyright© 2012-2016 Bianker.All Rights Reserved</div>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+    $(function () {
+        $("#login").on("click",function () {
+            if($(this).attr("class") == "login"){
+                $(".login").attr("class","login");
+                $(this).attr("class","money-color login-user login");
+                $("#seller").hide();
+                $("#user").show();
+            }
+        });
+        $("#login-seller").on("click",function () {
+            if($(this).attr("class") == "login"){
+                $(".login").attr("class","login");
+                $(this).attr("class","money-color login-user login");
+                $("#user").hide();
+                $("#seller").show();
+            }
+
+        });
+        $("#eye").on("click",function () {
+            if($("#eye").attr("class") == "ico5-9"){
+                $("#eye").attr("class","ico5-10")
+            }else {
+                $("#eye").attr("class","ico5-9")
+            }
+        })
+    })
+</script>

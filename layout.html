@@ -1,0 +1,142 @@
+<article>
+    <!-- header start -->
+    <header>
+        <div class="nav_wrap">
+            <div class="container clearfix">
+                <a ui-sref="app.index">
+                    <div class="nav_header fl">
+                        <div class="nav_header_logo ico9-6 fl"></div>
+                        <div class="nav_header_logofont fl">编客，陪你做视频的设计师</div>
+                    </div>
+                </a>
+                <a href="#"><div class="ico8-5 nav_footer_logo fr"></div></a>
+                <a href="#"><div class="nav_i_am_author fr">我是编客</div></a>
+                <a href="#"><div class="nav_i_am_employeer fr">我是雇主</div></a>
+                <a href="#"><div class="nav_my_list fr">我的订单</div></a>
+                <a ui-sref="register">
+                    <div class="text-center nav_register fr">注册</div>
+                </a>
+                <a ui-sref="login">
+                    <div class="text-center nav_login fr">
+                        登录</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="container search_select clearfix">
+            <div class="text-center fl" ng-class="{'active':searchTab_index==1}" ng-click="searchTab_index=1">需求</div>
+            <div class="text-center fl" ng-class="{'active':searchTab_index==2}" ng-click="searchTab_index=2">素材</div>
+            <div class="text-center fl" ng-class="{'active':searchTab_index==3}" ng-click="searchTab_index=3">编客</div>
+        </div>
+        <div class="container">
+            <div class="index_search fl clearfix">
+                <div class="index_search_ico_wrap fl">
+                    <div class="ico1-5 index_search_ico_main"></div>
+                </div>
+                <input type="text" class="index_search_input fl" style="outline:none;">
+                <div class="btn index_search_button" >搜索</div>
+            </div>
+            <div class="text-center index_or fl">
+                or
+            </div>
+            <div class="text-center dropdown fr" ng-mouseenter="deploy_show=true" ng-mouseleave="deploy_show=false">
+                <div class="btn index_publish" id="publish" >
+                    免费发布需求<div class="ico1-4 index_publish_ico"></div>
+                </div>
+                <ul class="index_publish_drop_wrap" style="display: block" ng-show="deploy_show">
+                    <li>如何快速发布需求</li>
+                    <li>Ⅰ选择类目</li>
+                    <li>Ⅱ描述需求</li>
+                    <li>Ⅲ设置赏金</li>
+                    <li>Ⅳ确定需求</li>
+                    <div class="index_publish_drop_submitBtn_wrap">
+                        <button class="btn index_publish_drop_submitBtn_main" ui-sref="app.requireDeploy">
+                            立即发布需求
+                        </button>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <!-- header end -->
+
+    <!-- body start -->
+    <section class="content" ui-view="body"></section>
+    <!-- body end -->
+
+    <!-- footer start -->
+    <footer class="footer">
+
+        <!-- 用户指南 -->
+           <div class="index_footer_pre_wrap" ng-if="showGuid()">
+            <div class="container index_footer_pre clearfix">
+                    <ul class="link">
+                        <li>新手指南</li>
+                        <li>注册新用户</li>
+                        <li>雇主入门</li>
+                        <li>服务商入门</li>
+                        <li>规则中心</li>
+                    </ul>
+                    <ul class="link">
+                        <li>我是雇主</li>
+                        <li>发布需求</li>
+                        <li>挑选服务商</li>
+                        <li>购买设计作品</li>
+                        <li>雇主故事</li>
+                    </ul>
+                    <ul class="link">
+                        <li>我是编客</li>
+                        <li>投标赚钱</li>
+                        <li>大咖分享</li>
+                        <li>服务商联盟</li>
+                        <li>编客商学院</li>
+                    </ul>
+                    <ul class="link">
+                        <li>编客担保交易</li>
+                        <li>支付方式</li>
+                        <li>诚信管理中心</li>
+                        <li>曝光台</li>
+                    </ul>
+                <div class="index_footer_service_wrap">
+                    <div class="index_footer_service">客服中心</div>
+                    <div class="text-center index_footer_service_phonenum">400-1234-567</div>
+                </div>
+            </div>
+        </div>
+        <!-- 常见问题 -->
+        <div class="footer-require" ng-if="showQuestion()">
+            <div class="container">
+                <div class="row">
+                    <div style="color: #323232;font-size: 16px;font-weight:bolder;margin: 40px 0 40px 0;">常见问题:</div>
+                </div>
+
+                <div class="row">
+                    <p>我在编客网上交易有安全保障吗？</p>
+                    <p>答：1)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
+                    <p style="text-indent: 2em">2)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
+                </div>
+
+                <div class="row" style="margin-top: 40px">
+                    <p>我在编客网上交易有安全保障吗？</p>
+                    <p>答：1)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
+                    <p style="text-indent: 2em">2)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div style="width: 100%;height: 94px;background-color: #222222">
+            <div class="container">
+                <div style="margin:30px 58px 10px 0;float:left;color: #FFFFFF;font-size: 14px">关于编客</div>
+                <div style="margin:30px 58px 10px 0;float:left;color: #FFFFFF;font-size: 14px">用户协议</div>
+                <div style="margin:30px 58px 10px 0;float:left;color: #FFFFFF;font-size: 14px">客服中心</div>
+                <div style="margin:30px 58px 10px 0;float:left;color: #FFFFFF;font-size: 14px">商务合作</div>
+
+            </div>
+            <div class="container">
+                <div style="color: #FFFFFF;font-size: 14px">copyright© 2012-2016 Bianker.All Rights Reserved</div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer end -->
+</article>
