@@ -53,12 +53,14 @@ define(function (require) {
             })
             //个人信息主页
             .state('app.personIndex', {
-                url: '/person/index'
+                url: '/person/index/:id'
+                ,params:{'id':''}
                 ,views:{
                     'body': {
                       templateUrl: '../person-index.html'
                       ,controllerUrl: 'system/personIndexCtrl'
                       ,controller: 'personIndexCtrl'
+                      ,dependencies: ['system/_kit']
                     }
                 }
             })

@@ -24,3 +24,10 @@
 }
 .index_publish_drop_submitBtn_wrap{margin: 20px auto;}
 #laydate_box,#laydate_box *{box-sizing: initial;}
+.bianker_employee_step_line2.active {
+    width: 100% !important;
+}
+.bianker_employee_step_line3 {
+    width: 50% !important;
+    margin-left: 0 !important;
+}
