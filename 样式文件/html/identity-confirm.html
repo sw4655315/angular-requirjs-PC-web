@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我是编客-身份认证</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href="http://cdn.bootcss.com/pure/0.6.0/grids-responsive.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/pure/0.6.0/grids-core.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="nav_wrap">
+        <div class="container clearfix">
+            <a href="index.html">
+                <div class="nav_header fl">
+                    <div class="nav_header_logo ico9-6 fl"></div>
+                    <div class="nav_header_logofont fl">编客，陪你做视频的设计师</div>
+                </div>
+            </a>
+            <a href="#"><div class="ico8-5 nav_footer_logo fr"></div></a>
+            <a href="#"><div class="nav_i_am_author fr">我是编客</div></a>
+            <a href="#"><div class="nav_i_am_employeer fr">我是雇主</div></a>
+            <a href="#"><div class="nav_my_list fr">我的订单</div></a>
+            <a href="register.html">
+                <div class="text-center nav_register fr">注册</div>
+            </a>
+            <a href="login.html">
+                <div class="text-center nav_login fr">
+                    登录<div class="ico1-3 nav_login_logo"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="container search_select clearfix">
+        <div class="text-center fl">需求</div>
+        <div class="text-center fl active">素材</div>
+        <div class="text-center fl">编客</div>
+    </div>
+    <div class="container">
+        <div class="index_search fl clearfix">
+            <div class="index_search_ico_wrap fl">
+                <div class="ico1-5 index_search_ico_main"></div>
+            </div>
+            <input type="text" class="index_search_input fl">
+            <div class="btn index_search_button">搜索</div>
+        </div>
+        <div class="text-center index_or fl">
+            or
+        </div>
+        <div class="text-center dropdown fr">
+            <div class="btn index_publish" id="publish">
+                免费发布需求<div class="ico1-4 index_publish_ico"></div>
+            </div>
+            <ul class="index_publish_drop_wrap">
+                <li>如何快速发布需求</li>
+                <li>Ⅰ选择类目</li>
+                <li>Ⅱ描述需求</li>
+                <li>Ⅲ设置赏金</li>
+                <li>Ⅳ确定需求</li>
+                <div class="index_publish_drop_submitBtn_wrap">
+                    <button class="btn index_publish_drop_submitBtn_main">
+                        立即发布需求
+                    </button>
+                </div>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div class="content">
+    <div class="bianker_navbar">
+        <div class="container">
+            <div class="ico4-1 bianker_navbar_icon fl"></div>
+            <div class="bianker_navbar_header fl">我是编客</div>
+            <div class="bianker_navbar_private_index_active fl">个人首页</div>
+            <div class="bianker_navbar_account_setting fl">账号设置</div>
+            <div class="bianker_navbar_my_message fl">我的消息</div>
+            <div class="bianker_navbar_i_am_employer fr">我是雇主</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="bianker_employee_step_wrap">
+            <div class="bianker_employee_step_title">· 认证申请 ·</div>
+            <div class="bianker_employee_step fl">
+                <div class="bianker_employee_step_bg ">1</div>
+                <div class="bianker_employee_step_line1 "></div>
+                <div class="text-center bianker_employee_step_font ">完善用户信息</div>
+            </div>
+            <div class="bianker_employee_step fl">
+                <div class="bianker_employee_step_bg active">2</div>
+                <div class="bianker_employee_step_line2 active"></div>
+                <div class="text-center bianker_employee_step_font active">提交认证信息</div>
+            </div>
+            <div class="bianker_employee_step fl">
+                <div class="bianker_employee_step_bg">3</div>
+                <div class="bianker_employee_step_line3"></div>
+                <div class="text-center bianker_employee_step_font">认证成功，开始接单</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container bianker_require_content_wrap">
+        <div class="col-lg-2 bianker_content_main_left">
+            <div class="bianker_user_img_wrap">
+                <img src="../img/photo.png">
+            </div>
+            <div class="bianker_user-name text-center">TEMSINS</div>
+            <div class="text-center">账户 :<span class="active-color">￥1000</span></div>
+            <div class="bianker_divide_line"></div>
+            <div class="bianker_menu text-center">查看收支明细</div>
+            <div class="bianker_menu text-center active-color">身份认证</div>
+            <div class="bianker_menu text-center">我的订单</div>
+            <div class="bianker_menu text-center">我的灵感</div>
+            <div class="bianker_menu text-center">我的素材</div>
+            <div class="bianker_menu text-center">我的收藏</div>
+            <div class="bianker_menu_bottom text-center">播放记录</div>
+        </div>
+        <div class="col-lg-10">
+            <div class="bianker_title_box"><span>个人-提交认证信息</span></div>
+            <div class="bianker_title_box_tip">亲爱的<span>Temsins</span>,身份认证后，才能开始接单哦</div>
+            <div class="bianker_company_confirm_container_right_block">
+                <div class="fl bianker_company_confirm_container_right_block_label">*身份证姓名</div>
+                <input type="text" class="fl bianker_company_confirm_container_right_block_input">
+            </div>
+            <div class="bianker_company_confirm_container_right_block">
+                <div class="fl bianker_company_confirm_container_right_block_label">*身份证号码</div>
+                <input type="text" class="fl bianker_company_confirm_container_right_block_input">
+            </div>
+            <div class="bianker_identity_confirm_container_right_block_bottom">
+                <div class="fl bianker_company_confirm_container_right_block_label">*手持证件照片</div>
+                <div class="fl" style="width: 208px;height: 150px;margin-top: 10px;margin-right: 40px"><img src="../img/1.png" style="width: 100%;height: 100%"></div>
+                <div class="fl bianker_identity_confirm_container_right_block_font">
+                    <div>身份证上所有信息清晰可见，必须能看清证件照信息。</div>
+                    <div>照片需免冠，建议未化妆，手持证件人的五官清晰。</div>
+                    <div>照片内容真实有效，不得做任何修改。</div>
+                    <div>支持.jpg .jpeg .bmp .gif格式照片，大小不超过2MB</div>
+                    <button class="btn bianker_company_confirm_container_right_block_font_btn">选择文件</button>
+                </div>
+            </div>
+            <div class="bianker_company_confirm_container_right_block_button">
+                <div class="fl bianker_company_confirm_container_right_block_label"></div>
+                <a href="employee.html"><button class="btn fl bianker_company_confirm_container_right_block_button_pre">上一步</button></a>
+                <button class="btn fl bianker_company_confirm_container_right_block_button_submit">提交申请</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div style="width: 100%;height: 94px;background-color: #222222">
+        <div class="container">
+            <div style="margin:30px 58px 10px 0;float:left;color: #FFFFFF;font-size: 14px">关于编客</div>
+            <div style="margin:30px 58px 10px 0;float:left;color: #FFFFFF;font-size: 14px">用户协议</div>
+            <div style="margin:30px 58px 10px 0;float:left;color: #FFFFFF;font-size: 14px">客服中心</div>
+            <div style="margin:30px 58px 10px 0;float:left;color: #FFFFFF;font-size: 14px">商务合作</div>
+        </div>
+        <div class="container">
+            <div style="color: #FFFFFF;font-size: 14px">copyright© 2012-2016 Bianker.All Rights Reserved</div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,25 +1,29 @@
 define(function (require) {
      'use strict';
      var app = require('../app');
+     var _kit,_stg,_state,_form;
      
      app.controller('registerCtrl',['$scope','$rootScope','$interval',function ($scope,$rootScope,$interval) {
-        var $kit = app.get('$kit');
+        _kit = app.get('$kit');
+        _stg = app.get('$stg');
+        _state = $rootScope.$state;
+        _form = $scope.loginForm = {};
         //查看密码
         $scope.showpwd = false;
         //注册方法
         $scope.signup = function(){
-            var isPass = validInput($scope.loginForm,$kit);
+            var isPass = validInput();
             if(!isPass) return false;
-            signup($scope.loginForm,$kit,$rootScope.$state);
+            signup();
         }
         //获取验证码
         $scope.getCaptcha = function(){
-            if(!$kit.reg.mobile.test($scope.loginForm.mobile)){
-                $kit.d('请输入正确手机号');
+            if(!_kit.reg.mobile.test(_form.mobile)){
+                _kit.d('请输入正确手机号');
                 return false;
             }
-            $kit.ag('user/getCaptcha/register',$scope.loginForm,function (res) {
-                $kit.s('验证码发送成功，请注意查收');
+            _kit.ag('user/getCaptcha/register',_form,function (res) {
+                _kit.s('验证码发送成功，请注意查收');
                 //60秒倒计时
                 $scope.countDown = 60;
                 $interval(function(){
@@ -29,27 +33,27 @@ define(function (require) {
         }
      }]);
 
-     function validInput (form,$kit) {
+     function validInput () {
         var r = true;
-        if(!$kit.reg.mobile.test(form.mobile)){
-            $kit.d('请输入正确手机号');
+        if(!_kit.reg.mobile.test(_form.mobile)){
+            _kit.d('请输入正确手机号');
             r = false;
         }
-        if(!$kit.reg.captcha.test(form.captcha)){
-            $kit.d('请输入正确验证码');
+        if(!_kit.reg.captcha.test(_form.captcha)){
+            _kit.d('请输入正确验证码');
             r = false;
         }
-        if(!$kit.reg.pwd.test(form.password)){
-            $kit.d('请输入正确密码');
+        if(!_kit.reg.pwd.test(_form.password)){
+            _kit.d('请输入正确密码');
             r = false;
         }
         return r;
      }
-     function signup (form,$kit,state) {
-        $kit.ap('user/signup',form,function(res){
-            $kit.stg.add('sid',res.sessionid);
-            $kit.stg.add('user',res);
-            state.go('app.index');
+     function signup () {
+        _kit.ap('user/signup',_form,function(res){
+            _stg.add('sid',res.sessionid);
+            _stg.add('user',res);
+            _state.go('app.index');
         })
      }
 });

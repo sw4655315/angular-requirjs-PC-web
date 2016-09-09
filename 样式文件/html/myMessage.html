@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的消息</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href="http://cdn.bootcss.com/pure/0.6.0/grids-responsive.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/pure/0.6.0/grids-core.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="nav_wrap">
+        <div class="container clearfix">
+            <a href="index.html">
+                <div class="nav_header fl">
+                    <div class="nav_header_logo ico9-6 fl"></div>
+                    <div class="nav_header_logofont fl">编客，陪你做视频的设计师</div>
+                </div>
+            </a>
+            <a href="#"><div class="ico8-5 nav_footer_logo fr"></div></a>
+            <a href="#"><div class="nav_i_am_author fr">我是编客</div></a>
+            <a href="#"><div class="nav_i_am_employeer fr">我是雇主</div></a>
+            <a href="#"><div class="nav_my_list fr">我的订单</div></a>
+            <a href="register.html">
+                <div class="text-center nav_register fr">注册</div>
+            </a>
+            <a href="login.html">
+                <div class="text-center nav_login fr">
+                    登录<div class="ico1-3 nav_login_logo"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="container search_select clearfix">
+        <div class="text-center fl">需求</div>
+        <div class="text-center fl active">素材</div>
+        <div class="text-center fl">编客</div>
+    </div>
+    <div class="container">
+        <div class="index_search fl clearfix">
+            <div class="index_search_ico_wrap fl">
+                <div class="ico1-5 index_search_ico_main"></div>
+            </div>
+            <input type="text" class="index_search_input fl">
+            <div class="btn index_search_button">搜索</div>
+        </div>
+        <div class="text-center index_or fl">
+            or
+        </div>
+        <div class="text-center dropdown fr">
+            <div class="btn index_publish" id="publish">
+                免费发布需求<div class="ico1-4 index_publish_ico"></div>
+            </div>
+            <ul class="index_publish_drop_wrap">
+                <li>如何快速发布需求</li>
+                <li>Ⅰ选择类目</li>
+                <li>Ⅱ描述需求</li>
+                <li>Ⅲ设置赏金</li>
+                <li>Ⅳ确定需求</li>
+                <div class="index_publish_drop_submitBtn_wrap">
+                    <button class="btn index_publish_drop_submitBtn_main">
+                        立即发布需求
+                    </button>
+                </div>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div class="content">
+    <div class="bianker_navbar">
+        <div class="container">
+            <div class="ico4-1 bianker_navbar_icon fl"></div>
+            <div class="bianker_navbar_header fl">我是编客</div>
+            <div class="bianker_navbar_private_index fl">个人首页</div>
+            <div class="bianker_navbar_account_setting fl">账号设置</div>
+            <div class="bianker_navbar_my_message_active fl">我的消息</div>
+            <div class="bianker_navbar_i_am_employer fr">我是雇主</div>
+        </div>
+    </div>
+
+    <div class="container bianker_content_wrap">
+        <div class="col-lg-2 bianker_my_message_main_left">
+            <div class="bianker_user_img_wrap">
+                <img src="../img/1.png">
+            </div>
+            <div class="bianker_user-name text-center">TEMSINS</div>
+            <div class="text-center">账户 :<span class="active-color">￥1000</span></div>
+            <div class="bianker_divide_line"></div>
+            <div class="bianker_menu text-center">系统通知(<span class="active-color">38</span>)</div>
+            <div class="bianker_menu text-center">聊天记录</div>
+        </div>
+        <div class="col-lg-10 bianker_my_message_main_right">
+            <div class="bianker_title_box"><span>系统通知(38)</span></div>
+            <div class="bianker_my_message_main_right_header">
+                <input type="checkbox" class="bianker_my_message_main_right_header_checkbox_all">
+                <a href="javascript:;" id="selectAll-btn">
+                    <button class="btn bianker_my_message_main_right_header_button_yidu">标记所选为已读</button>
+                </a>
+                <a href="javascript:;" id="del-btn">
+                    <button class="btn bianker_my_message_main_right_header_button_delete">删除所选</button>
+                </a>
+                <div class="text-center bianker_my_message_main_right_header_font_all">全部<span>41</span></div>
+                <div class="text-center bianker_my_message_main_right_header_font_i">/</div>
+                <div class="text-center active-color bianker_my_message_main_right_header_font_weidu">未读<span>38</span></div>
+            </div>
+
+            <div class="bianker_my_message_main_right_content">
+                <input type="checkbox" class="bianker_my_message_main_right_content_checkbox">
+                <div class="bianker_my_message_main_right_content_title">需求未通过审核</div>
+                <div class="bianker_my_message_main_right_content_neirong">
+                    --尊敬的“<span>*******9730</span>” : 非常抱歉 ! 您发布的编号为<span>789654</span>
+                </div>
+                <div class="bianker_my_message_main_right_content_date">2016-08-17 13:52:35</div>
+            </div>
+            <div class="bianker_my_message_main_right_content">
+                <input type="checkbox" class="bianker_my_message_main_right_content_checkbox">
+                <div class="bianker_my_message_main_right_content_title">需求未通过审核</div>
+                <div class="bianker_my_message_main_right_content_neirong">
+                    --尊敬的“<span>*******9730</span>” : 非常抱歉 ! 您发布的编号为<span>789654</span>
+                </div>
+                <div class="bianker_my_message_main_right_content_date">2016-08-17 13:52:35</div>
+            </div>
+            <div class="bianker_my_message_main_right_content">
+                <input type="checkbox" class="bianker_my_message_main_right_content_checkbox">
+                <div class="bianker_my_message_main_right_content_title">需求未通过审核</div>
+                <div class="bianker_my_message_main_right_content_neirong">
+                    --尊敬的“<span>*******9730</span>” : 非常抱歉 ! 您发布的编号为<span>789654</span>
+                </div>
+                <div class="bianker_my_message_main_right_content_date">2016-08-17 13:52:35</div>
+            </div>
+            <div class="bianker_my_message_main_right_content">
+                <input type="checkbox" class="bianker_my_message_main_right_content_checkbox">
+                <div class="bianker_my_message_main_right_content_title">需求未通过审核</div>
+                <div class="bianker_my_message_main_right_content_neirong">
+                    --尊敬的“<span>*******9730</span>” : 非常抱歉 ! 您发布的编号为<span>789654</span>
+                </div>
+                <div class="bianker_my_message_main_right_content_date">2016-08-17 13:52:35</div>
+            </div>
+            <div class="bianker_my_message_main_right_content">
+                <input type="checkbox" class="bianker_my_message_main_right_content_checkbox">
+                <div class="bianker_my_message_main_right_content_title">需求未通过审核</div>
+                <div class="bianker_my_message_main_right_content_neirong">
+                    --尊敬的“<span>*******9730</span>” : 非常抱歉 ! 您发布的编号为<span>789654</span>
+                </div>
+                <div class="bianker_my_message_main_right_content_date">2016-08-17 13:52:35</div>
+            </div>
+            <div class="bianker_my_message_main_right_content">
+                <input type="checkbox" class="bianker_my_message_main_right_content_checkbox">
+                <div class="bianker_my_message_main_right_content_title">需求未通过审核</div>
+                <div class="bianker_my_message_main_right_content_neirong">
+                    --尊敬的“<span>*******9730</span>” : 非常抱歉 ! 您发布的编号为<span>789654</span>
+                </div>
+                <div class="bianker_my_message_main_right_content_date">2016-08-17 13:52:35</div>
+            </div>
+            <div class="bianker_my_message_main_right_content">
+                <input type="checkbox" class="bianker_my_message_main_right_content_checkbox">
+                <div class="bianker_my_message_main_right_content_title">需求未通过审核</div>
+                <div class="bianker_my_message_main_right_content_neirong">
+                    --尊敬的“<span>*******9730</span>” : 非常抱歉 ! 您发布的编号为<span>789654</span>
+                </div>
+                <div class="bianker_my_message_main_right_content_date">2016-08-17 13:52:35</div>
+            </div>
+        </div>
+        <div class="col-lg-12 bianker_pagination_wrap">
+            <ul class="bianker_pagination_main fr">
+                <li>
+                    <div class="ico6-5 pre"></div>
+                </li>
+                <li class="text-center">
+                    1
+                </li>
+                <li class="text-center active">
+                    2
+                </li>
+                <li class="text-center">
+                    3
+                </li>
+                <li class="text-center">
+                    4
+                </li>
+                <li class="text-center">
+                    5
+                </li>
+                <li class="text-center">
+                    ...
+                </li>
+                <li class="text-center">
+                    21
+                </li>
+                <li class="text-center">
+                    22
+                </li>
+                <li>
+                    <div class="ico6-6 next"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="index_footer_main">
+        <div class="container">
+            <ul class="link">
+                <li>关于编客</li>
+                <li>用户协议</li>
+                <li>客服中心</li>
+                <li>商务合作</li>
+            </ul>
+            <br>
+            <div class="copyright">copyright© 2012-2016 Bianker.All Rights Reserved</div>
+        </div>
+    </div>
+</footer>
+
+<div id="mask" class="mask"></div>
+<div id="DelBox">
+    <a href="javascript:;" class="close">
+        <div class="ico6-10"></div>
+    </a>
+    <div class="title">删除所选</div>
+    <div class="content">真的要删除所选信息吗</div>
+    <div class="btn_group">
+        <button class="btn confirm">确定</button>
+        <button class="btn cancel">取消</button>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $("#del-btn").on("click",function () {
+            $("#mask").show();
+            $("#DelBox").fadeIn();
+            $(".close,.cancel").on("click",function () {
+                $("#DelBox").hide();
+                $("#mask").hide();
+            })
+        })
+    })
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我是编客-我的钱包</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link href="http://cdn.bootcss.com/pure/0.6.0/grids-responsive.css" rel="stylesheet">
+    <link href="http://cdn.bootcss.com/pure/0.6.0/grids-core.css" rel="stylesheet">
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+    <div class="nav_wrap">
+        <div class="container clearfix">
+            <a href="../index.html">
+                <div class="nav_header fl">
+                    <div class="nav_header_logo ico9-6 fl"></div>
+                    <div class="nav_header_logofont fl">编客，陪你做视频的设计师</div>
+                </div>
+            </a>
+            <a href="#"><div class="ico8-5 nav_footer_logo fr"></div></a>
+            <a href="#"><div class="nav_i_am_author fr">我是编客</div></a>
+            <a href="#"><div class="nav_i_am_employeer fr">我是雇主</div></a>
+            <a href="#"><div class="nav_my_list fr">我的订单</div></a>
+            <a href="../register.html">
+                <div class="text-center nav_register fr">注册</div>
+            </a>
+            <a href="../login.html">
+                <div class="text-center nav_login fr">
+                    登录<div class="ico1-3 nav_login_logo"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="container search_select clearfix">
+        <div class="text-center fl">需求</div>
+        <div class="text-center fl active">素材</div>
+        <div class="text-center fl">编客</div>
+    </div>
+    <div class="container">
+        <div class="index_search fl clearfix">
+            <div class="index_search_ico_wrap fl">
+                <div class="ico1-5 index_search_ico_main"></div>
+            </div>
+            <input type="text" class="index_search_input fl">
+            <div class="btn index_search_button">搜索</div>
+        </div>
+        <div class="text-center index_or fl">
+            or
+        </div>
+        <div class="text-center dropdown fr">
+            <div class="btn index_publish" id="publish">
+                免费发布需求<div class="ico1-4 index_publish_ico"></div>
+            </div>
+            <ul class="index_publish_drop_wrap">
+                <li>如何快速发布需求</li>
+                <li>Ⅰ选择类目</li>
+                <li>Ⅱ描述需求</li>
+                <li>Ⅲ设置赏金</li>
+                <li>Ⅳ确定需求</li>
+                <div class="index_publish_drop_submitBtn_wrap">
+                    <button class="btn index_publish_drop_submitBtn_main">
+                        立即发布需求
+                    </button>
+                </div>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<div class="content">
+    <div class="bianker_navbar">
+        <div class="container">
+            <div class="ico4-1 bianker_navbar_icon fl"></div>
+            <div class="bianker_navbar_header fl">我是编客</div>
+            <div class="bianker_navbar_private_index_active fl">个人首页</div>
+            <div class="bianker_navbar_account_setting fl">账号设置</div>
+            <div class="bianker_navbar_my_message fl">我的消息</div>
+            <div class="bianker_navbar_i_am_employer fr">我是雇主</div>
+        </div>
+    </div>
+
+    <div class="container bianker_content_wrap">
+        <div class="col-lg-2 bianker_content_main_left">
+            <div class="bianker_user_img_wrap">
+                <img src="../img/1.png">
+            </div>
+            <div class="bianker_user-name text-center">TEMSINS</div>
+            <div class="text-center">账户 :<span class="active-color">￥1000</span></div>
+            <div class="bianker_divide_line"></div>
+            <div class="bianker_menu text-center">我的账号</div>
+            <div class="bianker_menu text-center">个人资料</div>
+            <div class="bianker_menu">
+                <div class="bianker_my_wallet_main">
+                    <div class="active-color">我的钱包</div>
+                    <div class="ico5-7 bianker_my_wallet_ico"></div>
+                </div>
+            </div>
+            <div class="bianker_sub_menu text-center active-color">支付密码</div>
+            <div class="bianker_sub_menu text-center active-color">银&nbsp&nbsp行&nbsp&nbsp卡</div>
+            <div class="bianker_sub_menu text-center active-color">提&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp现</div>
+            <div class="bianker_income_pay_detail">
+                <div class="bianker_sub_menu active-color">收支明细</div>
+            </div>
+        </div>
+        <div class="col-lg-10">
+            <div class="bianker_title_box"><span>我的钱包</span></div>
+            <div class="bianker_employee_wallet_wrap clearfix">
+                <div class="bianker_employee_wallet_label">账&nbsp号&nbsp:</div>
+                <div class="bianker_employee_wallet_money">
+                    ￥<span>1000.0</span>
+                </div>
+                <div class="active-color bianker_employee_wallet_tixian">提现</div>
+                <div class="active-color bianker_employee_wallet_chakan">查看收支明细</div>
+            </div>
+
+                <div id="wallet_add" class="bianker_employee_wallet_add_card">
+                    <div class="ico4-10 bianker_employee_wallet_add_card_icon"></div>
+                    <div class="bianker_employee_wallet_add_card_font">添加银行卡</div>
+                </div>
+
+        </div>
+    </div>
+    <div id="mask" class="mask"></div>
+    <div id="walletBox" class="bianker_employee_wallet_walletBox">
+        <div class="bianker_employee_wallet_walletBox_header">绑定银行卡</div>
+        <div class="bianker_employee_wallet_walletBox_name">
+            <div class="bianker_employee_wallet_walletBox_label">持卡人姓名 :</div>
+            <input type="text" class="bianker_employee_wallet_walletBox_name_input"/>
+        </div>
+        <div class="bianker_employee_wallet_walletBox_bankcard">
+            <div class="bianker_employee_wallet_walletBox_label">银&nbsp行&nbsp卡&nbsp号&nbsp:</div>
+            <input type="text" class="bianker_employee_wallet_walletBox_bankcard_input"/>
+        </div>
+        <div class="bianker_employee_wallet_walletBox_bankcard">
+            <div class="bianker_employee_wallet_walletBox_label">所&nbsp属&nbsp银&nbsp行&nbsp:</div>
+            <div id="bank-select" class="bianker_employee_wallet_walletBox_bankSelect">
+                <div class="fl">请选择开户行</div>
+                <div class="bianker_employee_wallet_walletBox_bankSelect_icon">
+                    <div class="ico5-1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="bianker_employee_wallet_walletBox_bankSelectDown_wrap">
+            <ul class="bianker_employee_wallet_walletBox_bankSelectDown">
+                <li>农业银行</li>
+                <li>交通银行</li>
+                <li>工商银行</li>
+            </ul>
+        </div>
+        <div class="row text-center bianker_employee_wallet_walletBox_button_wrap">
+            <button class="btn fl bianker_employee_wallet_walletBox_button_save">保存</button>
+            <button class="btn fl bianker_employee_wallet_walletBox_button_cancel" id="walletBox_cancel">取消</button>
+        </div>
+
+    </div>
+</div>
+
+<footer>
+    <div class="index_footer_main">
+        <div class="container">
+            <ul class="link">
+                <li>关于编客</li>
+                <li>用户协议</li>
+                <li>客服中心</li>
+                <li>商务合作</li>
+            </ul>
+            <br>
+            <div class="copyright">copyright© 2012-2016 Bianker.All Rights Reserved</div>
+        </div>
+    </div>
+</footer>
+
+<script>
+    $(function () {
+        $("#wallet_add").on("click", function () {
+            $("#mask").show();
+            $("#walletBox").fadeIn();
+        })
+        $("#bank-select").on("click",function () {
+            if ($(".bianker_employee_wallet_walletBox_bankSelectDown").css("display") == "none"){
+                $(".bianker_employee_wallet_walletBox_bankSelectDown").show();
+                $(".bianker_employee_wallet_walletBox_bankSelectDown li").on("click",function () {
+                    $("#bank-select>div:first-child").html($(this).html())
+                    $(".bianker_employee_wallet_walletBox_bankSelectDown").hide();
+                })
+            }else {
+                $(".bianker_employee_wallet_walletBox_bankSelectDown").hide();
+            }
+        })
+        $("#walletBox_cancel").on("click",function () {
+            $("#walletBox").hide();
+            $("#mask").hide();
+        })
+    })
+</script>
+</body>
+</html>

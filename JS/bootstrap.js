@@ -4,7 +4,9 @@
         paths: {
              'jquery': 'assets/jquery/jquery.min'
             ,'swiper': 'assets/swiper/swiper.min'
+            ,'laydate': 'assets/layer/laydate/laydate'
             ,'angular': 'assets/angular/angular.min'
+            ,'angular-laydate': 'assets/layer/laydate/angular-laydate'
             ,'angular-animate': 'assets/angular/angular-animate.min'
             ,'angular-cookies': 'assets/angular/angular-cookies.min'
             ,'angular-ui-router': 'assets/angular-ui/angular-ui-router.min'
@@ -19,6 +21,7 @@
         ,shim: {
              'swiper':['css!assets/swiper/swiper.min.css']
             ,'angular': {exports: 'angular'}
+            ,'angular-laydate':{deps: ['laydate']}
             ,'angular-ui-router': {deps: ['angular']}
             ,'angular-loading-bar': {deps: ['angular','angular-animate']}
             ,'angular-select-address': {deps: ['jquery']}

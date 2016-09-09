@@ -40,7 +40,8 @@ define(function (require) {
             })
             //需求详情
             .state('app.requireDetail', {
-                url: '/require/detail'
+                url: '/require/detail/:id'
+                ,params:{'id':''}
                 ,views:{
                     'body': {
                       templateUrl: '../require-detail.html'
@@ -49,7 +50,6 @@ define(function (require) {
                       ,dependencies: ['system/_kit']
                     }
                 }
-                
             })
             //个人信息主页
             .state('app.personIndex', {

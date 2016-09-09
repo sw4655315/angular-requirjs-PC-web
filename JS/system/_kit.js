@@ -3,13 +3,16 @@ define(function (require) {
      var angular = require('angular');
      var app = require('app');
      var c = require('app-config');
+     var d = require('app-dict');
 
      require('angular-storage');
      app.useModule('LocalStorageModule');
 
-
     angular.module('_kit', [])
     .service('$stg',function(localStorageService){
+        /**
+         * 缓存服务
+         */
         var stg = angular.extend({},localStorageService);
         //缓存的sessionid
         stg.sid = function(){
@@ -24,30 +27,46 @@ define(function (require) {
             stg.set('sid',null);
             stg.set('user',null);
         }
-        return stg;
-    })
-    .service('$kit',function($http,$alert,$modal){
-        var kit = angular.extend({},c);
-        kit.isEmpty = function(obj){
-            return obj === void 0 
-                || typeof obj  === "undefined"
-                || obj === null 
-                || obj === ''
-                || obj === 'null';
-        }
-        kit.isExist = function(obj){
-            if(kit.isEmpty(obj)) return !1;
-            if(angular.isArray(obj)) return obj.length > 0;
-            if(angular.isObject(obj)) return !isEmptyObject(obj);
-            return !0;
-        }
 
-        function isEmptyObject(e){
-            var t;
-            for (t in e) 
-                return !1;
-            return !0;
+        stg.isSignin = function(){
+            return !isEmpty(stg.get('sid'));
         }
+        stg.isBianker = function () {
+            var cuser = stg.user();
+            if(isEmpty(cuser)){
+                return !1;
+            }
+            return cuser.type == '1';
+        }
+        stg.isEmployer = function(){
+            var cuser = stg.user();
+            if(isEmpty(cuser)){
+                return !1;
+            }
+            return cuser.type == '2';
+        }
+        return stg;
+    })    
+    .service('$dict',function($stg){
+        /**
+         * 字典服务
+         */
+        var dict = angular.extend({},d);
+        dict.needStatus = function(status){
+            if($stg.isEmployer()){
+                return dict.need_status_employer[status];
+            }
+            return dict.need_status_bianker[status];
+        }
+        return dict;
+    })
+    .service('$kit',function($http,$alert,$modal,$stg){
+        /**
+         * 工具类服务
+         */
+        var kit = angular.extend({},c);
+        kit.isEmpty = isEmpty;
+        kit.isExist = isExist;
         kit.c = kit.confirm = function(msg,callback){
             var myModal = $modal({content: msg || '确定操作吗？', templateUrl:'/modal-confirm.html', show: true,placement:'center',backdrop:false}); 
             myModal.$scope.$action = function(action){
@@ -76,7 +95,7 @@ define(function (require) {
                 url: kit.uri + url,
                 method: 'POST',
                 params: {},
-                data  : data || {}
+                data  : angular.extend(data,{sessionid:$stg.sid()}) || {}
             })
             .success(successFun|| function(){})
             .error(errorFun || function(){})
@@ -98,7 +117,7 @@ define(function (require) {
             $http({
                 url: kit.uri + url,
                 method: 'GET',
-                params: data || {},
+                params: angular.extend(data,{sessionid:$stg.sid()}) || {},
                 data  : {}
             })
             .success(success|| function(){})
@@ -120,56 +139,91 @@ define(function (require) {
         return kit;
     })
     .config(function(localStorageServiceProvider){
-        //本地存在设置
+        //本地存储设置
         localStorageServiceProvider.prefix = 'bianker';
         localStorageServiceProvider.storageType = "sessionStorage";
     })
-    .config(function($httpProvider){
-        $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-        // Override $http service's default transformRequest
-        $httpProvider.defaults.transformRequest = [function(data) {
-        /**
-         * The workhorse; converts an object to x-www-form-urlencoded serialization.
-         * @param {Object} obj
-         * @return {String}
-         */
-        var param = function(obj) {
-            var query = '';
-            var name, value, fullSubName, subName, subValue, innerObj, i;
+    // .config(function($httpProvider){
+    //     $httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+    //     // Override $http service's default transformRequest
+    //     $httpProvider.defaults.transformRequest = [function(data) {
+    //     /**
+    //      * The workhorse; converts an object to x-www-form-urlencoded serialization.
+    //      * @param {Object} obj
+    //      * @return {String}
+    //      */
+    //     var param = function(obj) {
+    //         var query = '';
+    //         var name, value, fullSubName, subName, subValue, innerObj, i;
 
-            for (name in obj) {
-                value = obj[name];
+    //         for (name in obj) {
+    //             value = obj[name];
 
-                if (value instanceof Array) {
-                    for (i = 0; i < value.length; ++i) {
-                        subValue = value[i];
-                        fullSubName = name + '[' + i + ']';
-                        innerObj = {};
-                        innerObj[fullSubName] = subValue;
-                        query += param(innerObj) + '&';
-                    }
-                } else if (value instanceof Object) {
-                    for (subName in value) {
-                        subValue = value[subName];
-                        fullSubName = name + '[' + subName + ']';
-                        innerObj = {};
-                        innerObj[fullSubName] = subValue;
-                        query += param(innerObj) + '&';
-                    }
-                } else if (value !== undefined && value !== null) {
-                    query += encodeURIComponent(name) + '='
-                            + encodeURIComponent(value) + '&';
-                }
-            }
+    //             if (value instanceof Array) {
+    //                 for (i = 0; i < value.length; ++i) {
+    //                     subValue = value[i];
+    //                     fullSubName = name + '[' + i + ']';
+    //                     innerObj = {};
+    //                     innerObj[fullSubName] = subValue;
+    //                     query += param(innerObj) + '&';
+    //                 }
+    //             } else if (value instanceof Object) {
+    //                 for (subName in value) {
+    //                     subValue = value[subName];
+    //                     fullSubName = name + '[' + subName + ']';
+    //                     innerObj = {};
+    //                     innerObj[fullSubName] = subValue;
+    //                     query += param(innerObj) + '&';
+    //                 }
+    //             } else if (value !== undefined && value !== null) {
+    //                 query += encodeURIComponent(name) + '='
+    //                         + encodeURIComponent(value) + '&';
+    //             }
+    //         }
 
-            return query.length ? query.substr(0, query.length - 1) : query;
-        };
+    //         return query.length ? query.substr(0, query.length - 1) : query;
+    //     };
 
-        return angular.isObject(data) && String(data) !== '[object File]'
-                ? param(data)
-                : data;
-    }];
-    })
+    //     return angular.isObject(data) && String(data) !== '[object File]'
+    //             ? param(data)
+    //             : data;
+    // }];
+    // })
     ;
     app.useModule('_kit');
+    /**
+     * 判断是否为空
+     * @param  {[type]}  obj [description]
+     * @return {Boolean}     [description]
+     */
+    function isEmpty(obj){
+        return obj === void 0 
+                || typeof obj  === "undefined"
+                || obj === null 
+                || obj === ''
+                || obj === 'null';
+    }
+    /**
+     * 判断是否存在
+     * @param  {[type]}  obj [description]
+     * @return {Boolean}     [description]
+     */
+    function isExist(obj){
+        if(isEmpty(obj)) return !1;
+        if(angular.isArray(obj)) return obj.length > 0;
+        if(angular.isObject(obj)) return !isEmptyObject(obj);
+        return !0;
+    }
+
+/**
+ * 判断是否为空对象
+ * @param  {[type]}  e [description]
+ * @return {Boolean}   [description]
+ */
+    function isEmptyObject(e){
+        var t;
+        for (t in e) 
+            return !1;
+        return !0;
+    }
 });

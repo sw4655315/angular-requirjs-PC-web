@@ -6,6 +6,7 @@ define(function (require, exports, module) {
     c.reg.mobile = /1[3578]\d{9}/;
     c.reg.pwd = /\w{6,16}/;
     c.reg.captcha = /\d{6}/;
+    c.reg.reward_rmb = /[1-9]\d{2,}/;
     c.http = {};
     c.http.ok = 200;
     module.exports = c;

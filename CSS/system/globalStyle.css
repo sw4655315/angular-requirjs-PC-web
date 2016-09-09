@@ -23,3 +23,4 @@
     margin: 10px 0px;
 }
 .index_publish_drop_submitBtn_wrap{margin: 20px auto;}
+#laydate_box,#laydate_box *{box-sizing: initial;}

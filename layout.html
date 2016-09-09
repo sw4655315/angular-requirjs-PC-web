@@ -24,17 +24,17 @@
             </div>
         </div>
         <div class="container search_select clearfix">
-            <div class="text-center fl" ng-class="{'active':searchTab_index==1}" ng-click="searchTab_index=1">需求</div>
-            <div class="text-center fl" ng-class="{'active':searchTab_index==2}" ng-click="searchTab_index=2">素材</div>
-            <div class="text-center fl" ng-class="{'active':searchTab_index==3}" ng-click="searchTab_index=3">编客</div>
+            <div class="text-center fl" ng-class="{'active':_search.tab_index==1}" ng-click="_search.tab_index=1">需求</div>
+            <div class="text-center fl" ng-class="{'active':_search.tab_index==2}" ng-click="_search.tab_index=2">素材</div>
+            <div class="text-center fl" ng-class="{'active':_search.tab_index==3}" ng-click="_search.tab_index=3">编客</div>
         </div>
         <div class="container">
             <div class="index_search fl clearfix">
                 <div class="index_search_ico_wrap fl">
                     <div class="ico1-5 index_search_ico_main"></div>
                 </div>
-                <input type="text" class="index_search_input fl" style="outline:none;">
-                <div class="btn index_search_button" >搜索</div>
+                <input type="text" class="index_search_input fl" style="outline:none;" ng-model="search.key_word">
+                <div class="btn index_search_button" ng-click="search()">搜索</div>
             </div>
             <div class="text-center index_or fl">
                 or
