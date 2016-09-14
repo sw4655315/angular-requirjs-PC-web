@@ -3,7 +3,9 @@ define(function(require) {
     var app = require('../app');
     require('swiper');
 
-    app.controller('bodyCtrl', ['$scope', '$modal', '$alert', function($scope, $modal, $alert) {
+    app.controller('bodyCtrl', ['$scope', '$modal', '$alert','$rootScope', function($scope, $modal, $alert,$rootScope) {
+        $rootScope.menu.menu_type = 1;
+        $rootScope.menu.menu_index = 1;
         var $kit = app.get('$kit');
         // $scope.myModal = $modal({content: 'My Content', templateUrl:'/modal-confirm.html', show: true,placement:'center',btn:'123'}); 
         // $scope.myModal.$scope.btn = [{

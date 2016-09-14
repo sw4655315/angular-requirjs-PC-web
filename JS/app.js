@@ -14,7 +14,7 @@ define(function (require, exports, module) {
         $rootScope.$stateParams = $stateParams;
     }]);
 
-    app.config(function($modalProvider,$alertProvider) {
+    app.config(function($modalProvider,$alertProvider,cfpLoadingBarProvider) {
       angular.extend($modalProvider.defaults, {
         // animation: 'am-flip-x'
       });
@@ -24,6 +24,11 @@ define(function (require, exports, module) {
         ,container: '.toast-container'
         ,show: true
       });
+
+      /**
+       * 加载框
+       */
+      cfpLoadingBarProvider.spinnerTemplate = '<div class="loading-container"></div>';
     })
 
     // initialze app module for angular-async-loader

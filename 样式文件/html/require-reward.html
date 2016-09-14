@@ -83,12 +83,12 @@
 
     <div class="container">
         <div class="bianker_require_select_type fl">
-            <div class="bianker_require_select_type_bg">1</div>
-            <div class="bianker_require_select_type_font"><p>选择类目</p></div>
+            <div class="bianker_require_select_type_bg active"><div class="ico2-5"></div></div>
+            <div class="bianker_require_select_type_font active"><p>选择类目</p></div>
         </div>
         <div class="bianker_require_select_type fl">
-            <div class="bianker_require_select_type_bg">2</div>
-            <div class="bianker_require_select_type_font"><p>描述您的需求</p></div>
+            <div class="bianker_require_select_type_bg active"><div class="ico2-5"></div></div>
+            <div class="bianker_require_select_type_font active"><p>描述您的需求</p></div>
         </div>
         <div class="bianker_require_select_type fl">
             <div class="bianker_require_select_type_bg active">3</div>
@@ -103,25 +103,26 @@
     <div class="container bianker_require_content_wrap" style="height: 902px">
         <div class="bianker_require_content_ad">官方提供线上担保交易，保障您的资金安全，且不会收取您任何佣金。80%的欺诈、资金盗取均由线下交易导致，请勿线下交易。</div>
 
-            <div style="width: auto;height: 63px;margin-left: 28px;margin-top: 40px">
+            <div class="bianker_require_content_remark_title_wrap">
                 <div class="bianker_require_content_remark_title">请选择您的交易模式</div>
                 <div class="radio bianker_reward_radio">
                     <label>
-                        <input type="radio" name="optionsRadios">
+                        <input type="radio" name="mosh" checked>
                         投稿模式
                     </label>
                 </div>
             </div>
-            <div class="bianker_reward_introduce">投稿模式简介 :<span>&nbsp;指雇主在发布需求时，先将赏金托管到编客网，再从编客投稿中选出满意稿件的交易模式。编客网暂不收取任何比例赏金最为平台服务费。</span></div>
+            <div class="bianker_reward_introduce">投稿模式简介 :<span>&nbsp;指雇主在发布需求时，先将赏金托管到趣编网，再从编客投稿中选出满意稿件的交易模式。趣编网暂不收取任何比例赏金最为平台服务费。</span></div>
             <div class="bianker_reward_introduce_people">
                 <div class="bianker_reward_introduce_people_num_title">您希望参与的编客人数:</div>
-                <div class="bianker_reward_introduce_people_num">最多3人</div>
-                <div class="bianker_reward_introduce_people_num">最多6人</div>
-                <div class="bianker_reward_introduce_people_num">最多9人</div>
+                <button class="bianker_reward_introduce_people_num active">最多3人</button>
+                <button class="bianker_reward_introduce_people_num">最多6人</button>
+                <button class="bianker_reward_introduce_people_num">最多9人</button>
             </div>
             <div class="bianker_reward_setting clearfix">
                 <div class="reward-setting">设置悬赏金额:</div>
                 <input type="text" class="fl bianker_reward_setting_input" placeholder="请输入>100的金额">
+                <a href="#"><div class="bianker_reward_setting_confirm fl">确认</div></a>
             </div>
 
 
@@ -129,7 +130,7 @@
                 <div class="bianker_require_content_remark_title">您希望如何分配该赏金</div>
                 <div class="radio bianker_reward_radio">
                     <label>
-                        <input type="radio" name="optionsRadios">
+                        <input type="radio" name="optionsRadios" checked>
                         单人独享
                     </label>
                 </div>
@@ -137,12 +138,16 @@
 
             <div class="bianker_reward_command">
                 <div class="bianker_require_content_remark_title">对投稿编客有何要求</div>
-                <div class="btn-group">
-                    <label class="checkbox-inline">
-                        <input type="radio" name="a" value="option1" checked> 需要身份认证
+                <div class="radio bianker_reward_radio fl">
+                    <label>
+                        <input type="radio" name="aaa" checked>
+                        需要身份认证
                     </label>
-                    <label class="checkbox-inline">
-                        <input type="radio" name="a" value="option2"> 手机认证
+                </div>
+                <div class="radio bianker_reward_radio fl" style="margin-left: 34px">
+                    <label>
+                        <input type="radio" name="aaa">
+                        手机认证
                     </label>
                 </div>
             </div>
@@ -151,7 +156,8 @@
                 <div class="bianker_require_content_remark_title">您需要何时完成需求</div>
                 <div style="width:auto;height: 34px;margin-top: 20px;margin-bottom: 132px" class="clearfix">
                     <div class="ico2-8 fl"></div>
-                    <input type="date" class="bianker_reward_endtime_input_date">
+                    <input type="date" class="bianker_reward_endtime_input_date fl">
+                    <div class="fl" style="margin-top: 7px;color: #6a6a6a;margin-left: 20px">您希望多长时间来完成这个需求，您可以在截稿后开始选稿</div>
                 </div>
 
             </div>
@@ -173,15 +179,15 @@
             </div>
 
             <div class="row">
-                <p>我在编客网上交易有安全保障吗？</p>
-                <p>答：1)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
-                <p style="text-indent: 2em">2)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
+                <p>我在趣编网上交易有安全保障吗？</p>
+                <p>答：1)趣编网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
+                <p style="text-indent: 2em">2)趣编网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
             </div>
 
             <div class="row" style="margin-top: 40px">
-                <p>我在编客网上交易有安全保障吗？</p>
-                <p>答：1)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
-                <p style="text-indent: 2em">2)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
+                <p>我在趣编网上交易有安全保障吗？</p>
+                <p>答：1)趣编网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
+                <p style="text-indent: 2em">2)趣编网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
             </div>
         </div>
     </div>

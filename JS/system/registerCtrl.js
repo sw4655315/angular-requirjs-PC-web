@@ -1,7 +1,7 @@
 define(function (require) {
      'use strict';
      var app = require('../app');
-     var _kit,_stg,_state,_form;
+     var _kit,_stg,_state,_form,_gou;
      
      app.controller('registerCtrl',['$scope','$rootScope','$interval',function ($scope,$rootScope,$interval) {
         _kit = app.get('$kit');
@@ -31,6 +31,9 @@ define(function (require) {
                 },1000,60);
             });
         }
+         _gou = $scope._gou = {
+             tab_index:true
+         }
      }]);
 
      function validInput () {

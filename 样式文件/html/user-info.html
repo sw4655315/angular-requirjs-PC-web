@@ -9,171 +9,157 @@
     <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="header">
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <div class="ico2"></div>
-                <a class="navbar-brand" href="#" style="font-size: 14px">编客，陪你做视频的设计师</a>
-            </div>
-
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">我的订单</a></li>
-                    <li><a href="#">我是雇主</a></li>
-                    <li><a href="#">我是编客</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">登录<span class="caret"></span></a></li>
-                    <li><a href="#">注册</a></li>
-                    <li><a href="#">丨</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="pure-g">
-            <div class="pure-u-lg-1-24 text-center">需求</div>
-            <div class="pure-u-lg-1-24 text-center" style="background: #323232;color: #FFFFFF">素材</div>
-            <div class="pure-u-lg-1-24 text-center">编客</div>
+<header>
+    <div class="nav_wrap">
+        <div class="container clearfix">
+            <a href="index.html">
+                <div class="nav_header fl">
+                    <div class="nav_header_logo ico9-6 fl"></div>
+                    <div class="nav_header_logofont fl">编客，陪你做视频的设计师</div>
+                </div>
+            </a>
+            <a href="#"><div class="ico8-5 nav_footer_logo fr"></div></a>
+            <a href="#"><div class="nav_i_am_author fr">我是编客</div></a>
+            <a href="#"><div class="nav_i_am_employeer fr">我是雇主</div></a>
+            <a href="#"><div class="nav_my_list fr">我的订单</div></a>
+            <a href="register.html">
+                <div class="text-center nav_register fr">注册</div>
+            </a>
+            <a href="login.html">
+                <div class="text-center nav_login fr">
+                    登录<div class="ico1-3 nav_login_logo"></div>
+                </div>
+            </a>
         </div>
     </div>
+    <div class="container search_select clearfix">
+        <div class="text-center fl">需求</div>
+        <div class="text-center fl active">素材</div>
+        <div class="text-center fl">编客</div>
+    </div>
     <div class="container">
-        <div class="pure-u-lg-2-3">
-            <div class="input-group">
-                <span class="input-group-addon Magnifier"><div class="ico5"></div></span>
-                <input type="text" class="form-control search">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button">搜索</button>
-            </span>
+        <div class="index_search fl clearfix">
+            <div class="index_search_ico_wrap fl">
+                <div class="ico1-5 index_search_ico_main"></div>
             </div>
+            <input type="text" class="index_search_input fl">
+            <div class="btn index_search_button">搜索</div>
         </div>
-        <div class="pure-u-lg-1-12 text-center" style="font-size: 16px;line-height: 2.5">
+        <div class="text-center index_or fl">
             or
         </div>
-        <div class="pure-u-lg-1-5 text-center">
-            <button class="btn btn-default btn-block" type="button">发布</button>
+        <div class="text-center dropdown fr">
+            <div class="btn index_publish" id="publish">
+                免费发布需求<div class="ico1-4 index_publish_ico"></div>
+            </div>
+            <ul class="index_publish_drop_wrap">
+                <li>如何快速发布需求</li>
+                <li>Ⅰ选择类目</li>
+                <li>Ⅱ描述需求</li>
+                <li>Ⅲ设置赏金</li>
+                <li>Ⅳ确定需求</li>
+                <div class="index_publish_drop_submitBtn_wrap">
+                    <button class="btn index_publish_drop_submitBtn_main">
+                        立即发布需求
+                    </button>
+                </div>
+            </ul>
         </div>
     </div>
-</div>
+</header>
+
 <div class="content">
-    <div style="width: 100%;height: 34px;background-color: #323232;margin-top: 64px">
+    <div class="bianker_navbar">
         <div class="container">
-            <div class="ico4-1" style="float: left;margin-top: 8px"></div>
-            <div style="float: left;margin:5px 0 0 8px;font-size: 16px;font-weight: bold;color: #FFFFFF">我是编客</div>
-            <div style="float: left;width: 118px;height: 34px;border: 2px solid #323232;font-size: 16px;font-weight: bold;color: #FFFFFF;background: #323232;text-align: center;line-height: 34px;margin-left: 110px">个人首页</div>
-            <div style="float: left;width: 118px;height: 34px;border: 2px solid #323232;font-size: 16px;font-weight: bold;color: #323232;background: #FFFFFF;text-align: center;line-height: 34px;">账号设置</div>
-            <div style="float: left;width: 118px;height: 34px;border: 2px solid #323232;font-size: 16px;font-weight: bold;color: #FFFFFF;background: #323232;text-align: center;line-height: 34px;">我的消息</div>
+            <div class="ico4-1 bianker_navbar_icon fl"></div>
+            <div class="bianker_navbar_header fl">我是编客</div>
+            <div class="bianker_navbar_private_index fl">个人首页</div>
+            <div class="bianker_navbar_account_setting_active fl">账号设置</div>
+            <div class="bianker_navbar_my_message fl">我的消息</div>
+            <div class="bianker_navbar_i_am_employer fr">
+                <div class="fl">我是雇主</div>
+                <div class="ico3-4 fl"></div>
+            </div>
         </div>
     </div>
 
-    <div class="container" style="border: 1px solid #e1e1e1;margin-top: 40px;padding: 0;margin-bottom: 98px">
-        <div class="col-lg-2" style="min-height: 885px;background: #eaeaea">
-            <div class="row">
-                <div style="margin: 40px 0 30px 54px">
-                    <div style="width: 96px;height: 96px;border: 2px solid #e3e3e3;border-radius:50%;"><img src="../img/photo.png" style="height: 100%;width: 100%"></div>
-                </div>
+    <div class="container bianker_content_wrap clearfix">
+        <div class="fl bianker_content_main_left " style="min-height: 870px">
+            <div class="bianker_user_img_wrap">
+                <img src="../img/1.png">
             </div>
-            <div class="row text-center">
-                <div class="user-name">TEMSINS</div>
-            </div>
-            <div class="row text-center">
-                <div>账户 :<span class="money-color">￥1000</span></div>
-            </div>
-            <div style="width: 159px;height: 30px;border-bottom: 1px solid #aeadad;margin: 0 auto"></div>
-            <div class="row text-center" style="margin-top: 40px">
-                我的账号
-            </div>
-            <div class="row text-center money-color" style="margin-top: 40px">
-                个人资料
-            </div>
-            <div class="row text-center" style="margin-top: 40px">
-                我的钱包
-            </div>
+            <div class="bianker_user-name text-center">TEMSINS</div>
+            <div class="text-center">账户 :<span class="active-color">￥1000</span></div>
+            <div class="bianker_divide_line"></div>
+            <div class="bianker_menu text-center">我的账号</div>
+            <div class="bianker_menu text-center">个人资料</div>
+            <div class="bianker_menu text-center">我的钱包</div>
         </div>
-        <div class="col-lg-10" style="min-height: 641px">
-            <ul class="nav nav-tabs" style="margin-top: 40px">
-                <li><a data-toggle="tab" aria-expanded="true"></a></li>
-                <li class="active"><a data-toggle="tab" aria-expanded="true">完善信息</a></li>
-            </ul>
-            <div class="row">
-                <div style="margin: 40px 0 0 64px;font-size: 14px;color: #aeadad">亲爱的<span>Temsins</span>,身份认证后，才能开始接单哦</div>
+        <div class="fr bianker_content_main_right" style="min-height: 870px">
+            <div class="bianker_title_box"><span>完善信息</span></div>
+
+            <div class="bianker_title_box_tip">亲爱的<span>Temsins</span>,身份认证后，才能开始接单哦</div>
+            <div class="bianker_user_info_img_wrap">
+                <div class="fl bianker_user_info_img_font">当前头像</div>
+                <div class="fl bianker_user_info_img_main"><img src="../img/photo.png"></div>
             </div>
-            <div class="row">
-                <div class="col-lg-1" style="margin: 40px 0 0 50px;font-size: 16px;font-weight:bold;white-space: nowrap">当前头像</div>
-                <div class="col-lg-1" style="margin: 40px 0 0 20px;font-size: 14px;">
-                    <div style="width: 80px;height: 80px;border: 2px solid #e3e3e3;border-radius:50%;overflow: hidden"><img src="../img/photo.png" style="height: 100%;width: 100%"></div>
-                </div>
+
+            <div class="bianker_user_info_wrap">
+                <div class="fl bianker_user_info_labelfont">昵&nbsp&nbsp称</div>
+                <input type="text" class="bianker_user_info_input fl">
             </div>
-            <div class="row">
-                <div class="col-lg-1" style="margin: 40px 20px 0 50px;font-size: 16px;font-weight:bold;white-space: nowrap">昵称</div>
-                <div class="col-lg-1" style="margin: 40px 0 0 0;font-size: 14px;">
-                    <input type="text" style="width: 180px;height: 34px;border: 1px solid #e1e1e1;border-radius: 2px;font-size: 16px;color: #323232">
-                </div>
+            <div class="bianker_user_info_wrap">
+                <div class="fl bianker_user_info_labelfont">*手机号码</div>
+                <input type="text" class="bianker_user_info_input fl">
             </div>
-            <div class="row">
-                <div class="col-lg-1" style="margin: 50px 20px 0 50px;font-size: 16px;font-weight:bold;white-space: nowrap">*手机号码</div>
-                <div class="col-lg-1" style="margin: 40px 0 0 0;font-size: 14px;">
-                    <input type="text" style="width: 180px;height: 34px;border: 1px solid #e1e1e1;border-radius: 2px;font-size: 16px;color: #323232">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-1" style="margin: 50px 20px 0 50px;font-size: 16px;font-weight:bold;white-space: nowrap">*所在城市</div>
-                <div class="col-lg-3" style="margin: 40px 0 0 0;font-size: 14px;">
-                    <div style="width: 140px;height: 34px;border: 1px solid #e1e1e1;font-size: 16px; color:#323232;">
-                        <div style="float: left;margin: 4px 0 0 5px">浙江</div>
-                        <div style="width: 18px;height: 32px;border: 1px solid #aeadad;background: #e1e1e1;float: right">
-                            <div class="ico5-1" style="margin:12px 0 0 4px"></div>
-                        </div>
+            <div class="bianker_user_info_wrap">
+                <div class="fl bianker_user_info_labelfont">*所在城市</div>
+
+                <div class="fl bianker_user_info_xiala_wrap clearfix">
+                    <div class="bianker_user_info_xiala_maincontent">浙江</div>
+                    <div class="bianker_user_info_xiala_icon">
+                        <div class="ico5-1"></div>
                     </div>
                 </div>
-                <div class="col-lg-3" style="margin: 40px 0 0 0;font-size: 14px;">
-                    <div style="width: 140px;height: 34px;border: 1px solid #e1e1e1;font-size: 16px; color:#323232;">
-                        <div style="float: left;margin: 4px 0 0 5px">杭州</div>
-                        <div style="width: 18px;height: 32px;border: 1px solid #aeadad;background: #e1e1e1;float: right">
-                            <div class="ico5-1" style="margin:12px 0 0 4px"></div>
-                        </div>
+
+                <div class="fl bianker_user_info_xiala_wrap clearfix">
+                    <div class="bianker_user_info_xiala_maincontent">杭州</div>
+                    <div class="bianker_user_info_xiala_icon">
+                        <div class="ico5-1"></div>
                     </div>
                 </div>
-                <div class="col-lg-3" style="margin: 40px 0 0 0;font-size: 14px;">
-                    <div style="width: 140px;height: 34px;border: 1px solid #e1e1e1;font-size: 16px; color:#323232;">
-                        <div style="float: left;margin: 4px 0 0 5px">滨江</div>
-                        <div style="width: 18px;height: 32px;border: 1px solid #aeadad;background: #e1e1e1;float: right">
-                            <div class="ico5-1" style="margin:12px 0 0 4px"></div>
-                        </div>
+
+                <div class="fl bianker_user_info_xiala_wrap clearfix">
+                    <div class="bianker_user_info_xiala_maincontent">滨江</div>
+                    <div class="bianker_user_info_xiala_icon">
+                        <div class="ico5-1"></div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-1" style="margin: 40px 0 0 50px;font-size: 16px;font-weight:bold;white-space: nowrap">*账户类型</div>
-                <div class="col-lg-10" style="margin: 40px 0 0 0;font-size: 14px;">
+            <div class="bianker_user_info_wrap">
+                <div class="fl bianker_user_info_labelfont">*账户类型</div>
+                <div class="fl bianker_user_info_checkbox">
                     <label class="checkbox-inline">
-                        <input type="radio" name="sex"
+                        <input type="radio" name="optionsRadiosinline"
                                value="option1" checked>男
                     </label>
                     <label class="checkbox-inline">
-                        <input type="radio" name="sex"
+                        <input type="radio" name="optionsRadiosinline"
                                value="option2">女
                     </label>
                     <label class="checkbox-inline">
-                        <input type="radio" name="sex"
+                        <input type="radio" name="optionsRadiosinline"
                                value="option2">保密
                     </label>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-1" style="margin: 50px 20px 0 50px;font-size: 16px;font-weight:bold;white-space: nowrap">个性签名</div>
-                <div class="col-lg-1" style="margin: 40px 0 0 0;font-size: 14px;">
-                    <textarea class="form-control" style= "overflow:hidden; resize:none;width: 472px;height: 164px;border:1px solid #e1e1e1;border-radius: 2px ">
-
-                    </textarea>
-                </div>
+            <div class="bianker_user_info_textarea_wrap">
+                <div class="fl bianker_user_info_labelfont">个性签名</div>
+                <textarea class="bianker_user_info_textarea"></textarea>
             </div>
-            <div class="row">
-                <div class="col-lg-1" style="margin: 50px 20px 0 50px;font-size: 14px;white-space: nowrap"></div>
-                <div class="col-lg-1" style="margin: 60px 0 40px 0;font-size: 14px;">
-                    <button class="btn" style="width: 118px;height: 34px;background: #2baffa;font-size: 16px;color: #FFFFFF;line-height: 0">保存</button>
-                </div>
+            <div class="bianker_user_info_wrap">
+                <div class="fl bianker_user_info_labelfont"></div>
+                <button class="btn bianker_user_info_save_btn">保存</button>
             </div>
         </div>
     </div>

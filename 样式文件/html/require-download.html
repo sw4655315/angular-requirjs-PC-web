@@ -9,127 +9,151 @@
     <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="header">
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <div class="ico2"></div>
-                <a class="navbar-brand" href="#" style="font-size: 14px">编客，陪你做视频的设计师</a>
-            </div>
-
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">我的订单</a></li>
-                    <li><a href="#">我是雇主</a></li>
-                    <li><a href="#">我是编客</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">登录
-                            <span class="caret"></span></a>
-                    </li>
-                    <li><a href="#">注册</a></li>
-                    <li><a href="#">丨</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="pure-g">
-            <div class="pure-u-lg-1-24 text-center">需求</div>
-            <div class="pure-u-lg-1-24 text-center" style="background: #323232;color: #FFFFFF">素材</div>
-            <div class="pure-u-lg-1-24 text-center">编客</div>
+<header>
+    <div class="nav_wrap">
+        <div class="container clearfix">
+            <a href="index.html">
+                <div class="nav_header fl">
+                    <div class="nav_header_logo ico9-6 fl"></div>
+                    <div class="nav_header_logofont fl">编客，陪你做视频的设计师</div>
+                </div>
+            </a>
+            <a href="#"><div class="ico8-5 nav_footer_logo fr"></div></a>
+            <a href="#"><div class="nav_i_am_author fr">我是编客</div></a>
+            <a href="#"><div class="nav_i_am_employeer fr">我是雇主</div></a>
+            <a href="#"><div class="nav_my_list fr">我的订单</div></a>
+            <a href="register.html">
+                <div class="text-center nav_register fr">注册</div>
+            </a>
+            <a href="login.html">
+                <div class="text-center nav_login fr">
+                    登录<div class="ico1-3 nav_login_logo"></div>
+                </div>
+            </a>
         </div>
     </div>
+    <div class="container search_select clearfix">
+        <div class="text-center fl">需求</div>
+        <div class="text-center fl active">素材</div>
+        <div class="text-center fl">编客</div>
+    </div>
     <div class="container">
-        <div class="pure-u-lg-2-3">
-            <div class="input-group">
-                <span class="input-group-addon Magnifier"><div class="ico5"></div></span>
-                <input type="text" class="form-control search">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button">搜索</button>
-            </span>
+        <div class="index_search fl clearfix">
+            <div class="index_search_ico_wrap fl">
+                <div class="ico1-5 index_search_ico_main"></div>
             </div>
+            <input type="text" class="index_search_input fl">
+            <div class="btn index_search_button">搜索</div>
         </div>
-        <div class="pure-u-lg-1-12 text-center" style="font-size: 16px;line-height: 2.5">
+        <div class="text-center index_or fl">
             or
         </div>
-        <div class="pure-u-lg-1-5 text-center">
-            <button class="btn btn-default btn-block" type="button">发布</button>
+        <div class="text-center dropdown fr">
+            <div class="btn index_publish" id="publish">
+                免费发布需求<div class="ico1-4 index_publish_ico"></div>
+            </div>
+            <ul class="index_publish_drop_wrap">
+                <li>如何快速发布需求</li>
+                <li>Ⅰ选择类目</li>
+                <li>Ⅱ描述需求</li>
+                <li>Ⅲ设置赏金</li>
+                <li>Ⅳ确定需求</li>
+                <div class="index_publish_drop_submitBtn_wrap">
+                    <button class="btn index_publish_drop_submitBtn_main">
+                        立即发布需求
+                    </button>
+                </div>
+            </ul>
         </div>
     </div>
+</header>
+
+<div class="content">
     <nav class="navbar">
         <div class="container">
-            <div class="index-nav">
-                <div class="nav-font">首页</div>
-                <div class="nav-font active">需求</div>
-                <div class="nav-font">编客</div>
-                <div class="nav-font">灵感</div>
-                <div class="nav-font">素材</div>
+            <div class="index_nav">
+                <div class="nav_font">首页</div>
+                <div class="nav_font active">需求</div>
+                <div class="nav_font">编客</div>
+                <div class="nav_font">灵感</div>
+                <div class="nav_font">素材</div>
             </div>
         </div>
     </nav>
-
-</div>
-<div class="content">
-    <div class="container">
-        <div class="row">
-            <div class="tab-reqDesc">所有需求</div>
-            <div class="tab-reqDesc"> > </div>
-            <div class="tab-reqDesc">包装设计</div>
-            <div class="tab-reqDesc"> > </div>
-            <div class="tab-reqDesc">包装设计</div>
-            <div class="tab-reqDesc"> > </div>
-        </div>
-    </div>
-    <div class="container" style="margin-top: 20px;height: auto;border: 1px solid #e1e1e1">
-        <div class="row" style="margin: 40px 0 0 20px;border-bottom: 1px solid #e1e1e1">
-            <div class="col-lg-1"><div style="width: 96px;height: 96px;border: 2px solid #e3e3e3;border-radius:50%;"><img src="../img/photo.png" style="height: 100%;width: 100%"></div></div>
-            <div class="col-lg-4" style="margin:12px 0 0 20px">
-                <div class="user-name">TEMSINS</div>
-                <img src="../img/call-me.png">
+    <div class="container bianker_require_content_wrap">
+        <ul class="bianker_require_detail_nav">
+            <li class="fl bianker_require_content_nav_header">所有需求</li>
+            <li class="fl bianker_require_content_nav_ico"><div class="ico3-3"></div></li>
+            <li class="fl bianker_require_content_nav_first">包装设计</li>
+            <li class="fl bianker_require_content_nav_ico"><div class="ico3-3"></div></li>
+            <li class="fl bianker_require_content_nav_second">包装设计</li>
+            <li class="fl bianker_require_content_nav_ico"><div class="ico3-3"></div></li>
+        </ul>
+        <div class="bianker_require_detail_content_header">
+            <div class="fl bianker_require_detail_content_header_img">
+                <img src="../img/photo.png">
             </div>
-            <div class="col-lg-6" style="position: relative;height: 92px;margin-bottom: 40px">
-                <button class="btn btn-primary" style="float: right;position: absolute;bottom: 0;right: 0;width: 200px;height: 34px;line-height: 0">立即投稿</button>
+            <div class="fl bianker_require_detail_content_header_name_wrap">
+                <div class="bianker_require_detail_content_header_name">TEMSINS</div>
+                <a href="payments-detail.html"><img src="../img/call-me.png"></a>
             </div>
+            <button class="btn fr bianker_require_detail_content_header_button">修改需求</button>
         </div>
 
-        <div class="row" style="margin: 0 0 0 20px;border-bottom: 1px solid #e1e1e1;height: 68px">
-            <div style="margin: 20px 0 20px 0;font-size: 16px;font-weight: bold;color: #323232;float: left">玄幻类书籍介绍视频制作</div>
-            <div style="margin: 20px 0 20px 40px;font-size: 16px;font-weight: bold;float: left;" class="money-color">投稿中</div>
+        <div class="bianker_require_detail_content_wrap">
+            <div class="bianker_require_detail_content_label clearfix">玄幻类书籍介绍视频制作</div>
+            <div class="active-color bianker_require_detail_content_font">投稿中</div>
         </div>
-        <div class="row" style="margin: 0 0 0 20px;border-bottom: 1px solid #e1e1e1;height: 68px">
-            <div style="margin: 20px 0 20px 0;font-size: 16px;font-weight: bold;color: #323232;float: left">悬赏金额 :</div>
-            <div style="margin: 20px 60px 20px 40px;font-size: 16px;font-weight: bold;float: left;" class="money-color">￥800.0</div>
-            <div style="margin: 20px 0 20px 0;font-size: 16px;font-weight: bold;color: #323232;float: left">悬赏金额 :</div>
-            <div style="margin: 20px 0 20px 40px;font-size: 16px;font-weight: bold;float: left;" class="money-color">￥800.0</div>
-        </div>
-        <div class="row" style="margin: 0 0 0 20px;border-bottom: 1px solid #e1e1e1;height: 68px">
-            <div style="margin: 20px 0 20px 0;font-size: 16px;font-weight: bold;color: #323232;float: left">交易模式 :</div>
-            <div style="margin: 20px 60px 20px 40px;font-size: 16px;float: left;">投稿</div>
-            <div style="margin: 20px 0 20px 0;font-size: 16px;font-weight: bold;color: #323232;float: left">悬赏分配 :</div>
-            <div style="margin: 20px 0 20px 40px;font-size: 16px;float: left;">一人独享该赏金</div>
-        </div>
-        <div class="row" style="margin: 0 0 0 20px;border-bottom: 1px solid #e1e1e1;height: 68px">
-            <div style="margin: 20px 0 20px 0;font-size: 16px;font-weight: bold;color: #323232;float: left">雇主希望服务商是这样的 :</div>
-            <div style="margin: 20px 40px 20px 40px;font-size: 14px;color: #6a6a6a; float: left;height:28px;width: 112px;border-radius: 2px;border: 1px solid #6a6a6a">
-                <div class="ico5-3"></div>
-                <div style="float: left;margin: 2px 0 0 10px">实名认证</div>
+        <div class="bianker_require_detail_content_wrap">
+            <div class="bianker_require_detail_content_label clearfix">
+                <div class="bianker_require_detail_content_font1">悬赏金额 :</div>
+                <div class="bianker_require_detail_content_font2 active-color">￥800.0</div>
             </div>
-            <div style="margin: 20px 60px 20px 40px;font-size: 14px;color: #6a6a6a; float: left;height:28px;width: 112px;border-radius: 2px;border: 1px solid #6a6a6a">
-                <div class="ico5-4"></div>
-                <div style="float: left;margin: 2px 0 0 10px">手机认证</div>
+            <div class="bianker_require_detail_content_label clearfix">
+                <div class="bianker_require_detail_content_font1">托管金额 :</div>
+                <div class="bianker_require_detail_content_font2 active-color">￥800.0</div>
             </div>
         </div>
-        <div class="row" style="margin: 0 0 40px 20px;height: 68px">
-            <div class="col-lg-6" style="position: relative;height: 72px">
-                <button class="btn btn-primary" style="float: left;position: absolute;bottom: 0;left: 0;width: 112px;height: 28px;line-height: 0">去认证</button>
+        <div class="bianker_require_detail_content_wrap">
+            <div class="bianker_require_detail_content_label">
+                <div class="bianker_require_detail_content_font1">交易模式 :</div>
+                <div class="bianker_require_detail_content_font2">投稿</div>
             </div>
+            <div class="bianker_require_detail_content_label">
+                <div class="bianker_require_detail_content_font1">悬赏分配 :</div>
+                <div class="bianker_require_detail_content_font2">一人独享该赏金</div>
+            </div>
+
         </div>
+        <div class="bianker_require_detail_content_wrap">
+            <div class="bianker_require_detail_content_label">雇主希望服务商是这样的 :</div>
+            <a href="#" class="bianker_require_detail_content_label_ico1">
+                <div class="ico5-3 fl" style="margin: 5px 10px 0 12px"></div>
+                <div class="bianker_require_detail_content_label_icofont">实名认证</div>
+            </a>
+            <a href="#" class="bianker_require_detail_content_label_ico2">
+                <div class="ico5-4 fl" style="margin: 5px 10px 0 12px"></div>
+                <div class="bianker_require_detail_content_label_icofont">手机认证</div>
+            </a>
+        </div>
+        <button class="btn bianker_require_content_button">去认证</button>
+        <pre style="background-color: #FFFFFF;font-size:16px;font-family:'微软雅黑 Regular'!important;border: none!important;margin:0 0 40px 28px!important;padding-left: 0;padding-right:28px;line-height: 1.5;color: #323232!important;padding-top: 0!important;">
+具体需求：
+心之明社会工作服务中心《婚姻昏因》介绍视频制作:
+一、概况
+书名：《婚姻昏因——命中注定爱上你》
+婚姻是灵魂的需求,学习是生命的需要！
+面对，持续面对，面对到底！
+二、本书出版说明：
+很多人追求“灵魂伴侣”和“完美的婚姻”，以至于执着地改变对方、改造对方，即使硝烟弥漫，也在所不惜……
+夫妻透过爱而结合，但婚后，为何夫妻之心越来越远，幸福感越来越低？那是因为夫妻都忘记结婚的初衷，忘记了探寻生活不如意背后的原因，
+忘记察觉爱的存在。这是各有问题的5对夫妻，也是世间夫妻相处模式的不同代表；他们通过学习，婚姻生活发生了极大的翻转。5对夫妻升起无比的勇气，发起无比的慈悲心，传播心灵学堂“我幸福了，让更多的人幸福”的理念，把各自学习前后的改变记录下来，启迪有缘之人，于是留下了文字传世。
+        </pre>
 
 
-        <div class="row" style="border-top: 1px solid #e1e1e1;margin-top: 60px"><p style="font-size: 14px;color: #6a6a6a;margin:10px 0 10px 28px">官方提供线上担保交易，保障您的资金安全，且不会收取您任何佣金。80%的欺诈、资金盗取均由线下交易导致，请勿线下交易。</p></div>
+
+
+        <div class="bianker_require_content_ad_bottom">官方提供线上担保交易，保障您的资金安全，且不会收取您任何佣金。80%的欺诈、资金盗取均由线下交易导致，请勿线下交易。</div>
     </div>
 </div>
 <div class="content">
@@ -137,10 +161,10 @@
         <div class="row" style="margin: 40px 0 0 20px;border-bottom: 1px solid #e1e1e1">
             <div class="ico6-7"></div>
             <div style="margin: 2px 0 0 10px;font-size: 16px;font-weight: bold;color: #323232;float: left">编客稿件</div>
-            <button class="btn btn-primary" style="float: right;width: 100px;height: 28px;line-height: 0;border-radius: 2px;background-color: #2baffa;border: none;margin-bottom: 26px">确定</button>
+            <button class="btn btn-primary" style="float: right;margin-right: 28px;width: 100px;height: 28px;line-height: 0;border-radius: 2px;background-color: #2baffa;border: none;margin-bottom: 26px">确定</button>
         </div>
 
-        <div class="row" style="margin: 0 0 0 20px">
+        <div class="row" style="margin: 0 28px 0 28px">
             <div style="margin: 10px 0 0 0;font-size: 12px;color: #2baffa;float: left">温馨提示 : 该选项为单选</div>
         </div>
         <div class="row" style="margin: 20px 0 0 20px;height: auto;border-bottom: 1px solid #e1e1e1">
@@ -188,15 +212,15 @@
             </div>
 
             <div class="row">
-                <p>我在编客网上交易有安全保障吗？</p>
-                <p>答：1)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
-                <p style="text-indent: 2em">2)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
+                <p>我在趣编网上交易有安全保障吗？</p>
+                <p>答：1)趣编网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
+                <p style="text-indent: 2em">2)趣编网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
             </div>
 
             <div class="row" style="margin-top: 40px">
-                <p>我在编客网上交易有安全保障吗？</p>
-                <p>答：1)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
-                <p style="text-indent: 2em">2)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
+                <p>我在趣编网上交易有安全保障吗？</p>
+                <p>答：1)趣编网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
+                <p style="text-indent: 2em">2)趣编网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
             </div>
         </div>
     </div>

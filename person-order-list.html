@@ -1,0 +1,46 @@
+    <div class="container bianker_content_wrap">
+        <div class="fl bianker_employer_myorder_main_left">
+            <div class="bianker_user_img_wrap">
+                <img src="../img/1.png">
+            </div>
+            <div class="bianker_user-name text-center" ng-bind="cuser.nickname">TEMSINS</div>
+            <div class="text-center">账户 :<span class="active-color" >￥{{cuser.balance}}</span></div>
+            <div class="bianker_divide_line"></div>
+            <div class="bianker_menu">
+                <div class="bianker_employer_myorder_main_left_income_detail">
+                    <div>查看收支明细</div>
+                    <div class="ico5-1 bianker_my_wallet_ico"></div>
+                    <div class="ico9-7">
+                        <p>趣编网资金由编客钱包管理，钱包支持提现，查询金额等资金业务!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bianker_menu text-center active-color">我的订单</div>
+            <div class="bianker_menu text-center">评价管理</div>
+        </div>
+        <div class="fl bianker_employer_myorder_main_right">
+            <div class="bianker_title_box"><span>我的订单</span></div>
+            <ul class="bianker_employer_myorder_main_right_nav">
+                <li class=" text-center" ng-class="{'active-color':state==2}" ng-click="loadStateDate(2)">投稿中<span>{{order_state['2'] || 0}}</span></li>
+                <li class=" text-center" ng-class="{'active-color':state==3}" ng-click="loadStateDate(3)">已关闭<span>{{order_state['3'] || 0}}</span></li>
+                <li class=" text-center" ng-class="{'active-color':state==4}" ng-click="loadStateDate(4)">待评价<span>{{order_state['4'] || 0}}</span></li>
+                <li class=" text-center" ng-class="{'active-color':state==5}" ng-click="loadStateDate(5)">已结束<span>{{order_state['5'] || 0}}</span></li>
+                <li class=" text-center" ng-class="{'active-color':state==6}" ng-click="loadStateDate(6)">退款<span>{{order_state['6'] || 0}}</span></li>
+                <li class=" text-center" ng-class="{'active-color':state==1}" ng-click="loadStateDate(1)">查看全部订单</li>
+            </ul>
+            <div class="bianker_employer_myorder_main_right_content" ng-repeat="order in orderList">
+                <div class="col-lg-12 bianker_employer_myorder_main_right_content_list1">
+                    <div class="bianker_employer_myorder_main_right_content_list1_left">{{order.title}} - {{_dict.trade_type[order.trade_type]}}</div>
+                    <div class="bianker_employer_myorder_main_right_content_list1_right" ng-click="go_detail(order.id,order.userids)">立即查看</div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="bianker_employer_myorder_main_right_content_list_font">赏金 : </div>
+                    <div class="fl active-color">￥{{order.reward_rmb}}</div>
+                    <div class="bianker_employer_myorder_main_right_content_list_font">- {{_dict.need_status_bianker[order.status]}}</div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 bianker_pagination_wrap" id="laypage" style="text-align: right;padding-top: 6px !important;">
+
+        </div>
+    </div>

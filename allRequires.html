@@ -1,0 +1,135 @@
+    <div class="container bianker_all_require_content_wrap">
+        <ul class="bianker_require_detail_nav">
+            <li class="fl bianker_all_require_content_nav_header">需求大厅</li>
+            <li class="fl bianker_all_require_content_nav_ico"><div class="ico3-3"></div></li>
+            <li class="fl bianker_all_require_content_nav_first">
+                <div class="text-center">
+                    全部分类<span class="caret"></span>
+                </div>
+            </li>
+            <li class="fl bianker_all_require_content_nav_ico"><div class="ico3-3"></div></li>
+            <li class="fl bianker_all_require_content_nav_second">
+                <input type="text" class="bianker_all_require_content_nav_second_input" placeholder="当前条件下搜索">
+                <div class="bianker_all_require_content_nav_second_input_icon">
+                    <div class="ico4-4"></div>
+                </div>
+            </li>
+        </ul>
+
+        <div class="bianker_all_require_header_wrap">
+            <div class="bianker_all_require_header_detail_first">
+                <div class="bianker_all_require_header_detail_font1">交易模式 : </div>
+                <div class="text-center bianker_all_require_header_detail_font_all">全部</div>
+                <div class="bianker_all_require_header_detail_font_1">投稿</div>
+            </div>
+            <div class="bianker_all_require_header_detail">
+                <div class="bianker_all_require_header_detail_font2">赏&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp金 : </div>
+                <div class="text-center bianker_all_require_header_detail_font_all1">全部</div>
+                <div class="bianker_all_require_header_detail_font_2">已托管</div>
+            </div>
+            <div class="bianker_all_require_header_detail">
+                <div class="bianker_all_require_header_detail_font2">需求时间 : </div>
+                <div class="text-center bianker_all_require_header_detail_font_all1">全部</div>
+                <div class="bianker_all_require_header_detail_font_2">今日发布</div>
+            </div>
+            <div class="bianker_all_require_header_detail_last">
+                <div class="bianker_all_require_header_detail_font1">投标情况 : </div>
+                <div class="text-center bianker_all_require_header_detail_font_all">全部</div>
+                <div class="bianker_all_require_header_detail_font_1">投稿未满</div>
+            </div>
+        </div>
+    </div>
+    <div class="container bianker_all_require_mid_content_wrap">
+        <button class="btn bianker_all_require_mid_content_ing_btn">进行中</button>
+        <ul class="bianker_all_require_mid_content_nav">
+            <li class="text-center bianker_all_require_mid_content_nav_li1">默认</li>
+            <li class="bianker_all_require_mid_content_nav_li2">
+                <div class="bianker_all_require_mid_content_nav_li2_font_wrap">
+                    <div class="bianker_all_require_mid_content_nav_li2_font fl">发布时间</div>
+                    <div class="ico4-2 bianker_all_require_mid_content_nav_li2_icon fl"></div>
+                </div>
+            </li>
+            <li class="bianker_all_require_mid_content_nav_li3">
+                <div class="bianker_all_require_mid_content_nav_li3_font_wrap">
+                    <div class="bianker_all_require_mid_content_nav_li3_font fl">剩余时间</div>
+                    <div class="ico4-2 bianker_all_require_mid_content_nav_li3_icon fl"></div>
+                </div>
+            </li>
+            <li class="bianker_all_require_mid_content_nav_li4">
+                <div class="bianker_all_require_mid_content_nav_li4_font_wrap">
+                    <div class="bianker_all_require_mid_content_nav_li4_font fl">价格</div>
+                    <div class="ico4-2 bianker_all_require_mid_content_nav_li4_icon fl"></div>
+                </div>
+            </li>
+            <li class="bianker_all_require_mid_content_nav_li5">
+                <div class="bianker_all_require_mid_content_nav_li5_input">
+                    <div class="fl">￥</div>
+                    <input type="text" class="bianker_all_require_mid_content_nav_li5_input1"/>
+                    <div class="fl">至</div>
+                    <input type="text" class="bianker_all_require_mid_content_nav_li5_input2"/>
+                    <button class="btn bianker_all_require_mid_content_nav_li5_button">确定</button>
+                </div>
+            </li>
+            <li class="bianker_all_require_mid_content_nav_li6">
+                <div class="bianker_all_require_mid_content_nav_li6_font">地址<div class="ico4-3 bianker_all_require_mid_content_nav_li6_icon"></div></div>
+            </li>
+        </ul>
+
+        <div class="bianker_all_require_mid_content_neirong" ng-repeat="order in orderList">
+            <div class="bianker_all_require_mid_content_neirong_left">
+                <div class="fl"><span class="active-color">￥{{order.reward_rmb}} </span ><a ui-sref="app.requireDetail({id:order.id,userids:order.userids})" ng-bind-html="markSearchWord(order.title) | trustHtml"></a></div>
+                <div class="bianker_all_require_mid_content_neirong_left_font1 fr" ng-bind="_dict.need_status_bianker[order.status]">投稿中</div>
+                <div class="bianker_all_require_mid_content_neirong_left_font2 fr"><span class="active-color" ng-bind="order.finishedNum">4</span>位编客参与</div>
+                <div class="active-color fr bianker_all_require_mid_content_neirong_left_font3" >已托管</div>
+                <br>
+                <div class="bianker_all_require_mid_content_neirong_left_font4 cutStr" ng-bind="unescapeHtml(order.summary)" style="width: 50%">主要用户电子书宣传、介绍使用、视频时长控制在1分钟左右，需要提供多种时长的片段视频。</div>
+                <div class="bianker_all_require_mid_content_neirong_left_font5">仅剩<span>{{order.max_contribution - order.finishedNum}}</span>个投稿机会</div>
+            </div>
+            <div class="text-center bianker_all_require_mid_content_neirong_left_font6" ng-if="order.attachment">附件</div>
+        </div>
+        <div class="bianker_all_require_mid_content_bottom_nav">
+            <div class="bianker_all_require_mid_content_bottom_nav_quick_search">
+                <input type="text" class="bianker_all_require_mid_content_bottom_nav_quick_search_input" placeholder="快速搜索">
+                <div class="bianker_all_require_mid_content_bottom_nav_quick_search_icon">
+                    <div class="ico4-4" style=""></div>
+                </div>
+            </div>
+            <ul class="bianker_pagination_main fr" id="laypage" style="margin-top: 5px;"></ul>
+        </div>
+    </div>
+    <div class="container index_recommend_block last">
+        <div class="title">热门推荐</div>
+
+        <div class="index_recommend_block_video_img_wrap clearlf">
+            <a href="#">
+                <div class="video_img fl">
+                    <div class="video_img_mask"></div>
+                    <img src="Images/1.png">
+                    <div class="text-center video_img_font">
+                        《Doctors》第九集收视出炉
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="video_img fl">
+                    <div class="video_img_mask"></div>
+                    <img src="Images/2.png">
+                    <div class="text-center video_img_font">
+                        《Doctors》第九集收视出炉
+                    </div>
+                </div>
+            </a>
+            <a href="#">
+                <div class="video_img fl">
+                    <div class="video_img_mask"></div>
+                    <img src="Images/4.png">
+                    <div class="text-center video_img_font">
+                        《Doctors》第九集收视出炉
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+
+

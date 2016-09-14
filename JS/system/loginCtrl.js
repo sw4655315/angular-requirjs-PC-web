@@ -1,7 +1,7 @@
 define(function (require) {
      'use strict';
      var app = require('app');
-     var _kit,_stg,_state;
+     var _kit,_stg,_state,_search;
      
      app.controller('loginCtrl',['$scope','$rootScope',function ($scope,$rootScope) {
         var accountSignin = $scope.accountSignin = true;
@@ -15,6 +15,9 @@ define(function (require) {
             if(!isPass) return false;
             signin(form);
         }
+         _search = $scope._search = {
+             tab_index:1
+         }
      }]);
      /**
       * 验证输入
@@ -35,7 +38,7 @@ define(function (require) {
       * 登录操作
       */
      function signin (form) {
-        _kit.ap('user/signin',form,function(res){
+        _kit.ap('user/signin',form,function(res){ //调用登录接口
             _stg.add('sid',res.sessionid);
             _stg.add('user',res);
             _state.go('app.index');

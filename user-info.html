@@ -1,0 +1,60 @@
+    <div class="container bianker_content_wrap clearfix">
+        <div class="fl bianker_content_main_left " style="min-height: 870px">
+            <div class="bianker_user_img_wrap">
+                <img src="../img/1.png">
+            </div>
+            <div class="bianker_user-name text-center" ng-bind="cuser.nickname"></div>
+            <div class="text-center">账户 :<span class="active-color">￥1000</span></div>
+            <div class="bianker_divide_line"></div>
+            <div class="bianker_menu" ui-sref="app.userSetting">我的账号</div>
+            <div class="bianker_menu active-color">个人资料</div>
+            <div class="bianker_menu">我的钱包</div>
+        </div>
+        <div class="fr bianker_content_main_right" style="min-height: 870px">
+            <div class="bianker_title_box"><span>完善信息</span></div>
+
+            <div class="bianker_title_box_tip">亲爱的<span ng-bind="cuser.nickname"></span>,身份认证后，才能开始接单哦</div>
+            <div class="bianker_user_info_img_wrap">
+                <div class="fl bianker_user_info_img_font">当前头像</div>
+                <div class="fl bianker_user_info_img_main"><img src="../img/photo.png"></div>
+            </div>
+
+            <div class="bianker_user_info_wrap">
+                <div class="fl bianker_user_info_labelfont">昵&nbsp&nbsp称</div>
+                <input type="text" class="bianker_user_info_input fl" ng-model="loginForm.nickname">
+            </div>
+            <div class="bianker_user_info_wrap">
+                <div class="fl bianker_user_info_labelfont">*手机号码</div>
+                <input type="text" class="bianker_user_info_input fl" ng-model="loginForm.mobile">
+            </div>
+            <div class="bianker_user_info_wrap">
+                <div class="fl bianker_user_info_labelfont">*所在城市</div>
+                <input select-address p="p" c="c" a="a" d="d" ng-model="cuser.city" placeholder="请选择所在地" type="text" class="bianker_user_info_input fl" readonly="readonly" />
+            </div>
+            <div class="bianker_user_info_wrap">
+                <div class="fl bianker_user_info_labelfont">*账户类型</div>
+                <div class="fl bianker_user_info_checkbox">
+                    <label class="checkbox-inline">
+                        <input type="radio" name="optionsRadiosinline"
+                               value="option1" checked>男
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="optionsRadiosinline"
+                               value="option2">女
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="radio" name="optionsRadiosinline"
+                               value="option2">保密
+                    </label>
+                </div>
+            </div>
+            <div class="bianker_user_info_textarea_wrap">
+                <div class="fl bianker_user_info_labelfont">个性签名</div>
+                <textarea class="bianker_user_info_textarea"></textarea>
+            </div>
+            <div class="bianker_user_info_wrap">
+                <div class="fl bianker_user_info_labelfont"></div>
+                <button class="btn bianker_user_info_save_btn">保存</button>
+            </div>
+        </div>
+    </div>

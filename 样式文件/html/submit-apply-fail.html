@@ -9,155 +9,137 @@
     <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
-<div class="header">
-    <nav class="navbar navbar-default">
-        <div class="container">
-            <div class="navbar-header">
-                <div class="ico2"></div>
-                <a class="navbar-brand" href="#" style="font-size: 14px">编客，陪你做视频的设计师</a>
-            </div>
-
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">我的订单</a></li>
-                    <li><a href="#">我是雇主</a></li>
-                    <li><a href="#">我是编客</a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">登录<span class="caret"></span></a></li>
-                    <li><a href="#">注册</a></li>
-                    <li><a href="#">丨</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container">
-        <div class="pure-g">
-            <div class="pure-u-lg-1-24 text-center">需求</div>
-            <div class="pure-u-lg-1-24 text-center" style="background: #323232;color: #FFFFFF">素材</div>
-            <div class="pure-u-lg-1-24 text-center">编客</div>
+<header>
+    <div class="nav_wrap">
+        <div class="container clearfix">
+            <a href="../index.html">
+                <div class="nav_header fl">
+                    <div class="nav_header_logo ico9-6 fl"></div>
+                    <div class="nav_header_logofont fl">编客，陪你做视频的设计师</div>
+                </div>
+            </a>
+            <a href="#"><div class="ico8-5 nav_footer_logo fr"></div></a>
+            <a href="#"><div class="nav_i_am_author fr">我是编客</div></a>
+            <a href="#"><div class="nav_i_am_employeer fr">我是雇主</div></a>
+            <a href="#"><div class="nav_my_list fr">我的订单</div></a>
+            <a href="../register.html">
+                <div class="text-center nav_register fr">注册</div>
+            </a>
+            <a href="../login.html">
+                <div class="text-center nav_login fr">
+                    登录<div class="ico1-3 nav_login_logo"></div>
+                </div>
+            </a>
         </div>
     </div>
+    <div class="container search_select clearfix">
+        <div class="text-center fl">需求</div>
+        <div class="text-center fl active">素材</div>
+        <div class="text-center fl">编客</div>
+    </div>
     <div class="container">
-        <div class="pure-u-lg-2-3">
-            <div class="input-group">
-                <span class="input-group-addon Magnifier"><div class="ico5"></div></span>
-                <input type="text" class="form-control search">
-                <span class="input-group-btn">
-                  <button class="btn btn-default" type="button">搜索</button>
-            </span>
+        <div class="index_search fl clearfix">
+            <div class="index_search_ico_wrap fl">
+                <div class="ico1-5 index_search_ico_main"></div>
             </div>
+            <input type="text" class="index_search_input fl">
+            <div class="btn index_search_button">搜索</div>
         </div>
-        <div class="pure-u-lg-1-12 text-center" style="font-size: 16px;line-height: 2.5">
+        <div class="text-center index_or fl">
             or
         </div>
-        <div class="pure-u-lg-1-5 text-center">
-            <button class="btn btn-default btn-block" type="button">发布</button>
+        <div class="text-center dropdown fr">
+            <div class="btn index_publish" id="publish">
+                免费发布需求<div class="ico1-4 index_publish_ico"></div>
+            </div>
+            <ul class="index_publish_drop_wrap">
+                <li>如何快速发布需求</li>
+                <li>Ⅰ选择类目</li>
+                <li>Ⅱ描述需求</li>
+                <li>Ⅲ设置赏金</li>
+                <li>Ⅳ确定需求</li>
+                <div class="index_publish_drop_submitBtn_wrap">
+                    <button class="btn index_publish_drop_submitBtn_main">
+                        立即发布需求
+                    </button>
+                </div>
+            </ul>
         </div>
     </div>
-</div>
+</header>
+
 <div class="content">
-    <div style="width: 100%;height: 34px;background-color: #323232;margin-top: 64px">
+    <div class="bianker_navbar">
         <div class="container">
-            <div class="ico4-1" style="float: left;margin-top: 8px"></div>
-            <div style="float: left;margin:5px 0 0 8px;font-size: 16px;font-weight: bold;color: #FFFFFF">我是编客</div>
-            <div style="float: left;width: 118px;height: 34px;border: 2px solid #323232;font-size: 16px;font-weight: bold;color: #323232;background: #FFFFFF;text-align: center;line-height: 34px;margin-left: 110px">个人首页</div>
-            <div style="float: left;width: 118px;height: 34px;border: 2px solid #323232;font-size: 16px;font-weight: bold;color: #FFFFFF;background: #323232;text-align: center;line-height: 34px;">账号设置</div>
-            <div style="float: left;width: 118px;height: 34px;border: 2px solid #323232;font-size: 16px;font-weight: bold;color: #FFFFFF;background: #323232;text-align: center;line-height: 34px;">我的消息</div>
-        </div>
-    </div>
-    <div class="container">
-        <div style="margin: 0 auto;width: 750px;height: auto">
-            <div style="width: 300px;height: auto">
-                <div class="" style="width: auto;margin:40px 0 40px 80px;font-weight: bold;color: #323232;letter-spacing: 14px">
-                    · 认证申请 ·
-                </div>
-            </div>
-            <div style="width: 248px;height: 38px;float: left">
-                <div style="height: 50px;width:50px;background-color: #2baffa;border-radius:50%;margin:  0 auto;color: #FFFFFF;font-size: 20px;text-align: center;line-height: 2.4">
-                    1
-                </div>
-                <div style="height: 1px;border: 1px solid #2baffa;width: 50%;margin-top: -25px;margin-left: 124px;text-align: center"></div>
-                <div class="text-center" style="margin-top: 34px;font-size: 14px;color: #2baffa">完善用户信息</div>
-            </div>
-            <div style="width: 248px;height: 38px;float: left">
-                <div style="height: 50px;width:50px;background-color: #2baffa;border-radius:50%;margin:  0 auto;color: #FFFFFF;font-size: 20px;text-align: center;line-height: 2.4">
-                    2
-                </div>
-                <div style="height: 1px;border: 1px solid #2baffa;width: 50%;margin-top: -25px;text-align: center;float: left"></div>
-                <div style="height: 1px;border: 1px solid #e1e1e1;width: 99px;margin-top: -25px;text-align: center;float: right"></div>
-                <div class="text-center" style="margin-top: 12px;font-size: 14px;color: #2baffa">提交认证信息</div>
-            </div>
-            <div style="width: 248px;height: 38px;float: left">
-                <div style="height: 50px;width:50px;background-color: #e1e1e1;border-radius:50%;margin:  0 auto;color: #FFFFFF;font-size: 20px;text-align: center;line-height: 2.4">
-                    3
-                </div>
-                <div style="height: 1px;border: 1px solid #e1e1e1;width: 50%;margin-top: -25px;text-align: center"></div>
-                <div class="text-center" style="margin-top: 34px;font-size: 14px;color: #e1e1e1">认证成功，开始接单</div>
+            <div class="ico4-1 bianker_navbar_icon fl"></div>
+            <div class="bianker_navbar_header fl">我是编客</div>
+            <div class="bianker_navbar_private_index_active fl">个人首页</div>
+            <div class="bianker_navbar_account_setting fl">账号设置</div>
+            <div class="bianker_navbar_my_message fl">我的消息</div>
+            <div class="bianker_navbar_i_am_employer fr">
+                <div class="fl">我是雇主</div>
+                <div class="ico3-4 fl"></div>
             </div>
         </div>
     </div>
 
-    <div class="container" style="border: 1px solid #e1e1e1;margin-top: 80px;padding: 0;margin-bottom: 98px">
-        <div class="col-lg-2" style="height: auto;background: #eaeaea">
-            <div class="row">
-                <div style="margin: 40px 0 30px 54px">
-                    <div style="width: 96px;height: 96px;border: 2px solid #e3e3e3;border-radius:50%;"><img src="../img/photo.png" style="height: 100%;width: 100%"></div>
-                </div>
+    <div class="container">
+        <div class="bianker_employee_step_wrap">
+            <div class="bianker_employee_step_title">· 认证申请 ·</div>
+            <div class="bianker_employee_step fl">
+                <div class="bianker_employee_step_bg active">1</div>
+                <div class="bianker_employee_step_line1 active"></div>
+                <div class="text-center bianker_employee_step_font active">完善用户信息</div>
             </div>
-            <div class="row text-center">
-                <div class="user-name">TEMSINS</div>
+            <div class="bianker_employee_step fl">
+                <div class="bianker_employee_step_bg active">2</div>
+                <div class="bianker_employee_step_line2 active"></div>
+                <div class="text-center bianker_employee_step_font active">提交认证信息</div>
             </div>
-            <div class="row text-center">
-                <div>账户 :<span class="money-color">￥1000</span></div>
-            </div>
-            <div style="width: 159px;height: 30px;border-bottom: 1px solid #aeadad;margin: 0 auto"></div>
-            <div class="row text-center" style="margin-top: 40px">
-                查看收支明细
-            </div>
-            <div class="row text-center" style="margin-top: 40px">
-                身份认证
-            </div>
-            <div class="row text-center" style="margin-top: 40px">
-                我的订单
-            </div>
-            <div class="row text-center" style="margin-top: 40px">
-                我的灵感
-            </div>
-            <div class="row text-center" style="margin-top: 40px">
-                我的素材
-            </div>
-            <div class="row text-center" style="margin-top: 40px">
-                我的收藏
-            </div>
-            <div class="row text-center" style="margin-top: 40px;padding-bottom: 40px">
-                播放记录
+            <div class="bianker_employee_step fl">
+                <div class="bianker_employee_step_bg">3</div>
+                <div class="bianker_employee_step_line3"></div>
+                <div class="text-center bianker_employee_step_font">认证成功，开始接单</div>
             </div>
         </div>
-        <div class="col-lg-10" style="height: auto">
-            <ul class="nav nav-tabs" style="margin-top: 40px;margin-bottom: 180px">
-                <li><a data-toggle="tab" aria-expanded="true"></a></li>
-                <li class="active"><a data-toggle="tab" aria-expanded="true">认证申请</a></li>
-            </ul>
-            <div class="ico4-6" style="margin: 0 auto"></div>
-            <div class="row text-center money-color" style="margin-top: 20px">对不起，您填写的信息有误，请<u>重新申请</u></div>
+    </div>
+
+    <div class="container bianker_submit_apply_wrap">
+        <div class="fl bianker_content_main_left bianker_employee_content_main_left">
+            <div class="bianker_user_img_wrap">
+                <img src="../img/1.png">
+            </div>
+            <div class="bianker_user-name text-center">TEMSINS</div>
+            <div class="text-center">账户<span style="padding:0 8px;">:</span><span class="active-color">￥</span><span class="active-color">1000</span></div>
+            <div class="bianker_divide_line"></div>
+            <div class="bianker_menu text-center">查看收支明细</div>
+            <div class="bianker_menu text-center active-color">身份认证</div>
+            <div class="bianker_menu text-center">我的订单</div>
+            <div class="bianker_menu text-center">我的灵感</div>
+            <div class="bianker_menu text-center">我的素材</div>
+            <div class="bianker_menu text-center">我的收藏</div>
+            <div class="bianker_menu_bottom text-center">播放记录</div>
+        </div>
+        <div class="fr bianker_content_main_right">
+            <div class="bianker_title_box"><span>认证申请</span></div>
+            <div class="ico4-6" style="margin: 0 auto;margin-top: 180px"></div>
+            <div class="row text-center active-color" style="margin-top: 16px;font-weight: bold;">对不起，您填写的信息有误，请<a href="#" style="border-bottom: 2px solid #2baffa;padding-bottom: 4px;color: #2baffa">重新申请</a></div>
         </div>
     </div>
 </div>
 
 <div class="footer">
-    <div style="width: 100%;height: 94px;background-color: #222222">
+    <div class="index_footer_main">
         <div class="container">
-            <div style="margin:30px 58px 10px 0;float:left;color: #FFFFFF;font-size: 14px">关于编客</div>
-            <div style="margin:30px 58px 10px 0;float:left;color: #FFFFFF;font-size: 14px">用户协议</div>
-            <div style="margin:30px 58px 10px 0;float:left;color: #FFFFFF;font-size: 14px">客服中心</div>
-            <div style="margin:30px 58px 10px 0;float:left;color: #FFFFFF;font-size: 14px">商务合作</div>
-
+            <ul class="link">
+                <li>关于编客</li>
+                <li>用户协议</li>
+                <li>客服中心</li>
+                <li>商务合作</li>
+            </ul>
+            <br>
+            <div class="copyright">copyright© 2012-2016 Bianker.All Rights Reserved</div>
         </div>
-        <div class="container">
-            <div style="color: #FFFFFF;font-size: 14px">copyright© 2012-2016 Bianker.All Rights Reserved</div>
-        </div>
-
     </div>
 </div>
 

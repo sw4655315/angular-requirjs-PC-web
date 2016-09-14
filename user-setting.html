@@ -1,0 +1,49 @@
+    <div class="container bianker_content_wrap clearfix">
+        <div class="bianker_content_main_left " style="min-height: 612px">
+            <div class="bianker_user_img_wrap">
+                <img src="../img/1.png">
+            </div>
+            <div class="bianker_user-name text-center" ng-bind="cuser.nickname">TEMSINS</div>
+            <div class="text-center">账户 :<span class="active-color">¥{{cuser.balance}}</span></div>
+            <div class="bianker_divide_line"></div>
+            <div class="bianker_menu active-color">我的账号</div>
+            <div class="bianker_menu" ui-sref="app.userInfo">个人资料</div>
+            <div class="bianker_menu">我的钱包</div>
+        </div>
+        <div class="bianker_content_main_right">
+            <div class="bianker_title_box"><span ng-bind="cuser.nickname">TEMSINS</span></div>
+            <div class="bianker_user_setting_header_wrap">
+                <div class="bianker_user_setting_labelfont">昵&nbsp&nbsp称&nbsp&nbsp:</div>
+                <div class="bianker_user_setting_labelcontent" ng-bind="cuser.nickname">TEMSINS</div>
+            </div>
+            <div class="bianker_user_setting_wrap">
+                <div class="bianker_user_setting_labelfont">已绑定手机号码&nbsp&nbsp:</div>
+                <div class="bianker_user_setting_labelcontent" ng-bind="cuser.mobile">12345678912</div>
+            </div>
+            <div class="bianker_user_setting_wrap">
+                <div class="bianker_user_setting_labelfont">登录密码&nbsp&nbsp:</div>
+                <div class="bianker_user_setting_labelcontent">*************</div>
+                <div class="bianker_user_setting_edit_btn" ng-click="_editable.edit=!_editable.edit">修改</div>
+                <div class="ico5-{{_editable.edit?'6':'7'}} bianker_user_setting_edit_ico"></div>
+            </div>
+            <div class="bianker_user_setting_divide_line"></div>
+            <span ng-if="_editable.edit">
+            <div class="bianker_user_setting_edit_header_wrap">
+                <div class="bianker_user_setting_edit_font">原密码&nbsp&nbsp:</div>
+                <input type="password" class="bianker_user_setting_edit_input" ng-model="_form.opwd">
+            </div>
+            <div class="bianker_user_setting_edit_wrap">
+                <div class="bianker_user_setting_edit_font">新密码&nbsp&nbsp:</div>
+                <input type="password" class="bianker_user_setting_edit_input" ng-model="_form.npwd">
+            </div>
+            <div class="bianker_user_setting_edit_wrap">
+                <div class="bianker_user_setting_edit_font">确认新密码&nbsp&nbsp:</div>
+                <input type="password" class="bianker_user_setting_edit_input" ng-model="_form.cnpwd">
+            </div>
+            <div class="bianker_user_setting_edit_bottom_wrap">
+                <button class="btn bianker_user_setting_edit_save_btn" ng-click="savePassword()">保存</button>
+            </div>
+            </span>
+        </div>
+    </div>
+

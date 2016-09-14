@@ -1,16 +1,3 @@
-<div class="bianker_navbar">
-        <div class="container">
-            <div class="ico4-1 bianker_navbar_icon fl"></div>
-            <div class="bianker_navbar_header fl">我是编客</div>
-            <div class="bianker_navbar_private_index_active fl">个人首页</div>
-            <div class="bianker_navbar_account_setting fl">账号设置</div>
-            <div class="bianker_navbar_my_message fl">我的消息</div>
-            <div class="bianker_navbar_i_am_employer fr">
-                <div class="fl">我是雇主</div>
-                <div class="ico3-4 fl"></div>
-            </div>
-        </div>
-    </div>
     <div class="container">
         <div class="bianker_employee_step_wrap">
             <div class="bianker_employee_step_title">· 认证申请 ·</div>
@@ -35,31 +22,33 @@
     <div class="container bianker_content_wrap clearfix">
         <div class="fl bianker_content_main_left bianker_employee_content_main_left">
             <div class="bianker_user_img_wrap">
-                <img src="../img/1.png">
+                <img ng-src="{{cuser.avator}}" onerror="this.src='../Images/photo.png'">
             </div>
-            <div class="bianker_user-name text-center" ng-bind="cuser.nickname">TEMSINS</div>
-            <div class="text-center">账户<span style="padding:0 8px;">:</span><span class="active-color">￥</span><span class="active-color" ng-bind="cuser.">1000</span></div>
+            <div class="bianker_user-name text-center" ng-bind="cuser.nickname"></div>
+            <div class="text-center">账户<span style="padding:0 8px;">:</span><span class="active-color">￥</span><span class="active-color" ng-bind="cuser.balance">1000</span></div>
             <div class="bianker_divide_line"></div>
-            <div class="bianker_menu text-center">查看收支明细</div>
-            <div class="bianker_menu text-center active-color">身份认证</div>
-            <div class="bianker_menu text-center">我的订单</div>-
-            <div class="bianker_menu text-center">我的灵感</div>
-            <div class="bianker_menu text-center">我的素材</div>
-            <div class="bianker_menu text-center">我的收藏</div>
-            <div class="bianker_menu_bottom text-center">播放记录</div>
+
+            <div class="bianker_menu"><a ui-sref="-">查看收支明细</a></div>
+            <div class="bianker_menu active"><a ui-sref="app.personIndex">身份认证</a></div>
+            <div class="bianker_menu"><a ui-sref="app.personOrderList">我的订单</a></div>
+            <div class="bianker_menu"><a ui-sref="-">我的灵感</a></div>
+            <div class="bianker_menu"><a ui-sref="-">我的素材</a></div>
+            <div class="bianker_menu"><a ui-sref="-">我的收藏</a></div>
+            <div class="bianker_menu_bottom"><a ui-sref="-">播放记录</a></div>
+
         </div>
         <!-- 第一步 -->
-        <div ng-show="step == 1" class="fl bianker_content_main_right">
+        <div ng-show="step == 1" class="bianker_content_main_right fl">
             <div class="bianker_title_box"><span>完善信息</span></div>
 
             <div class="bianker_title_box_tip">亲爱的<span ng-bind="cuser.nickname"></span>,身份认证后，才能开始接单哦</div>
             <div class="bianker_user_info_img_wrap">
                 <div class="fl bianker_user_info_img_font">当前头像</div>
-                <div class="fl bianker_user_info_img_main"><img ng-src="{{cuser.avator}}" onerror="this.src='../img/photo.png'"></div>
+                <div class="fl bianker_user_info_img_main"><img ng-src="{{cuser.avator}}" onerror="this.src='../Images/photo.png'"></div>
             </div>
             <div class="bianker_user_info_wrap">
                 <div class="fl bianker_user_info_labelfont">昵&nbsp&nbsp称</div>
-                <input type="text" class="bianker_user_info_input fl" ng-model="cuser.nickname">
+                <input type="text" class="bianker_user_info_input fl" value="{{cuser.nickname}}">
             </div>
             <div class="bianker_user_info_wrap">
                 <div class="fl bianker_user_info_labelfont">*账户类型</div>
@@ -76,11 +65,11 @@
             </div>
             <div class="bianker_user_info_wrap">
                 <div class="fl bianker_user_info_labelfont">*手机号码</div>
-                <input type="text" class="bianker_user_info_input fl" ng-model="cuser.mobile">
+                <span ng-bind="cuser.mobile"></span>
             </div>
             <div class="bianker_user_info_wrap">
                 <div class="fl bianker_user_info_labelfont">*所在城市</div>
-                <input select-address p="p" c="c" a="a" d="d" ng-model="xxx" placeholder="请选择所在地" type="text" class="bianker_user_info_input fl" readonly="readonly" />
+                <input select-address p="p" c="c" a="a" d="d" ng-model="cuser.city" placeholder="请选择所在地" type="text" class="bianker_user_info_input fl" readonly="readonly" />
             </div>
             <div class="bianker_user_info_wrap">
                 <div class="fl bianker_user_info_labelfont"></div>
@@ -91,7 +80,7 @@
         <!-- 第二步 - 个人审核 -->
         <div ng-show="step == 2 && cuser.type == 1" class="fl bianker_content_main_right">
             <div class="bianker_title_box"><span>个人-提交认证信息</span></div>
-            <div class="bianker_title_box_tip">亲爱的<span>Temsins</span>,身份认证后，才能开始接单哦</div>
+            <!-- <div class="bianker_title_box_tip">亲爱的<span ng-bind="cuser.nickname"></span>,身份认证后，才能开始接单哦</div> -->
             <div class="bianker_company_confirm_container_right_block">
                 <div class="fl bianker_company_confirm_container_right_block_label">*身份证姓名</div>
                 <input type="text" class="fl bianker_company_confirm_container_right_block_input" ng-model="_form.name">
@@ -102,8 +91,9 @@
             </div>
             <div class="bianker_identity_confirm_container_right_block_bottom">
                 <div class="fl bianker_company_confirm_container_right_block_label">*手持证件照片</div>
-                <div class="fl bianker_company_confirm_container_right_block_img">
-                    <img src="../img/anli.png" style="width: 100%;height: 100%">
+                <div class="fl bianker_company_confirm_container_right_block_img" style="margin-right: 20px">
+                    <img ng-src="{{(_form.photo || 'Images/anli.png') | ngfDataUrl}}" style="width: 200px;height: 200px">
+                    <!-- <img src="Images/anli.png" style="width: 100%;height: 100%"> -->
                     <div class="text-center cankao">参考实例</div>
                 </div>
                 <div class="fl bianker_identity_confirm_container_right_block_font">
@@ -111,7 +101,11 @@
                     <div>照片需免冠，建议未化妆，手持证件人的五官清晰。</div>
                     <div>照片内容真实有效，不得做任何修改。</div>
                     <div>支持.jpg .jpeg .bmp .gif格式照片，大小不超过2MB</div>
-                    <button class="btn bianker_company_confirm_container_right_block_font_btn">选择文件</button>
+                    <button class="btn bianker_company_confirm_container_right_block_font_btn"
+                        ngf-select ng-model="_form.photo" name="photo" ngf-pattern="'image/*'"
+                        ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" 
+                        ngf-resize="{width: 100, height: 100}"
+                    >选择文件</button>
                 </div>
             </div>
             <div class="bianker_company_confirm_container_right_block_button">
@@ -121,35 +115,44 @@
             </div>
         </div>
         <!-- 第二步 - 企业审核 -->
-        <div ng-show="step == 2 && cuser.type == 2" class="fl bianker_content_main_right">
-            <div class="bianker_title_box"><span>个人-提交认证信息</span></div>
-            <div class="bianker_title_box_tip">亲爱的<span>Temsins</span>,身份认证后，才能开始接单哦</div>
+        <div ng-show="step == 2 && cuser.type != 1" class="fl bianker_content_main_right">
+            <div class="bianker_title_box"><span>企业-提交认证信息</span></div>
+            <!-- <div class="bianker_title_box_tip">亲爱的<span ng-bind="cuser.nickname"></span>,身份认证后，才能开始接单哦</div> -->
             <div class="bianker_company_confirm_container_right_block">
-                <div class="fl bianker_company_confirm_container_right_block_label">*身份证姓名</div>
-                <input type="text" class="fl bianker_company_confirm_container_right_block_input">
+                <div class="fl bianker_company_confirm_container_right_block_label">*企业名称</div>
+                <input type="text" class="fl bianker_company_confirm_container_right_block_input" ng-model="_form.name">
             </div>
             <div class="bianker_company_confirm_container_right_block">
-                <div class="fl bianker_company_confirm_container_right_block_label">*身份证号码</div>
-                <input type="text" class="fl bianker_company_confirm_container_right_block_input">
+                <div class="fl bianker_company_confirm_container_right_block_label">*营业执照注册号</div>
+                <input type="text" class="fl bianker_company_confirm_container_right_block_input" ng-model="_form.id_card">
             </div>
-            <div class="bianker_identity_confirm_container_right_block_bottom">
-                <div class="fl bianker_company_confirm_container_right_block_label">*手持证件照片</div>
-                <div class="fl bianker_company_confirm_container_right_block_img">
-                    <img src="../img/anli.png" style="width: 100%;height: 100%">
-                    <div class="text-center cankao">参考实例</div>
-                </div>
-                <div class="fl bianker_identity_confirm_container_right_block_font">
-                    <div>身份证上所有信息清晰可见，必须能看清证件照信息。</div>
-                    <div>照片需免冠，建议未化妆，手持证件人的五官清晰。</div>
-                    <div>照片内容真实有效，不得做任何修改。</div>
-                    <div>支持.jpg .jpeg .bmp .gif格式照片，大小不超过2MB</div>
-                    <button class="btn bianker_company_confirm_container_right_block_font_btn">选择文件</button>
+            <div class="bianker_company_confirm_container_right_block">
+                <div class="fl bianker_company_confirm_container_right_block_label">成立时间</div>
+                <input type="text" id="laydate" def-laydate class="fl bianker_company_confirm_container_right_block_input" ng-model="_form.formed"  readonly="readonly" min-date="laydate.now()">
+            </div>
+            <div class="bianker_company_confirm_container_right_block">
+                <div class="fl bianker_company_confirm_container_right_block_label">经营范围</div>
+                <input type="text" class="fl bianker_company_confirm_container_right_block_input" ng-model="_form.frame">
+            </div>
+
+            <div class="bianker_company_confirm_container_right_block_bottom">
+                <div class="fl bianker_company_confirm_container_right_block_label">经营执照副本扫描件</div>
+                <div class="fl bianker_company_confirm_container_right_block_font">
+                    <div>请上传营业执照清晰彩色原件扫描件或数码照</div>
+                    <div>在有效期内且年检章齐全(当年成立的无年检章)</div>
+                    <div>由中国大陆工商局颁发</div>
+                    <div>支持.jpg .jpeg .bmp .gif格式照片，大小不超过5MB</div>
+                    <button class="btn bianker_company_confirm_container_right_block_font_btn"
+                        ngf-select ng-model="_form.photo" name="photo" ngf-pattern="'image/*'"
+                        ngf-accept="'image/*'" ngf-max-size="20MB" ngf-min-height="100" 
+                        ngf-resize="{width: 100, height: 100}"
+                    >选择文件</button><span class="company-photo-name" ng-bind="_form.photo.name"></span>
                 </div>
             </div>
             <div class="bianker_company_confirm_container_right_block_button">
                 <div class="fl bianker_company_confirm_container_right_block_label"></div>
                 <button class="btn fl bianker_company_confirm_container_right_block_button_pre" ng-click="step = 1">上一步</button>
-                <button class="btn fl bianker_company_confirm_container_right_block_button_submit" ng-click="step = 3">提交申请</button>
+                <button class="btn fl bianker_company_confirm_container_right_block_button_submit" ng-click="go_step_3()">提交申请</button>
             </div>
         </div>
         <!-- 审核中 -->
@@ -162,35 +165,12 @@
         <div ng-show="step == 4" class="fr bianker_content_main_right">
             <div class="bianker_title_box"><span>认证申请</span></div>
             <div class="ico4-6" style="margin: 0 auto;margin-top: 180px"></div>
-            <div class="row text-center active-color" style="margin-top: 16px;font-weight: bold;">对不起，您填写的信息有误，请<a href="#" style="border-bottom: 2px solid #2baffa;padding-bottom: 4px;color: #2baffa">重新申请</a></div>
+            <div class="row text-center active-color" style="margin-top: 16px;font-weight: bold;">对不起，您填写的信息有误，请<a href="javascript:;" style="border-bottom: 2px solid #2baffa;padding-bottom: 4px;color: #2baffa" ng-click="reApply()">重新申请</a></div>
         </div>
         <!-- 审核成功 -->
-        <div ng-show="step == 5" class="fl bianker_content_main_right">
-            <div class="bianker_title_box"><span>个人信息</span></div>
-
-            <div class="bianker_title_box_tip">亲爱的<span>Temsins</span>,身份认证后，才能开始接单哦</div>
-            <div class="bianker_user_info_img_wrap">
-                <div class="fl bianker_user_info_img_font">当前头像</div>
-                <div class="fl bianker_user_info_img_main"><img src="../img/photo.png"></div>
-            </div>
-            <div class="bianker_user_info_wrap">
-                <div class="fl bianker_user_info_labelfont">昵&nbsp&nbsp称</div>
-                <span class="bianker_user_info_input fl">Temsins</span>
-            </div>
-            <div class="bianker_user_info_wrap">
-                <div class="fl bianker_user_info_labelfont">*账户类型</div>
-                <div class="fl bianker_user_info_checkbox">
-                        个人
-                </div>
-            </div>
-            <div class="bianker_user_info_wrap">
-                <div class="fl bianker_user_info_labelfont">*手机号码</div>
-                <span class="bianker_user_info_input fl">13123456789</span>
-            </div>
-            <div class="bianker_user_info_wrap">
-                <div class="fl bianker_user_info_labelfont">*所在城市</div>
-                <span class="bianker_user_info_input fl">北京</span>
-            </div>
+        <div ng-show="step == 5" class="fr bianker_content_main_right">
+            <div class="bianker_title_box"><span>认证申请</span></div>
+            <div class="ico4-6" style="margin: 0 auto;margin-top: 180px"></div>
+            <div class="row text-center active-color" style="margin-top: 16px;font-weight: bold;">恭喜您，您已通过认证，赶紧<a ui-sref="app.allRequires" style="border-bottom: 2px solid #2baffa;padding-bottom: 4px;color: #2baffa">去接单</a>吧!</div>
         </div>
     </div>
-</div>
