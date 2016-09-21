@@ -41,7 +41,7 @@ define(function (require) {
             //需求详情
             .state('app.requireDetail', {
                 url: '/require/detail/:id'
-                ,params:{'id':'','userids':''}
+                ,params:{'id':''}
                 ,views:{
                     'body': {
                       templateUrl: '../require-detail.html'
@@ -79,7 +79,8 @@ define(function (require) {
             })
             //登录
             .state('login', {
-                url: '/login'
+                url: '/login/:flag'
+                ,params:{'flag':''}
                 ,templateUrl: '../login.html'
                 ,controllerUrl: 'system/loginCtrl'
                 ,controller: 'loginCtrl'
@@ -118,38 +119,130 @@ define(function (require) {
                 }
                 ,cache:true
             })
-            //托管赏金
-            .state('app.moneyPay', {
-                url: '/moneyPay'
+            //个人首页-编客
+            .state('app.user_bk', {
+                url: '/user_bk'
+                ,abstract:true
                 ,views:{
                     'body': {
-                        templateUrl: '../money-pay.html'
-                        ,controllerUrl: 'system/moneyPayCtrl'
-                        ,controller: 'moneyPayCtrl'
+                        templateUrl: '../user-bk.html'
+                        ,controllerUrl: 'system/user_bkCtrl'
+                        ,controller: 'user_bkCtrl'
                         ,dependencies: ['system/_kit']
+                    }
+                }
+            })
+            //个人首页-编客-身份认证
+            .state('app.user_bk.index', {
+                url: '/index'
+                ,templateUrl: '../user-bk-index.html'
+                ,controllerUrl: 'system/bkIndexCtrl'
+                ,controller: 'bkIndexCtrl'
+                ,dependencies: ['system/_kit']
+            })
+            //个人首页-编客-身份认证
+            .state('app.user_bk.order_list', {
+                url: '/order_list'
+                ,templateUrl: '../user-bk-order-list.html'
+                ,controllerUrl: 'system/bkOrderListCtrl'
+                ,controller: 'bkOrderListCtrl'
+                ,dependencies: ['system/_kit']
+            })
+            //个人首页-雇主
+            .state('app.user_gz', {
+                url: '/user_gz'
+                ,abstract:true
+                ,views:{
+                    'body': {
+                        templateUrl: '../user-gz.html'
+                        ,controllerUrl: 'system/user_gzCtrl'
+                        ,controller: 'user_gzCtrl'
+                        ,dependencies: ['system/_kit']
+                    }
+                }
+            })
+            //个人首页-编客-身份认证
+            .state('app.user_gz.order_list', {
+                url: '/order_list'
+                ,templateUrl: '../user-gz-order-list.html'
+                ,controllerUrl: 'system/gzOrderListCtrl'
+                ,controller: 'gzOrderListCtrl'
+                ,dependencies: ['system/_kit']
+            })
+            //个人首页-编客-身份认证
+            .state('app.user_gz.evaluate_manage', {
+                url: '/evaluate_manage'
+                ,templateUrl: '../user-gz-evaluate-manage.html'
+                ,controllerUrl: 'system/evaluateManageCtrl'
+                ,controller: 'evaluateManageCtrl'
+                ,dependencies: ['system/_kit']
+            })
+
+
+
+            //账户设置-个人资料
+            .state('app.user', {
+                url: '/user'
+                ,abstract:true
+                ,views:{
+                    'body': {
+                        templateUrl: '../user.html'
+                        // ,controller: function($state){
+                        //     $state.go('app.user.info');
+                        // }
                     }
                 }
             })
             //账户设置-个人资料
-            .state('app.userInfo', {
-                url: '/userInfo'
+            .state('app.user.info', {
+                url: '/info'
+                ,templateUrl: '../user-info.html'
+                ,controllerUrl: 'system/userInfoCtrl'
+                ,controller: 'userInfoCtrl'
+                ,dependencies: ['system/_kit']
+                
+            })
+            //账户设置-我的账号
+            .state('app.user.setting', {
+                url: '/setting'
+                ,templateUrl: '../user-setting.html'
+                ,controllerUrl: 'system/userSettingCtrl'
+                ,controller: 'userSettingCtrl'
+                ,dependencies: ['system/_kit']
+                
+            })
+            //个人首页-评价管理
+            .state('app.evaluateManage', {
+                url: '/evaluateManage'
                 ,views:{
                     'body': {
-                        templateUrl: '../user-info.html'
-                        ,controllerUrl: 'system/userInfoCtrl'
-                        ,controller: 'userInfoCtrl'
+                        templateUrl: '../evaluate-manage.html'
+                        ,controllerUrl: 'system/evaluateManageCtrl'
+                        ,controller: 'evaluateManageCtrl'
                         ,dependencies: ['system/_kit']
                     }
                 }
             })
-            //账户设置-个我的账号
-            .state('app.userSetting', {
-                url: '/userSetting'
+            //意见反馈
+            .state('app.feedBack', {
+                url: '/feedBack'
                 ,views:{
                     'body': {
-                        templateUrl: '../user-setting.html'
-                        ,controllerUrl: 'system/userSettingCtrl'
-                        ,controller: 'userSettingCtrl'
+                        templateUrl: '../Feedback.html'
+                        ,controllerUrl: 'system/feedBackCtrl'
+                        ,controller: 'feedBackCtrl'
+                        ,dependencies: ['system/_kit']
+                    }
+                }
+            })
+            //服务协议
+            .state('app.serverRule', {
+                url: '/serverRule'
+                ,views:{
+                    'body': {
+                        templateUrl: '../server-rule.html'
+                        ,controllerUrl: 'system/serverRuleCtrl'
+                        ,controller: 'serverRuleCtrl'
                         ,dependencies: ['system/_kit']
                     }
                 }

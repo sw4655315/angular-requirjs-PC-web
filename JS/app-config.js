@@ -9,7 +9,9 @@ define(function (require, exports, module) {
     c.reg.reward_rmb = /^[1-9]\d{2,}$/;
     c.reg.real_name = /^([\u4e00-\u9fa5]{2,4})$/;
     c.reg.id_card = /^(([1-9]\d{7}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3})|([1-9]\d{5}[1-9]\d{3}((0\d)|(1[0-2]))(([0|1|2]\d)|3[0-1])\d{3}([0-9]|X)))$/
+    c.reg.vacode = /^[0-9a-zA-Z]{16}$/;
     c.http = {};
     c.http.ok = 200;
+    c.http.signin_timeout = 507;
     module.exports = c;
 });

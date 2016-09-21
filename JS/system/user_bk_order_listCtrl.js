@@ -5,17 +5,15 @@ define(function (require) {
      require('angular-laypage');
 
      var _kit,_stg,_state,_form,_cuser,_dict;
-     app.controller('personOrderListCtrl',['$scope','$rootScope','Upload',function ($scope,$rootScope,Upload) {
+     app.controller('user_bk_order_listCtrl',['$scope','$rootScope','Upload',function ($scope,$rootScope,Upload) {
         $rootScope.menu.menu_type = 2;
         $rootScope.menu.menu_index = 1;
         _kit = $scope._kit = app.get('$kit');
         _stg = $scope._stg = app.get('$stg');
         _dict = $scope._dict = app.get('$dict');
         _state = $rootScope.$state;
-
         var _page = $scope.page = {pageNumber:1,pageSize:10};
         $scope.state = 1;
-        $scope.upload_modal = !1;
         _form = {};
         _stg.needSignin();
 
@@ -64,7 +62,7 @@ define(function (require) {
          * 加载各状态总数量
          */
         function loadStateCount(){
-            _kit.ag('employer/stateCount',{},function(res){
+            _kit.ag('employee/stateCount',{},function(res){
                 $scope.order_state = res;
             });
         }
@@ -75,7 +73,7 @@ define(function (require) {
          */
          function loadData(){
             var param = angular.extend(_page,{orderType:$scope.state||1});
-            _kit.ag('employer/orderList',param,function(res){
+            _kit.ag('employee/orderList',param,function(res){
                 $scope.orderList = res.orderList;
                 $scope.page =res.page;
                 _kit.renderPage($scope.page,function(obj,first){

@@ -1,0 +1,15 @@
+    <div class="container bianker_content_wrap clearfix">
+        <div class="fl bianker_content_main_left " style="min-height: 870px">
+            <div class="bianker_user_img_wrap">
+                <img ng-src="{{cuser.avator}}" onerror="this.src='../img/1.png'">
+            </div>
+            <div class="bianker_user-name text-center" ng-bind="cuser.nickname"></div>
+            <div class="text-center">账户 :<span class="active-color">￥{{cuser.balance}}</span></div>
+            <div class="bianker_divide_line"></div>
+            <div class="bianker_menu" ng-class="{'active-color':$state.current.name=='app.user.setting'}" ui-sref="app.user.setting">我的账号</div>
+            <div class="bianker_menu" ng-class="{'active-color':$state.current.name=='app.user.info'}" ui-sref="app.user.info">个人资料</div>
+            <div class="bianker_menu" ng-click="notOpen()">我的钱包</div>
+        </div>
+        <div class="fr bianker_content_main_right" style="min-height: 870px" ui-view>
+        </div>
+    </div>

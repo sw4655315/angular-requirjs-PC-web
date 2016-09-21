@@ -5,7 +5,7 @@ define(function (require) {
      require('angular-laypage');
 
      var _kit,_stg,_state,_form,_cuser,_dict;
-     app.controller('personOrderListCtrl',['$scope','$rootScope','Upload',function ($scope,$rootScope,Upload) {
+     app.controller('gzOrderListCtrl',['$scope','$rootScope','Upload',function ($scope,$rootScope,Upload) {
         $rootScope.menu.menu_type = 2;
         $rootScope.menu.menu_index = 1;
         _kit = $scope._kit = app.get('$kit');

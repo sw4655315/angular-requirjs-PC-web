@@ -37,9 +37,9 @@ define(function (require) {
             return !isEmpty(stg.get('sid'));
         }
 
-        stg.needSignin = function(){
+        stg.needSignin = function(flag){
             if(isEmpty(stg.get('sid'))){
-                $state.go('login');
+                $state.go('login',{flag:flag || 0});
                 return !1;
             }
             return !0;
@@ -120,7 +120,7 @@ define(function (require) {
             kit.post(url,data
                 ,function(res,header,config,status){
                     if(!res || res.rspCode !== kit.http.ok){
-                        if(res.rspCode == 503) $stg.signout();
+                        if(res.rspCode == kit.http.signin_timeout) $stg.signout();
                         kit.d(res.rspMsg);
                         return false;
                     } 
@@ -144,7 +144,7 @@ define(function (require) {
             kit.get(url,data
                 ,function(res,header,config,status){
                     if(!res || res.rspCode !== kit.http.ok){
-                        if(res.rspCode == 503) $stg.signout();
+                        if(res.rspCode == kit.http.signin_timeout) $stg.signout();
                         kit.d(res.rspMsg);
                         return false;
                     }
@@ -165,15 +165,17 @@ define(function (require) {
                     return !1;
                 }
                 if(res.data.rspCode != kit.http.ok){
-                    if(res.rspCode == 503) $stg.signout();
+                    if(res.rspCode == kit.http.signin_timeout) $stg.signout();
                     kit.d(res.data.rspMsg || '请求失败，请稍候重试！');
                     return !1;
                 }
                 success(res.data.rspObject);
             },function(res){
                 console.error(res);
-            },finallyFun);
+            });
+            upload.finally(finallyFun);
         };
+
         return kit;
     })
     .config(function(localStorageServiceProvider){

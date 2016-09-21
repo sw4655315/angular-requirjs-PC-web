@@ -3,11 +3,20 @@
             <li class="fl bianker_all_require_content_nav_header">需求大厅</li>
             <li class="fl bianker_all_require_content_nav_ico"><div class="ico3-3"></div></li>
             <li class="fl bianker_all_require_content_nav_first">
-                <div class="text-center">
+                <div class="text-center" ng-mouseenter="deploy_all_show=true" ng-mouseleave="deploy_all_show=false">
                     全部分类<span class="caret"></span>
+                    <div class="bianker_all_require_content_nav_first_drop" ng-show="deploy_all_show">
+                        <ul>
+                            <li>宣传片</li>
+                            <li>微广告</li>
+                            <li>新媒体定制</li>
+                            <li>动画、动漫</li>
+                        </ul>
+                        <div class="bianker_all_require_content_nav_first_zhanwei"></div>
+                    </div>
                 </div>
             </li>
-            <li class="fl bianker_all_require_content_nav_ico"><div class="ico3-3"></div></li>
+            <!--<li class="fl bianker_all_require_content_nav_ico"><div class="ico3-3"></div></li>-->
             <li class="fl bianker_all_require_content_nav_second">
                 <input type="text" class="bianker_all_require_content_nav_second_input" placeholder="当前条件下搜索">
                 <div class="bianker_all_require_content_nav_second_input_icon">
@@ -85,7 +94,7 @@
                 <div class="bianker_all_require_mid_content_neirong_left_font4 cutStr" ng-bind="unescapeHtml(order.summary)" style="width: 50%">主要用户电子书宣传、介绍使用、视频时长控制在1分钟左右，需要提供多种时长的片段视频。</div>
                 <div class="bianker_all_require_mid_content_neirong_left_font5">仅剩<span>{{order.max_contribution - order.finishedNum}}</span>个投稿机会</div>
             </div>
-            <div class="text-center bianker_all_require_mid_content_neirong_left_font6" ng-if="order.attachment">附件</div>
+            <div class="text-center bianker_all_require_mid_content_neirong_left_font6" ng-if="_kit.isExist(order.attachment)">附件</div>
         </div>
         <div class="bianker_all_require_mid_content_bottom_nav">
             <div class="bianker_all_require_mid_content_bottom_nav_quick_search">

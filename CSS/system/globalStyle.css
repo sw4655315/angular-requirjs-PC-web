@@ -14,6 +14,7 @@
     width: 20%;
     min-width: 300px;
     right: 0;    
+    z-index: 19900207;
 }
 .toast-container .top-right{
     width: 100%;
@@ -53,4 +54,30 @@
 }
 .mark_search{
     color:#f55 !important;
+}
+
+.bianker_require_content_attachment_add_list{
+    height: auto !important;
+    min-height: 31px;
+    padding: 5px;
+}
+
+.nav_login_name
+,.nav_login{
+    height: 28px !important;
+}
+
+.nav_login_logo{
+    bottom: 15px !important;
+}
+.tipbox{
+    z-index: 99999;
+}
+.bianker_user_info_input{
+    width: 472px !important;
+}
+
+.bianker_download_content_slide_photo{
+    width: 40px !important;
+    height: 40px !important;
 }

@@ -11,7 +11,7 @@
     </div>
 </header>
 
-<div class="content" ng-init="loginForm.mobile='';loginForm.password='';">
+<div class="content" ng-init="loginForm.mobile='18357194831';loginForm.password='000000';">
     <div id="bg"><img src="Images/bg.png"/></div>
     <div class="container">
         <div class="login_window fr">
@@ -38,8 +38,8 @@
                 <input type="password" class="password_input" placeholder="密码" ng-model="loginForm.password">
             </div>
             <button class="btn login_btn" ng-click="signin()">登录</button>
-            <div class="contact_service" id="seller" ng-if="_search.tab_index==1">联系客服</div>
-            <div class="find_password_block" id="user" ng-if="_search.tab_index==2">
+            <div class="contact_service" id="seller" ng-if="_search.tab_index==2">联系客服</div>
+            <div class="find_password_block" id="user" ng-if="_search.tab_index==1">
                 <a ui-sref="app.findPassword"><div class="fl find_password_label" >忘记密码</div></a>
                 <a ui-sref="register"><div class="text-right fr active-color">马上注册</div></a>
             </div>

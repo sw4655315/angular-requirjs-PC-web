@@ -4,7 +4,7 @@ define(function (require) {
       * 发布需求页
       */
      var app = require('../app');
-     var _kit,_stg,_state,_form,_dict;
+     var _kit,_stg,_state,_form,_dict,_leftTab;
      require('angular-laydate');
      app.controller('requireDeployCtrl',['$scope','$rootScope',function ($scope,$rootScope) {
         $rootScope.menu.menu_type = 1;
@@ -12,11 +12,15 @@ define(function (require) {
         $scope.deploy_step=1;
         _kit = app.get('$kit');
         _stg = $scope._stg = app.get('$stg');
-        _stg.needSignin();
+        _stg.needSignin(1); //判断是否已登录
         _dict = $scope._dict = app.get('$dict');
         _state = $rootScope.$state;
         _form = $scope._form = {max_contribution:3,pledge_rmb:0};
-        $scope.now = laydate.now(1);
+        $scope.min_date = laydate.now(7);
+
+         _leftTab = $scope._leftTab = {
+             tab_index:1
+         }
         /**
          * 到第二步
          */
@@ -62,8 +66,7 @@ define(function (require) {
                 _kit.d('请阅读并同意发布守则');
                 return false;
             }
-            _form.summary = _form.summary.replace('\n', '<br>');
-            _kit.apf('Employer/deployNeed',_form,function(res){
+            _kit.apf('employer/deployNeed',_form,function(res){
                 //_state.go('app.requireDetail',{id:res});
                 $scope.deploy_step = 5;
                 _form.id = res;
@@ -72,6 +75,11 @@ define(function (require) {
 
          $scope.deploy_finish = function(){
             _state.go('app.requireDetail',{id:_form.id,userids:_stg.user().ids});
+         }
+
+
+         $scope.log = function(){
+            console.log(_form.files);
          }
      }]);
 });

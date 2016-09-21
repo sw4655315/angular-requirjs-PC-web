@@ -9,7 +9,7 @@ define(function (require) {
 
 
      var _kit,_stg,_state,_paras,_form,_cuser,_dict,_nickname;
-     app.controller('personIndexCtrl',['$scope','$rootScope',function ($scope,$rootScope,Upload) {
+     app.controller('bkIndexCtrl',['$scope','$rootScope',function ($scope,$rootScope,Upload) {
         $rootScope.menu.menu_type = 2;
         $rootScope.menu.menu_index = 1;
         _kit = $scope._kit = app.get('$kit');

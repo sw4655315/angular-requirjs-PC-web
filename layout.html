@@ -6,22 +6,36 @@
                 <a ui-sref="app.index">
                     <div class="nav_header fl">
                         <div class="nav_header_logo ico9-6 fl"></div>
-                        <div class="nav_header_logofont fl">编客，陪你做视频的设计师</div>
+                        <div class="nav_header_logofont fl">趣编，陪你做视频的设计师</div>
                     </div>
                 </a>
                 <a href="#"><div class="ico8-5 nav_footer_logo fr"></div></a>
-                <a ui-sref="app.personIndex"><div class="nav_i_am_author fr">我是编客</div></a>
-                <a ui-sref="app.personOrderList"><div class="nav_i_am_employeer fr">我是雇主</div></a>
-                <a ui-sref="app.personOrderList"><div class="nav_my_list fr">我的订单</div></a>
+                <a ui-sref="app.user_bk.index" ><div ng-click="_role=1" class="nav_i_am_author fr">我是编客</div></a>
+                <a ui-sref="app.user_gz.order_list" ><div ng-click="_role=2" class="nav_i_am_employeer fr">我是雇主</div></a>
+                <a ui-sref="app.user_bk.order_list"><div class="nav_my_list fr">我的订单</div></a>
                 <span ng-if="cuser">
-                    <a ui-sref="app.personIndex">
+                    <a ui-sref="app.user_bk.index">
                         <div class="text-center nav_register fr">消息</div>
                     </a>
-                    <a ui-sref="app.personIndex">
-                        <div class="text-center nav_login fr">
-                            <span ng-if="cuser.nickname" ng-bind="cuser.nickname"></span><div class="ico1-3 nav_login_logo"></div>
+                        <div class="text-center nav_login_name fr"  ng-mouseenter="deploy_login_show=true" ng-mouseleave="deploy_login_show=false">
+                            <span ng-if="cuser.nickname" ui-sref="app.personIndex" ng-bind="cuser.nickname"></span><div class="ico1-3 nav_login_logo"></div>
+                            <div class="tipbox" ng-show="deploy_login_show">
+                                <ul>
+                                    <li ui-sref="app.user.setting">
+                                        <div class="ico3-6 icon"></div>
+                                        <div class="font">账号设置</div>
+                                    </li>
+                                    <li ui-sref="app.feedBack">
+                                        <div class="ico3-7 icon"></div>
+                                        <div class="font">意见反馈</div>
+                                    </li>
+                                    <li ng-click="signout()">
+                                        <div class="ico3-8 icon"></div>
+                                        <div class="font">退出</div>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
-                    </a>
                 </span>
                 <span ng-if="!cuser">
                     <a ui-sref="register">
@@ -32,7 +46,6 @@
                             <span>登录</span><div class="ico1-3 nav_login_logo"></div>
                         </div>
                     </a>
-
                 </span>
 
             </div>
@@ -57,7 +70,7 @@
                 <div class="btn index_publish" id="publish" >
                     免费发布需求<div class="ico1-4 index_publish_ico"></div>
                 </div>
-                <ul class="index_publish_drop_wrap" style="display: block" ng-show="deploy_show">
+                <ul class="index_publish_drop_wrap" ng-show="deploy_show">
                     <li>如何快速发布需求</li>
                     <li>Ⅰ选择类目</li>
                     <li>Ⅱ描述需求</li>
@@ -77,7 +90,7 @@
             <div class="index_nav">
                 <div class="nav_font" ng-class="{'active':menu.menu_index==1}" ui-sref="app.index">首页</div>
                 <div class="nav_font" ng-class="{'active':menu.menu_index==2}"  ui-sref="app.allRequires">需求</div>
-                <div class="nav_font" ng-class="{'active':menu.menu_index==3}"  ui-sref="app.index">编客</div>
+                <div class="nav_font" ng-class="{'active':menu.menu_index==3}"  ui-sref="app.index">趣编</div>
                 <div class="nav_font" ng-class="{'active':menu.menu_index==4}"  ui-sref="app.index">灵感</div>
                 <div class="nav_font" ng-class="{'active':menu.menu_index==5}" onclick="window.open('http://www.videoartists.cn')">素材</div>
             </div>
@@ -86,12 +99,12 @@
     <div class="bianker_navbar" ng-if="menu.menu_type==2">
         <div class="container">
             <div class="ico4-1 bianker_navbar_icon fl"></div>
-            <div class="bianker_navbar_header fl">我是{{_dict.user_type[cuser.type]}}</div>
-            <a ui-sref="app.personIndex"><div class="bianker_navbar_private_index{{menu.menu_index == 1?'_active':''}} fl">个人首页</div></a>
-            <a ui-sref="app.userInfo"><div class="bianker_navbar_account_setting{{menu.menu_index == 2?'_active':''}} fl">账号设置</div></a>
-            <a ui-sref="app.personIndex"><div class="bianker_navbar_my_message{{menu.menu_index == 3?'_active':''}} fl">我的消息</div></a>
-            <div class="bianker_navbar_i_am_employer fr">
-                <div class="fl">我是{{_dict.user_type[cuser.type==1?'2':'1']}}</div>
+            <div class="bianker_navbar_header fl">我是{{_dict.user_type[_role]}}</div>
+            <a ui-sref="app.user_bk.index"><div class="bianker_navbar_private_index{{menu.menu_index == 1?'_active':''}} fl">个人首页</div></a>
+            <a ui-sref="app.user.setting"><div class="bianker_navbar_account_setting{{menu.menu_index == 2?'_active':''}} fl">账号设置</div></a>
+            <a ui-sref="app.user_bk.index"><div class="bianker_navbar_my_message{{menu.menu_index == 3?'_active':''}} fl">我的消息</div></a>
+            <div class="bianker_navbar_i_am_employer fr" ng-click="go_role_page()">
+                <div class="fl">我是{{_dict.user_type[_role==1?'2':'1']}}</div>
                 <div class="ico3-4 fl"></div>
             </div>
         </div>
@@ -144,21 +157,18 @@
         <!-- 常见问题 -->
         <div class="footer-require" ng-if="showQuestion()">
             <div class="container">
-                <div class="row">
-                    <div style="color: #323232;font-size: 16px;font-weight:bolder;margin: 40px 0 40px 0;">常见问题:</div>
-                </div>
-
-                <div class="row">
-                    <p>我在编客网上交易有安全保障吗？</p>
-                    <p>答：1)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
-                    <p style="text-indent: 2em">2)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
-                </div>
-
-                <div class="row" style="margin-top: 40px">
-                    <p>我在编客网上交易有安全保障吗？</p>
-                    <p>答：1)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
-                    <p style="text-indent: 2em">2)编客网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠</p>
-                </div>
+                <p class="title">常见问题：</p>
+                <p>我在趣编网上交易有安全保障吗？</p>
+                <p>答：</p>
+                <p>1）趣编网与第三方支付平台合作，第三方支付平台具有国家颁发的互联网支付牌照，担保您资金的安全可靠。</p>
+                <p>2）您发布需求后先支付赏金到趣编网，对编客工作满意后，再通知趣编网打款；如无有效稿件，全额退款。整个交易过程趣编网担保您赏金安全，并保障您的交易效果。</p>
+                <p>3）此外，所有编客实名认证，为雇主提供保障，若交易中编客发生违约或不诚信行为，雇主可获得赔付。</p>
+                <p class="title1">我该怎么填写我的需求？</p>
+                <p>答：</p>
+                <p>您可以：</p>
+                <p>1）参考趣编网的已有需求，看看人家的需求是怎样描述的。</p>
+                <p>2）尽量用简单、明了的语言来表述自己的需求。</p>
+                <p>3）实在难以表述清楚的，可以联系趣编网的客服人员协助您处理。</p>
             </div>
         </div>
 
@@ -166,7 +176,7 @@
         <div class="index_footer_main">
             <div class="container">
                 <ul class="link">
-                    <li><a href="index.html">关于编客</a></li>
+                    <li><a href="index.html">关于趣编</a></li>
                     <li><a href="index.html">用户协议</a></li>
                     <li><a href="index.html">客服中心</a></li>
                     <li><a href="index.html">商务合作</a></li>

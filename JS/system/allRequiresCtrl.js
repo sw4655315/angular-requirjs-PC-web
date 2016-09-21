@@ -5,8 +5,8 @@ define(function (require) {
     app.controller('allRequiresCtrl',['$scope','$rootScope',function ($scope,$rootScope,$interval) {
         $rootScope.menu.menu_type = 1;
         $rootScope.menu.menu_index = 2;
-        _kit = app.get('$kit');
-        _stg = app.get('$stg');
+        _kit = $scope._kit = app.get('$kit');
+        _stg = $scope._stg = app.get('$stg');
         _dict = $scope._dict =  app.get('$dict');
         _state = $rootScope.$state;
         _form = $scope._form = {pageNumber:1,pageSize:10,key_word:$rootScope._search.key_word};
@@ -34,6 +34,21 @@ define(function (require) {
                     if(!first) loadData();
                 });
             })
+        }
+
+        $scope.search = function(){
+            if(_kit.isEmpty(_search.key_word)){
+
+                _kit.d('请输入搜索关键字');
+                return false;
+            }
+            switch(_search.tab_index){
+                case 1:search_require();break;
+                case 2:search_material();break;
+                case 3:
+                default:
+                    search_bianker();break;
+            }
         }
 
         /**

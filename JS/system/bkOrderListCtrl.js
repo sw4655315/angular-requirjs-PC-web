@@ -5,7 +5,7 @@ define(function (require) {
      require('angular-laypage');
 
      var _kit,_stg,_state,_form,_cuser,_dict;
-     app.controller('personOrderListCtrl',['$scope','$rootScope','Upload',function ($scope,$rootScope,Upload) {
+     app.controller('bkOrderListCtrl',['$scope','$rootScope','Upload',function ($scope,$rootScope,Upload) {
         $rootScope.menu.menu_type = 2;
         $rootScope.menu.menu_index = 1;
         _kit = $scope._kit = app.get('$kit');
@@ -29,7 +29,7 @@ define(function (require) {
             loadData();
         }
         $scope.go_detail = function (id,userids) {
-            _state.go('app.requireDetail',{id:id,userids:userids});
+            _state.go('app.requireDetail',{id:id});
         }
          $scope.submit = function () {
             $scope.upload_modal = !0;
@@ -64,7 +64,7 @@ define(function (require) {
          * 加载各状态总数量
          */
         function loadStateCount(){
-            _kit.ag('employer/stateCount',{},function(res){
+            _kit.ag('employee/stateCount',{},function(res){
                 $scope.order_state = res;
             });
         }
@@ -75,7 +75,7 @@ define(function (require) {
          */
          function loadData(){
             var param = angular.extend(_page,{orderType:$scope.state||1});
-            _kit.ag('employer/orderList',param,function(res){
+            _kit.ag('employee/yeeOrderList',param,function(res){
                 $scope.orderList = res.orderList;
                 $scope.page =res.page;
                 _kit.renderPage($scope.page,function(obj,first){

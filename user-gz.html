@@ -1,0 +1,22 @@
+    <div class="container bianker_content_wrap">
+        <div class="fl bianker_employer_myorder_main_left">
+            <div class="bianker_user_img_wrap">
+                <img src="Images/1.png">
+            </div>
+            <div class="bianker_user-name text-center" ng-bind="cuser.nickname">TEMSINS</div>
+            <div class="text-center">账户 :<span class="active-color" >￥{{cuser.balance}}</span></div>
+            <div class="bianker_divide_line"></div>
+            <div class="bianker_menu">
+                <div class="bianker_employer_myorder_main_left_income_detail">
+                    <div ng-click="notOpen()">查看收支明细</div>
+                    <div class="ico5-1 bianker_my_wallet_ico"></div>
+                    <div class="ico9-7">
+                        <p>趣编网资金由编客钱包管理，钱包支持提现，查询金额等资金业务!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bianker_menu text-center" ng-class="{'active-color':$state.current.name == 'app.user_gz.order_list'}" ui-sref="app.user_gz.order_list">我的订单</div>
+            <div class="bianker_menu text-center" ng-class="{'active-color':$state.current.name == 'app.user_gz.evaluate_manage'}"  ui-sref="app.user_gz.evaluate_manage">评价管理</div>
+        </div>
+        <div ui-view></div>
+    </div>

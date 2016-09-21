@@ -4,11 +4,11 @@
         <div class="bianker_require_select_type_font {{deploy_step>=1?'active':''}}"><p>选择类目</p></div>
     </div>
     <div class="bianker_require_select_type fl">
-        <div class="bianker_require_select_type_bg {{deploy_step>=2?'active':''}}">2</div>
+        <div class="bianker_require_select_type_bg {{deploy_step>=2?'active':''}}"> <div class="{{deploy_step>=2?'ico2-5':''}}">{{deploy_step>=2?'':'2'}}</div></div>
         <div class="bianker_require_select_type_font {{deploy_step>=2?'active':''}}"><p>描述您的需求</p></div>
     </div>
     <div class="bianker_require_select_type fl">
-        <div class="bianker_require_select_type_bg {{deploy_step>=3?'active':''}}">3</div>
+        <div class="bianker_require_select_type_bg {{deploy_step>=3?'active':''}}"><div class="{{deploy_step>=3?'ico2-5':''}}">{{deploy_step>=3?'':'3'}}</div></div>
         <div class="bianker_require_select_type_font {{deploy_step>=3?'active':''}}"><p>设置需求赏金</p></div>
     </div>
     <div class="bianker_require_select_type fl">
@@ -22,106 +22,62 @@
         <div class="container bianker_require_content_wrap">
             <div class="bianker_require_content_ad_index">官方提供线上担保交易，保障您的资金安全，且不会收取您任何佣金。80%的欺诈、资金盗取均由线下交易导致，请勿线下交易</div>
             <div class="bianker_require_option_left fl">
-                <div class="bianker_require_option_left_menu">LOGO/VI设计、包装/卡片设计<div class="ico10-2 bianker_require_option_left_menu_ico"></div></div>
-                <div class="bianker_require_option_left_menu active">广告/宣传品设计、书籍/PPT设计<div class="ico3-2 bianker_require_option_left_menu_ico"></div></div>
-                <div class="bianker_require_option_left_menu">电商服务<div class="ico10-2 bianker_require_option_left_menu_ico"></div></div>
-                <div class="bianker_require_option_left_menu">公司起名/宝宝起名<div class="ico10-2 bianker_require_option_left_menu_ico"></div></div>
-                <div class="bianker_require_option_left_menu">品牌/活动/营销/商业策划、文案撰写<div class="ico10-2 bianker_require_option_left_menu_ico"></div></div>
-                <div class="bianker_require_option_left_menu">营销/策划/推广、SEO<div class="ico10-2 bianker_require_option_left_menu_ico"></div></div>
-                <div class="bianker_require_option_left_menu">漫画/动画设计、动画配音<div class="ico10-2 bianker_require_option_left_menu_ico"></div></div>
-                <div class="bianker_require_option_left_menu">影视拍摄/影视文案/后期、音乐制作<div class="ico10-2 bianker_require_option_left_menu_ico"></div></div>
+                <div class="bianker_require_option_left_menu" ng-class="{'active':_leftTab.tab_index==1}" ng-click="_leftTab.tab_index=1">宣传片<div class="ico{{_leftTab.tab_index==1?3:10}}-2 bianker_require_option_left_menu_ico"></div></div>
+                <div class="bianker_require_option_left_menu" ng-class="{'active':_leftTab.tab_index==2}" ng-click="_leftTab.tab_index=2">微广告<div class="ico{{_leftTab.tab_index==2?3:10}}-2 bianker_require_option_left_menu_ico"></div></div>
+                <div class="bianker_require_option_left_menu" ng-class="{'active':_leftTab.tab_index==3}" ng-click="_leftTab.tab_index=3">新媒体定制<div class="ico{{_leftTab.tab_index==3?3:10}}-2 bianker_require_option_left_menu_ico"></div></div>
+                <div class="bianker_require_option_left_menu" ng-class="{'active':_leftTab.tab_index==4}" ng-click="_leftTab.tab_index=4">动画、动漫<div class="ico{{_leftTab.tab_index==4?3:10}}-2 bianker_require_option_left_menu_ico"></div></div>
             </div>
             <div class="bianker_require_option_right fl">
-                <div class="bianker_require_option_right_block">
+                <div class="bianker_require_option_right_block" ng-if="_leftTab.tab_index==1">
                     <div class="bianker_require_option_right_block_content">
-                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('广告设计','广告安装')">广告安装</div>
-                        <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
-                        <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
-                        <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
-                        <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
-                    </div>
-                    <div class="bianker_require_option_right_block_content">
-                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('广告设计','易拉宝设计')">易拉宝设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
-                    </div>
-                    <div class="bianker_require_option_right_block_content">
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                    </div>
-                    <div class="bianker_require_option_right_block_content">
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('宣传片','企业宣传片')">企业宣传片</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('宣传片','产品宣传片')">产品宣传片</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('宣传片','公益宣传片')">公益宣传片</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('宣传片','电视宣传片')">电视宣传片</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('宣传片','其他')">其他</div>
                     </div>
                 </div>
-                <div class="bianker_require_option_right_block">
+                <div class="bianker_require_option_right_block" ng-if="_leftTab.tab_index==2">
                     <div class="bianker_require_option_right_block_content">
-                        <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
-                        <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
-                        <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
-                        <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
-                        <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('微广告','民生服务')">民生服务</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('微广告','房地产')">房地产</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('微广告','旅游服务')">旅游服务</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('微广告','餐饮食品')">餐饮食品</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('微广告','文学教育')">文学教育</div>
                     </div>
                     <div class="bianker_require_option_right_block_content">
-                        <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
-                    </div>
-                    <div class="bianker_require_option_right_block_content">
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                    </div>
-                    <div class="bianker_require_option_right_block_content">
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('微广告','汽车')">汽车</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('微广告','服装')">服装</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('微广告','体育')">体育</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('微广告','其他')">其他</div>
                     </div>
                 </div>
-                <div class="bianker_require_option_right_block">
+                <div class="bianker_require_option_right_block" ng-if="_leftTab.tab_index==3">
                     <div class="bianker_require_option_right_block_content">
-                        <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
-                        <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
-                        <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
-                        <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
-                        <div class="bianker_require_option_right_block_content_font fl">广告安装</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('新媒体定制','微博')">微博</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('新媒体定制','微信')">微信</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('新媒体定制','微信公众平台')">微信公众平台</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('新媒体定制','微网站')">微网站</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('新媒体定制','APP')">APP</div>
                     </div>
                     <div class="bianker_require_option_right_block_content">
-                        <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">易拉宝设计</div>
-                    </div>
-                    <div class="bianker_require_option_right_block_content">
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                        <div class="bianker_require_option_right_block_content_font fl">墙体广告</div>
-                    </div>
-                    <div class="bianker_require_option_right_block_content">
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
-                        <div class="bianker_require_option_right_block_content_font fl">赠品广告设计</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('新媒体定制','其他')">其他</div>
                     </div>
                 </div>
+                <div class="bianker_require_option_right_block" ng-if="_leftTab.tab_index==4">
+                    <div class="bianker_require_option_right_block_content">
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('动画、动漫','游戏CG动画')">游戏CG动画</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('动画、动漫','少儿动画')">少儿动画</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('动画、动漫','影视动画')">影视动画</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('动画、动漫','3D动画')">3D动画</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('动画、动漫','影视动画')">影视动画</div>
+                    </div>
+                    <div class="bianker_require_option_right_block_content">
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('动画、动漫','国产动漫')">国产动漫</div>
+                        <div class="bianker_require_option_right_block_content_font fl" ng-click="go_step_2('动画、动漫','其他')">其他</div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
@@ -144,13 +100,19 @@
                 <div class="bianker_require_content_remark_detail_title">说说您的详细需求</div>
                 <textarea  id="require-detail"  rows="15" class="bianker_require_content_remark_detail_input" ng-model="_form.summary_tight"></textarea>
             </div>
-
             <div class="bianker_require_content_attachment">
-                <div class="bianker_require_content_attachment_add fl" ng-click="showfj=!showfj">添加附件</div>
+                <div class="bianker_require_content_attachment_add fl"
+                ngf-select ng-model="_form.files" name="files" ngf-multiple="true" ngf-max-files="5"
+                ngf-max-total-size="50MB"
+                >添加附件</div>
                 <div class="ico8-3 bianker_require_content_attachment_add_icon" ></div>
                 <div class="bianker_require_content_attachment_add_tip">最多可添加五个附件，每个大小不超过10M</div>
             </div>
-            <div class="bianker_require_content_attachment_add_list" ng-if="showfj"></div>
+            <div class="bianker_require_content_attachment_add_list" ng-if="_form.files">
+                <span ng-repeat="f in _form.files">
+                    <label>{{f.name}}</label><br>
+                </span>
+            </div>
             <div class="bianker_require_content_button_wrap">
                 <button class="btn bianker_require_content_button_pre" type="button" ng-click="deploy_step=1">上一步</button>
                 <button class="btn bianker_require_content_button_next" type="button" ng-click="go_step_3()">下一步</button>
@@ -206,7 +168,8 @@
                 <div class="bianker_require_content_remark_title">您需要何时完成需求</div>
                 <div style="width:auto;height: 34px;margin-top: 20px;margin-bottom: 132px" class="clearfix">
                     <div class="ico2-8 fl"></div>
-                    <input type="text" id="laydate" def-laydate class="bianker_reward_endtime_input_date" ng-model="_form.deadline_time"  readonly="readonly" min-date="{{now}}">
+                    <input type="text" id="laydate" def-laydate class="bianker_reward_endtime_input_date" ng-model="_form.deadline_time"  readonly="readonly" min-date="{{min_date}}">
+                    <div class="fl" style="margin-top: 7px;color: #6a6a6a;margin-left: 20px">您希望多长时间来完成这个需求，您可以在截稿后开始选稿</div>
                 </div>
             </div>
 
@@ -310,7 +273,7 @@
             </div>
             <div class="bianker_money_pay_content_bottom_wrap">
                 <div class="bianker_money_pay_content_label">交&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp计&nbsp&nbsp&nbsp&nbsp:</div>
-                <div class="bianker_money_pay_content_font_sum">￥{{_form.reward_rmb * _form.pledge_rmb / 100}}</div>
+                <div class="bianker_money_pay_content_font_sum">￥{{_form.pledge_rmb}}</div>
             </div>
             <div class="bianker_money_pay_content_font_sum_button_wrap">
                 <button class="btn bianker_money_pay_content_font_sum_button" ng-click="deploy_finish()">确认支付</button>

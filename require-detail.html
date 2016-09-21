@@ -14,16 +14,16 @@
 
            <div class="fl bianker_require_detail_content_header_name_wrap">
                <div class="bianker_require_detail_content_header_name" ng-bind="employer.nickname">TEMSINS</div>
-               <img src="Images/call-me.png">
+               <img src="Images/call-me.png" ng-click="connectMe()">
            </div>
-           <button class="btn fr bianker_require_detail_content_header_button" ng-if="!need.person_state || need.person_state == 0" ng-click="now_in()">立即投稿</button>
-           <button class="btn fr bianker_require_detail_content_header_button" ng-if="need.person_state == 2" ng-click="now_out()">取消投稿</button>
+           <button class="btn fr bianker_require_detail_content_header_button" ng-if="checkState.join(need)" ng-click="now_in()">立即投稿</button>
+           <button class="btn fr bianker_require_detail_content_header_button" ng-if="checkState.out(need)" ng-click="now_out()">取消投稿</button>
        </div>
 
         <div class="bianker_require_detail_content_wrap">
             <div class="bianker_require_detail_content_label clearfix cutStr" style="width: 30%"  ng-bind="need.title">玄幻类书籍介绍视频制作</div>
             <div class="active-color bianker_require_detail_content_font" style="margin-left: 20px;" ng-bind="_dict.needStatus(need.status)">投稿中</div>
-            <button class="btn btn-link fr" style="margin: 22px;" ng-if="need.person_state == '1'" ng-click="closeNeed()">关闭需求</button>
+            <button class="btn btn-link fr" style="margin: 22px;" ng-if="checkState.close(need)" ng-click="closeNeed()">关闭需求</button>
         </div>
         <div class="bianker_require_detail_content_wrap">
             <div class="bianker_require_detail_content_label clearfix">
@@ -32,7 +32,7 @@
             </div>
             <div class="bianker_require_detail_content_label clearfix">
                 <div class="bianker_require_detail_content_font1">托管金额 :</div>
-                <div class="bianker_require_detail_content_font2 active-color">￥{{need.reward_rmb * need.pledge_rmb / 100}}</div>
+                <div class="bianker_require_detail_content_font2 active-color">￥{{need.pledge_rmb}}</div>
             </div>
         </div>
         <div class="bianker_require_detail_content_wrap">
@@ -75,11 +75,15 @@
             <p>，发起无比的慈悲心，传播心灵学堂“我幸福了，让更多的人幸福”的理念，把各自学习前后的变记录下来，启迪有缘之人，于是留下了文字传世。</p>
             </div>
         </div>
-        <div class="bianker_require_content_detail_appendix" ng-if="_kit.isExists(need.attachment)">
-            <div class="active-color fl">附件&nbsp:</div>
-            <div class="ico2-6 bianker_require_content_detail_appendix_ico"></div>
-            <div class="bianker_require_content_detail_appendix_name">多人分享奖金.png</div>
-            <div class="bianker_require_content_detail_appendix_download">下载</div>
+        <div class="bianker_require_content_detail_appendix" ng-if="_kit.isExist(need.attachment)" style="height:auto;">
+            <div ng-repeat="str in need.attachment" style="min-height: 20px;">
+                <div class="active-color fl">附件&nbsp:</div>
+                <div class="ico2-6 bianker_require_content_detail_appendix_ico"></div>
+                <div class="bianker_require_content_detail_appendix_name" ng-bind="file.name(str)">多人分享奖金.png</div>
+                <a ng-href="{{str}}" download>
+                    <div class="bianker_require_content_detail_appendix_download">下载</div>
+                </a>
+            </div>
         </div>
         <div class="bianker_require_content_publish_detail">
             <div>发布时间&nbsp:</div>
@@ -90,4 +94,64 @@
             <div class="content" ng-bind="need.id">77712228</div>
         </div>
          <div class="bianker_require_content_ad_bottom">官方提供线上担保交易，保障您的资金安全，且不会收取您任何佣金。80%的欺诈、资金盗取均由线下交易导致，请勿线下交易。</div>
+    </div>
+
+    <!-- 雇主可下载-编客稿件 -->
+    <div class="container bianker_download_content_wrap" ng-if="g_finisheds">
+        <div class="bianker_download_content_main">
+            <div class="ico6-7"></div>
+            <div class="bianker_download_content_logofont">编客稿件</div>
+            <button class="btn bianker_download_content_confirm_btn" ng-click="need_over()">确定</button>
+        </div>
+
+        <div class="bianker_download_content_tip">
+            <div class="bianker_download_content_tip_font">温馨提示 : 该选项为单选</div>
+        </div>
+        <div class="bianker_download_content_slide" ng-repeat="finish in g_finisheds">
+            <div class="bianker_download_content_slide_top">
+                <div class="ico6-8 bianker_download_content_slide_checkbox"></div>
+                <div class="bianker_download_content_slide_photo"><img ng-src="finish.user_avator" onerror="this.src='Images/1.png'"></div>
+                <div class="bianker_download_content_slide_name" ng-bind="finish.user_nickname">JULIAFUR</div>
+                <div class="bianker_download_content_slide_date" ng-bind="finish.create_time | date:'yyyy-MM-dd hh:mm:ss'">2016.07.28</div>
+            </div>
+            <div class="bianker_download_content_slide_img_wrap">
+                <div class="bianker_download_content_slide_img_main">
+
+                    <div style="float: left;width:473px;height:auto;" ng-if="file.zip(finish.link)">
+                        <div class="bianker_download_content_slide_img_main_font">
+                            <div class="fl" ng-bind="file.name(finish.link)">XXX.mp4asfdasfasdfasdfasdf</div>
+                            <a ng-href="{{finish.link}}" download>
+                                <div class="fr active-color">下载</div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bianker_download_content_slide_img_main_right" ng-if="file.video(finish.link)">
+                        <img src="../img/2.png">
+                        <div class="bianker_download_content_slide_img_main_font">
+                            <div class="fl" ng-bind="file.name(finish.link)">XXX.mp4</div>
+                            <a ng-href="{{finish.link}}" download>
+                                <div class="fr active-color">下载</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bianker_download_content_slide_line"></div>
+        </div>
+    </div>
+    <!-- 已经参加的编客 -->
+    <div class="container bianker_download_content_wrap" ng-if="b_finisheds">
+        <div class="bianker_download_content_main">
+            <div class="ico6-7"></div>
+            <div class="bianker_download_content_logofont">已参加编客</div>
+        </div>
+
+        <div class="bianker_download_content_joined" ng-repeat="finish in b_finisheds">
+            <div class="bianker_download_content_joined_photo">
+                <img ng-src="{{finish.yer_user_avator}}" onerror="this.src='Images/1.png'">
+            </div>
+            <div class="bianker_download_content_joined_name" ng-bind="finish.yer_user_nickname">Learesan</div>
+            <div class="bianker_download_content_joined_date" ng-bind="finish.create_time | date:'yyyy-MM-dd HH:mm:ss'">2016年9月19日</div>
+        </div>
     </div>

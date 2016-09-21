@@ -36,5 +36,19 @@ define(function (require, exports, module) {
         ,'5':'已结束'
         ,'6':'退款'
     };
+    //需求状态-雇主
+    d.person_state = {
+        '0':'未登录'
+        ,'1':'已登录，不是自己发布的需求'
+        ,'2':'已登录，是自己发布的需求'
+    };
+
+    d.page_map = {
+        '0':'app.index'
+        ,'1':'app.requireDeploy'
+    }
+
+
+
     module.exports = d;
 });

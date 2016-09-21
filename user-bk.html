@@ -1,0 +1,40 @@
+<div class="container" ng-if="$state.current.name=='app.user_bk.index'">
+    <div class="bianker_employee_step_wrap">
+        <div class="bianker_employee_step_title">· 认证申请 ·</div>
+        <div class="bianker_employee_step fl">
+            <div class="bianker_employee_step_bg" ng-class="{'active':user_bk_index_step>=1}">1</div>
+            <div class="bianker_employee_step_line1" ng-class="{'active':user_bk_index_step>=1}"></div>
+            <div class="text-center bianker_employee_step_font"  ng-class="{'active':user_bk_index_step>=1}">完善用户信息</div>
+        </div>
+        <div class="bianker_employee_step fl">
+            <div class="bianker_employee_step_bg"  ng-class="{'active':user_bk_index_step>=2}">2</div>
+            <div class="bianker_employee_step_line2"  ng-class="{'active':user_bk_index_step>=2}"></div>
+            <div class="text-center bianker_employee_step_font"  ng-class="{'active':user_bk_index_step>=2}">提交认证信息</div>
+        </div>
+        <div class="bianker_employee_step fl">
+            <div class="bianker_employee_step_bg"  ng-class="{'active':user_bk_index_step>=5}">3</div>
+            <div class="bianker_employee_step_line3"  ng-class="{'active':user_bk_index_step>=5}"></div>
+            <div class="text-center bianker_employee_step_font"  ng-class="{'active':user_bk_index_step>=5}">认证成功，开始接单</div>
+        </div>
+    </div>
+</div>
+
+<div class="container bianker_content_wrap clearfix">
+        <div class="fl bianker_content_main_left bianker_employee_content_main_left">
+            <div class="bianker_user_img_wrap">
+                <img ng-src="{{cuser.avator}}" onerror="this.src='../Images/photo.png'">
+            </div>
+            <div class="bianker_user-name text-center" ng-bind="nickname"></div>
+            <div class="text-center">账户<span style="padding:0 8px;">:</span><span class="active-color">￥</span><span class="active-color" ng-bind="cuser.balance">1000</span></div>
+            <div class="bianker_divide_line"></div>
+
+            <div class="bianker_menu" ng-class="{'active':$state.current.name=='app.user_bk.accout_log'}"><a ui-sref="-" ng-click="notOpen()">查看收支明细</a></div>
+            <div class="bianker_menu" ng-class="{'active':$state.current.name=='app.user_bk.index'}"><a ui-sref="app.user_bk.index">身份认证</a></div>
+            <div class="bianker_menu" ng-class="{'active':$state.current.name=='app.user_bk.order_list'}"><a ui-sref="app.user_bk.order_list">我的订单</a></div>
+            <div class="bianker_menu" ng-class="{'active':$state.current.name=='app.user_bk.ling_gan'}"><a ui-sref="-" ng-click="notOpen()">我的灵感</a></div>
+            <div class="bianker_menu" ng-class="{'active':$state.current.name=='app.user_bk.material'}"><a ui-sref="-" ng-click="notOpen()">我的素材</a></div>
+            <div class="bianker_menu" ng-class="{'active':$state.current.name=='app.user_bk.collect'}"><a ui-sref="-" ng-click="notOpen()">我的收藏</a></div>
+            <div class="bianker_menu_bottom" ng-class="{'active':$state.current.name=='app.user_bk.record'}"><a ui-sref="-" ng-click="notOpen()">播放记录</a></div>
+        </div>
+        <div ui-view></div>
+</div>

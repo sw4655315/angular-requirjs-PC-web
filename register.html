@@ -41,33 +41,35 @@
                 <div class="register_window_footer_block_gou_wrap" ng-click="_gou.tab_index=!_gou.tab_index">
                     <div class="ico-gou" ng-if="_gou.tab_index"  ></div>
                 </div>
-                <div class="register_window_footer_block_xy">《编客网络服务协议》</div>
+                <div class="register_window_footer_block_xy" ui-sref="app.serverRule">《编客网络服务协议》</div>
                 <a class="register_window_footer_block_dl" ui-sref="login">登录</a>
                 <div class="register_window_footer_block_tip">已有账号？去</div>
             </div>
         </div>
     </div>
-    <div id="mask" class="mask"></div>
-    <div id="registerBox">
-        <a href="javascript:;" class="close"><div class="ico6-10"></div></a>
-        <div class="registerTitle text-center">使用VA码优先进行编客网注册</div>
-        <div class="row vaCode_wrap">
-            <div class="ico6-9 vaCode_icon fl"></div>
-            <div class="vaCode_main fl">
-                <label class="vaCode_main_label">请输入16位VA码</label>
-                <input type="text" class="vaCode_main_input">
+    <div ng-show="isSignup">
+        <div id="mask" class="mask"></div>
+        <div id="registerBox">
+            <a href="javascript:;" class="close" ng-click="isSignup=!1"><div class="ico6-10"></div></a>
+            <div class="registerTitle text-center">使用VA码优先进行编客网注册</div>
+            <div class="row vaCode_wrap">
+                <div class="ico6-9 vaCode_icon fl"></div>
+                <div class="vaCode_main fl">
+                    <label class="vaCode_main_label">请输入16位VA码</label>
+                    <input type="text" class="vaCode_main_input" ng-model="loginForm.vacode">
+                </div>
             </div>
-        </div>
-        <div class="row vaCode_confirm_btn">
-            <div></div>
-            <div class="vaCode_confirm_btn_wrap">
-                <button class="btn vaCode_confirm_btn_main" id="va-code">确定</button>
+            <div class="row vaCode_confirm_btn">
+                <div></div>
+                <div class="vaCode_confirm_btn_wrap">
+                    <button class="btn vaCode_confirm_btn_main" id="va-code" ng-click="sendCaptcha()">确定</button>
+                </div>
             </div>
-        </div>
-        <div class="vaCode_font">
-            <div class="vaCode_font_1">什么是VA码?</div>
-            <div class="vaCode_font_2">VA码是编客网内测邀请码，使用VA码可以优先注册编客网</div>
-            <div class="vaCode_font_3 active-color">联系客服</div>
+            <div class="vaCode_font">
+                <div class="vaCode_font_1">什么是VA码?</div>
+                <div class="vaCode_font_2">VA码是编客网内测邀请码，使用VA码可以优先注册编客网</div>
+                <div class="vaCode_font_3 active-color">联系客服</div>
+            </div>
         </div>
     </div>
 </div>

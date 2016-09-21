@@ -13,7 +13,7 @@ define(function (require) {
         $scope.submit = function(){
             var isPass = validInput();
             if(!isPass) return false;
-            signup();
+            resetp();
         }
         //获取验证码
         $scope.getCaptcha = function(){
@@ -21,7 +21,7 @@ define(function (require) {
                 _kit.d('请输入正确手机号');
                 return false;
             }
-            _kit.ag('user/getCaptcha/register',_form,function (res) {
+            _kit.ag('user/getCaptcha/resetp',_form,function (res) {
                 _kit.s('验证码发送成功，请注意查收');
                 //60秒倒计时
                 $scope.countDown = 60;
@@ -43,10 +43,22 @@ define(function (require) {
             _kit.d('请输入正确验证码');
             r = false;
         }
-        if(!_kit.reg.pwd.test(_form.password)){
+        if(!_kit.reg.pwd.test(_form.password)
+            || !_kit.reg.pwd.test(_form.rpassword)){
             _kit.d('请输入正确密码');
             r = false;
         }
+        if(_form.password != _form.rpassword){
+            _kit.d('两次密码输入不一致');
+            r = !1;
+        }
         return r;
+    }
+
+    function resetp(){
+        _kit.ap('user/resetp',_form,function (res) {
+            _kit.s('密码重置成功');
+            _state.go('login');
+        });
     }
 });
