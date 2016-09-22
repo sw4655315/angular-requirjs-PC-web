@@ -73,13 +73,14 @@ define(function (require) {
              })
          }         
          //跳转到角色对应的页面
-         $scope.go_role_page = function(){
+         $scope.go_role_page = function(str){
+            $rootScope._role = str;
             if($rootScope._role == 1){
-                _state.go('app.user_gz.order_list');
-            }else{
                 _state.go('app.user_bk.index');
-                
+            }else{
+                _state.go('app.user_gz.order_list');
             }
+            
          }
 
          $scope.log = function(){

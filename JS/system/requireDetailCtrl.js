@@ -33,7 +33,7 @@ define(function (require) {
             loadFinished();
         }
         $scope.now_in = function(){
-            if(_stg.needSignin()){
+            if(_stg.needSignin() && needAudit()){
                 _kit.ap('employee/setFinished',{need_id:_paras.id},function(res){
                     $scope.need.person_state = '2';
                 });
@@ -41,7 +41,7 @@ define(function (require) {
         }
 
         $scope.now_out = function(){
-            if(_stg.needSignin()){
+            if(_stg.needSignin()&& needAudit()){
                 _kit.ap('employee/cancelFinished',{need_id:_paras.id},function(res){
                     $scope.need.person_state = '0';
                 });
@@ -107,7 +107,21 @@ define(function (require) {
             close:function(need){
                 if(!need) return !1;
                 return (need.person_state && need.person_state == '1') && need.status == '2'
+            },
+            audit:function(){
+                return !_kit.isExist(_cuser) || _cuser.audit < 4;
             }
         };
+    }
+    /**
+     * 验证身份
+     */
+    function needAudit(){
+        if(_stg.user().audit < 4){
+            _kit.d('投稿需要<a href="#/user_bk/index">身份认证</a>');
+            return !1;
+        }
+        return !0;
+        
     }
 });

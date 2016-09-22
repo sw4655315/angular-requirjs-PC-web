@@ -9,7 +9,7 @@
         </ul>
        <div class="bianker_require_detail_content_header">
                <div class="fl bianker_require_detail_content_header_img">
-                   <img ng-src="{{employer.avator}}" onerror="../img/photo.png">
+                   <img ng-src="{{employer.avator}}" onerror="this.src='Images/photo.png'">
                </div>
 
            <div class="fl bianker_require_detail_content_header_name_wrap">
@@ -57,7 +57,7 @@
                 <div class="bianker_require_detail_content_label_icofont">手机认证</div>
             </div>
         </div>
-        <button class="btn bianker_require_content_button" ng-if="need.person_state == 0 && !_stg.isBianker()" ui-sref="app.personIndex">去认证</button>
+        <button class="btn bianker_require_content_button" ng-if="checkState.audit()" ui-sref="app.personIndex">去认证</button>
 
        
         <div class="bianker_require_content_detail_wrap">
@@ -76,11 +76,11 @@
             </div>
         </div>
         <div class="bianker_require_content_detail_appendix" ng-if="_kit.isExist(need.attachment)" style="height:auto;">
-            <div ng-repeat="str in need.attachment" style="min-height: 20px;">
+            <div ng-repeat="str in need.attachment" style="min-height: 21px;">
                 <div class="active-color fl">附件&nbsp:</div>
                 <div class="ico2-6 bianker_require_content_detail_appendix_ico"></div>
                 <div class="bianker_require_content_detail_appendix_name" ng-bind="file.name(str)">多人分享奖金.png</div>
-                <a ng-href="{{str}}" download>
+                <a ng-href="{{str}}" download="{{file.name(str)}}">
                     <div class="bianker_require_content_detail_appendix_download">下载</div>
                 </a>
             </div>
@@ -127,7 +127,7 @@
                     </div>
 
                     <div class="bianker_download_content_slide_img_main_right" ng-if="file.video(finish.link)">
-                        <img src="../img/2.png">
+                        <img src="Images/2.png">
                         <div class="bianker_download_content_slide_img_main_font">
                             <div class="fl" ng-bind="file.name(finish.link)">XXX.mp4</div>
                             <a ng-href="{{finish.link}}" download>

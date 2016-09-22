@@ -13,10 +13,14 @@
 
                     <div class="bianker_employer_myorder_main_right_content_list1_left" ng-click="go_detail(order.id,order.userids)" style="cursor: pointer;">{{order.title}} - {{_dict.trade_type[order.trade_type]}}</div>
 
-                    <div ng-if="statusFun(order).isUpload()"  class="bianker_employer_myorder_main_right_content_list1_right"
-                    ngf-select="log(order)" ng-model="order.videofile" name="videofile" ngf-pattern="'.mp4,.zip'"
+                    <div ng-if="statusFun(order).upload || statusFun(order).reupload"  class="bianker_employer_myorder_main_right_content_list1_right"
+                    ngf-select="upload(order)" ng-model="order.videofile" name="videofile" ngf-pattern="'.mp4,.zip'"
                     ngf-max-size="500MB"
-                    >上传稿件</div>
+                    >{{statusFun(order).upload?'上':'重'}}传稿件</div>
+
+                    <div ng-if="statusFun(order).full_upload"
+                    class="bianker_employer_myorder_main_right_content_list1_right"
+                    >重传次数已满</div>
                 </div>
                 <div class="col-lg-12">
                     <div class="bianker_employer_myorder_main_right_content_list_font">赏金 : </div>

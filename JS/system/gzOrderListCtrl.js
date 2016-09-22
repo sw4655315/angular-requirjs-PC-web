@@ -13,7 +13,7 @@ define(function (require) {
         _dict = $scope._dict = app.get('$dict');
         _state = $rootScope.$state;
 
-        var _page = $scope.page = {pageNumber:1,pageSize:10};
+        var _page = $scope.page = {pageNumber:1,pageSize:6};
         $scope.state = 1;
         $scope.upload_modal = !1;
         _form = {};
@@ -74,7 +74,7 @@ define(function (require) {
          * 加载列表数据
          */
          function loadData(){
-            var param = angular.extend(_page,{orderType:$scope.state||1});
+            var param = angular.extend(_page,{status:$scope.state||1});
             _kit.ag('employer/orderList',param,function(res){
                 $scope.orderList = res.orderList;
                 $scope.page =res.page;

@@ -13,7 +13,7 @@ define(function (require) {
         _dict = $scope._dict = app.get('$dict');
         _state = $rootScope.$state;
 
-        var _page = $scope.page = {pageNumber:1,pageSize:10};
+        var _page = $scope.page = {pageNumber:1,pageSize:6};
         $scope.state = 1;
         $scope.upload_modal = !1;
         _form = {};
@@ -44,15 +44,13 @@ define(function (require) {
 
         $scope.statusFun = function (order) {
             return {
-                isUpload:function(){
-                    return (order.person_state === '2' 
-                            && order.userids !== _cuser.ids
-                            && order.status == '2');
-                }
+                upload: order.status == '2' && order.upload_num <=0
+                ,reupload: order.status == '2' && order.upload_num > 0 && order.upload_num < 3
+                ,full_upload : order.status == '2' && order.upload_num >= 3 
             }
         }
 
-        $scope.log = function (order) {
+        $scope.upload = function (order) {
             order.filename = order.videofile.name;
             _form.need_id = order.id;
             _form.videofile = order.videofile;
