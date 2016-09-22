@@ -46,6 +46,7 @@ define(function (require, exports, module) {
     d.page_map = {
         '0':'app.index'
         ,'1':'app.requireDeploy'
+        ,'2':'app.user_bk.index'
     }
 
 

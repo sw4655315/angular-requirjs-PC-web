@@ -72,8 +72,8 @@ define(function (require) {
          * 加载列表数据
          */
          function loadData(){
-            var param = angular.extend(_page,{orderType:$scope.state||1});
-            _kit.ag('employee/orderList',param,function(res){
+            var param = angular.extend(_page,{status:$scope.state||1});
+            _kit.ag('employee/yeeOrderList',param,function(res){
                 $scope.orderList = res.orderList;
                 $scope.page =res.page;
                 _kit.renderPage($scope.page,function(obj,first){

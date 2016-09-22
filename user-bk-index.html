@@ -89,7 +89,7 @@
             </div>
             <div class="bianker_company_confirm_container_right_block">
                 <div class="fl bianker_company_confirm_container_right_block_label">成立时间</div>
-                <input type="text" id="laydate" def-laydate class="fl bianker_company_confirm_container_right_block_input" ng-model="_form.formed"  readonly="readonly" min-date="laydate.now()">
+                <input type="text" id="laydate" def-laydate class="fl bianker_company_confirm_container_right_block_input" ng-model="_form.formed"  readonly="readonly" max-date="{{now(-1)}}">
             </div>
             <div class="bianker_company_confirm_container_right_block">
                 <div class="fl bianker_company_confirm_container_right_block_label">经营范围</div>
@@ -110,7 +110,7 @@
                     >选择文件</button><span class="company-photo-name" ng-bind="_form.photo.name"></span>
                 </div>
             </div>
-            <div class="bianker_company_confirm_container_right_block_button">
+            <div class="bianker_company_confirm_container_right_block_button" style="margin-top: 40px;">
                 <div class="fl bianker_company_confirm_container_right_block_label"></div>
                 <button class="btn fl bianker_company_confirm_container_right_block_button_pre" ng-click="go_prev(1)">上一步</button>
                 <button class="btn fl bianker_company_confirm_container_right_block_button_submit" ng-click="go_step_3()">提交申请</button>

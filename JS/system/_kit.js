@@ -31,6 +31,7 @@ define(function (require) {
         stg.signout = function(){
             stg.set('sid',null);
             stg.set('user',null);
+            $state.reload();
         }
 
         stg.isSignin = function(){
@@ -165,7 +166,7 @@ define(function (require) {
                     return !1;
                 }
                 if(res.data.rspCode != kit.http.ok){
-                    if(res.rspCode == kit.http.signin_timeout) $stg.signout();
+                    if(res.data.rspCode == kit.http.signin_timeout) $stg.signout();
                     kit.d(res.data.rspMsg || '请求失败，请稍候重试！');
                     return !1;
                 }
@@ -175,7 +176,14 @@ define(function (require) {
             });
             upload.finally(finallyFun);
         };
-
+        kit.get_current_city = function(callback){
+            jQuery.getScript('http://int.dpool.sina.com.cn/iplookup/iplookup.php?format=js',function(){
+                callback({
+                    p:remote_ip_info.province
+                    ,c:remote_ip_info.city
+                });
+            });
+        }
         return kit;
     })
     .config(function(localStorageServiceProvider){

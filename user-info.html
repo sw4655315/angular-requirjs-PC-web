@@ -2,11 +2,11 @@
             <div class="bianker_title_box_tip">亲爱的<span ng-bind="cuser.nickname"></span>,身份认证后，才能开始接单哦</div>
             <div class="bianker_user_info_img_wrap">
                 <div class="fl bianker_user_info_img_font">当前头像</div>
-                <div class="fl bianker_user_info_img_main"><img
-                 ngf-select ng-model="_form.avator" name="avator" ngf-pattern="'image/*,.png,.jpg,jpeg'"
-                 ngf-accept="'image/*'" ngf-max-size="2MB" 
-                 ng-src="{{(_form.avator || cuser.avator) | ngfDataUrl}}"
-                 ></div>
+                <div class="fl bianker_user_info_img_main"
+                    ngf-select ng-model="_form.avator" name="avator" ngf-pattern="'image/*,.png,.jpg,jpeg'"
+                    ngf-accept="'image/*'" ngf-max-size="2MB" >
+                    <img ng-src="{{(_form.avator || cuser.avator) | ngfDataUrl}}" >
+                 </div>
             </div>
 
             <div class="bianker_user_info_wrap">

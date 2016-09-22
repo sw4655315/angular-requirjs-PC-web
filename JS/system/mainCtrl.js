@@ -81,6 +81,10 @@ define(function (require) {
                 
             }
          }
+
+         $scope.log = function(){
+            
+         }
      }]);
 
     /**
@@ -98,7 +102,7 @@ define(function (require) {
      */
      function search_material() {
         var word = _kit.isEmpty(_search.key_word)?'':_search.key_word;
-        window.open('http://videoartists.cn/?word='+word);
+        window.open('http://videoartists.cn:8083/?word='+word);
      }
      /**
      * 搜索编客

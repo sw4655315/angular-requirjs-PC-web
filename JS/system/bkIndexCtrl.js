@@ -17,7 +17,8 @@ define(function (require) {
         _dict = $scope._dict = app.get('$dict');
         _state = $rootScope.$state;
         _paras = $rootScope.$stateParams;
-        _stg.needSignin();
+        _stg.needSignin(2);
+        $scope.now = laydate.now;
         _form = $scope._form = {
             photo:null
         };
@@ -37,11 +38,15 @@ define(function (require) {
                 $scope.p = _cuser.city.split(' - ')[0] || '北京';
                 $scope.c = _cuser.city.split(' - ')[1];
                 $scope.a = _cuser.city.split(' - ')[2];
+            }else{
+                _kit.get_current_city(function(res){
+                    $scope = angular.extend($scope,res);
+                });
             }
         }
 
         /**
-         * 第二步
+         * 上一步
          */ 
         $scope.go_prev = function(step){
             $rootScope.user_bk_index_step = $scope.step = step;

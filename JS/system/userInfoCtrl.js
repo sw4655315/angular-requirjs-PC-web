@@ -25,6 +25,10 @@ define(function (require) {
                 $scope.p = _cuser.city.split(' - ')[0] || '北京';
                 $scope.c = _cuser.city.split(' - ')[1];
                 $scope.a = _cuser.city.split(' - ')[2];
+            }else{
+                _kit.get_current_city(function(res){
+                    $scope = angular.extend($scope,res);
+                });
             }
         }
 
